@@ -1,9 +1,19 @@
 export default async function Home() {
-  const data = await fetch("http://localhost:9093/news?page=1&limit=10}")
-    .then((response) => response.json())
-    .then((data) => data);
-
-  console.log(data);
-
-  return <div>프론트 서비스 페이지</div>;
+  return (
+    <div className="w-[100dvw]">
+      <main className="h-[100dvh] w-[100dvw] bg-red-300">메인 슬라이더</main>
+      <div className="h-[100dvh] w-[100dvw] bg-blue-100">미사 안내 및 문의</div>
+      <div className="h-[100dvh] w-[100dvw] bg-yellow-100">
+        초등부 주일학교 안내
+      </div>
+      <div className="h-[100dvh] w-[100dvw] bg-purple-100">
+        중고등부 주일학교 안내
+      </div>
+      <div className="h-[100dvh] w-[100dvw] bg-green-100">청년부 안내</div>
+      <div className="h-[100dvh] w-[100dvw] bg-gray-100">단체 안내</div>
+      <div className="h-[100dvh] w-[100dvw] bg-orange-400">성당소식</div>
+      <div className="h-[100dvh] w-[100dvw] bg-slate-300">공지사항 및 문의</div>
+      <div className="h-[300px] w-[100dvw]">풋터</div>
+    </div>
+  );
 }
