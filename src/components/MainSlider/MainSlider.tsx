@@ -11,9 +11,12 @@ import { AutoPlay, Pagination } from "@egjs/flicking-plugins";
 import "@egjs/flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 
-export default function Slider() {
+export default function MainSlider() {
   const flickingRef = useRef<HTMLDivElement>(null);
   const flickingInstanceRef = useRef<Flicking | null>(null);
+  const autoPlayInstanceRef = useRef<AutoPlay | null>(null);
+
+  const [isAutoPlay, setIsAutoPlay] = useState(true);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -43,6 +46,7 @@ export default function Slider() {
 
       flickingInstance.addPlugins(autoplayInstance, paginationInstance);
       flickingInstanceRef.current = flickingInstance;
+      autoPlayInstanceRef.current = autoplayInstance;
 
       flickingInstance.on("moveStart", () => setIsAnimating(true));
       flickingInstance.on("moveEnd", () => setIsAnimating(false));
@@ -56,12 +60,30 @@ export default function Slider() {
   const handleNextSlide = () => {
     if (!isAnimating && flickingInstanceRef.current) {
       flickingInstanceRef.current.next();
+
+      if (autoPlayInstanceRef.current) {
+        autoPlayInstanceRef.current.stop();
+      }
     }
   };
   const handlePrevSlide = () => {
     if (!isAnimating && flickingInstanceRef.current) {
       flickingInstanceRef.current.prev();
     }
+  };
+
+  const handleAutoPlay = () => {
+    setIsAutoPlay((prev) => {
+      prev = !isAutoPlay;
+      if (autoPlayInstanceRef.current && !prev) {
+        autoPlayInstanceRef.current.stop();
+      }
+
+      if (autoPlayInstanceRef.current && prev) {
+        autoPlayInstanceRef.current.play();
+      }
+      return prev;
+    });
   };
 
   return (
@@ -101,6 +123,7 @@ export default function Slider() {
       <div className="flicking-pagination"></div>
       <span className="item-inside-viewport">
         <button
+          type="button"
           className="absolute top-2 z-20"
           disabled={isAnimating}
           onClick={handleNextSlide}
@@ -108,6 +131,15 @@ export default function Slider() {
           다음 슬라이드
         </button>
         <button
+          className="absolute top-5 z-20"
+          type="button"
+          disabled={isAnimating}
+          onClick={handleAutoPlay}
+        >
+          {isAutoPlay ? "일시정지 버튼" : "재생 버튼"}
+        </button>
+        <button
+          type="button"
           className="absolute right-0 top-2 z-20"
           disabled={isAnimating}
           onClick={handlePrevSlide}
