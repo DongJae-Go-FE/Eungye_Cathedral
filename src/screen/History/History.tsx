@@ -2,7 +2,7 @@
 
 import { HistoryContext } from "./context";
 
-import useSchene from "./useSchene";
+import useSchene from "../../hooks/useSchene";
 
 const History = () => {
   const schene = useSchene([

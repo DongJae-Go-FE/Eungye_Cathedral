@@ -9,9 +9,9 @@ import {
   useState,
 } from "react";
 
-import { Schene, ScheneContext } from "./types";
+import { Schene, ScheneContext } from "../screen/History/types";
 
-import { reducer } from "./reducer";
+import { reducer } from "../screen/History/reducer";
 
 const useSchene = (
   schenes: Omit<Schene, "currentFrame" | "index">[],
