@@ -1,4 +1,5 @@
 import MainSlider from "@/components/MainSlider";
+import Map from "@/components/Map/Map";
 
 export default async function Home() {
   return (
@@ -6,6 +7,7 @@ export default async function Home() {
       <main className="h-[100dvh] w-[100dvw] bg-red-300">
         <MainSlider />
       </main>
+      <Map />
       <div className="h-[100dvh] w-[100dvw] bg-blue-100">미사 안내 및 문의</div>
       <div className="h-[100dvh] w-[100dvw] bg-yellow-100">
         초등부 주일학교 안내
