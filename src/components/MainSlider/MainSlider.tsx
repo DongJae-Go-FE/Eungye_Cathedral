@@ -16,7 +16,7 @@ export default function MainSlider() {
   const flickingInstanceRef = useRef<Flicking | null>(null);
   const autoPlayInstanceRef = useRef<AutoPlay | null>(null);
 
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
+  const [isAutoPlay, setIsAutoPlay] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
