@@ -1,5 +1,6 @@
 import MainSlider from "@/components/MainSlider";
 import Map from "@/components/Map/Map";
+import MainButton from "@/components/MainButton";
 
 export default async function Home() {
   return (
@@ -7,7 +8,7 @@ export default async function Home() {
       <main className="h-[100dvh] w-[100dvw] bg-red-300">
         <MainSlider />
       </main>
-      <div className="h-[100dvh] w-[100dvw] bg-gray-100">
+      <div className="h-[100dvh] w-[100dvw] bg-gray-800">
         <h2>성당 및 미사안내</h2>
         <div className="flex h-[calc(100%-48px)]">
           <div className="flex-1">
@@ -69,6 +70,7 @@ export default async function Home() {
                 </tr>
               </tbody>
             </table>
+            <MainButton title="메인" href="/" />
           </div>
         </div>
       </div>
