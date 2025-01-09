@@ -17,7 +17,7 @@ export default async function Home() {
             <Map />
           </div>
           <div className="flex-1">
-            <table className="table-fixed" cellSpacing={0}>
+            <table className="table-fixed">
               <caption className="sr-only">은계성당 미사안내</caption>
               <colgroup>
                 <col width="50%" />
