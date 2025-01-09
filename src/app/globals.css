@@ -6,6 +6,10 @@ body {
   @apply w-[100dvw] bg-gray-100;
 }
 
+h2 {
+  @apply mb-3 mt-14 pl-4 text-heading02b;
+}
+
 @layer components {
   .position-center {
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;

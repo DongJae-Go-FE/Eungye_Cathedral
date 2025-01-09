@@ -39,7 +39,7 @@ export default function Map() {
         src={`https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=${process.env.NEXT_PUBLIC_NAVER_CLIENT_ID}&submodules=geocoder`}
         onLoad={initializeMap}
       />
-      <div id={mapId} className="h-[500px] w-[500px]" />
+      <div id={mapId} className="h-[500px] w-[500px] bg-gray-200" />
     </div>
   );
 }
