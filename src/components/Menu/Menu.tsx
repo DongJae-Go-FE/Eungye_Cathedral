@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -17,8 +17,6 @@ export default function Menu({
   isTriggerAnimation,
   onClose,
 }: MenuType) {
-  const pathName = usePathname();
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
 

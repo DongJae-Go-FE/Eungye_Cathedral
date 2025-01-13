@@ -28,7 +28,7 @@ module.exports = {
     screens: {
       mobile: "0px",
       tablet: "727px",
-      desktop: "1279px",
+      desktop: "1280px",
     },
   },
   plugins: [],

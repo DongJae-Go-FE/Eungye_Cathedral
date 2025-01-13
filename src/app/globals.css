@@ -17,4 +17,8 @@ h2 {
   .skeleton-basic {
     @apply rounded-md bg-gray-200;
   }
+
+  .main-section {
+    @apply flex h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat mobile:px-[8vw] mobile:pb-[30vw] tablet:px-[10vw] tablet:pb-[20vw] desktop:px-[120px] desktop:pb-40;
+  }
 }

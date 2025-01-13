@@ -1,6 +1,7 @@
 import MainSlider from "@/components/MainSlider";
 import Map from "@/components/Map/Map";
 import MainButton from "@/components/MainButton";
+import MainIntroduction from "@/components/MainIntroduction";
 
 export default async function Home() {
   return (
@@ -74,14 +75,74 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="h-[100dvh] w-[100dvw] bg-yellow-100">
-        초등부 주일학교 안내
-      </div>
-      <div className="h-[100dvh] w-[100dvw] bg-purple-100">
-        중고등부 주일학교 안내
-      </div>
-      <div className="h-[100dvh] w-[100dvw] bg-green-100">청년부 안내</div>
-      <div className="h-[100dvh] w-[100dvw] bg-gray-100">단체 안내</div>
+      <section className="main-section bg-[url('/bg1.png')]">
+        <MainIntroduction
+          title="주일학교입니다."
+          content={`은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.\n은계성당 주일학교를 소개합니다.`}
+          titleBtnName="주일학교"
+          titleBtnHref="/school"
+        >
+          <ul className="flex mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4">
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
+              <MainButton title="메인" href="/" />
+            </li>
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
+              <MainButton title="메인" href="/" />
+            </li>
+          </ul>
+        </MainIntroduction>
+      </section>
+      <section className="main-section bg-[url('/bg2.png')]">
+        <MainIntroduction
+          title="주일학교입니다."
+          content="은계성당 주일학교를 소개합니다."
+          titleBtnName="주일학교"
+          titleBtnHref="/school"
+        >
+          <ul className="flex gap-x-4">
+            <li>
+              <MainButton title="메인" href="/" />
+            </li>
+            <li>
+              <MainButton title="메인" href="/" />
+            </li>
+          </ul>
+        </MainIntroduction>
+      </section>
+      <section className="main-section bg-[url('/bg3.png')]">
+        <MainIntroduction
+          title="주일학교입니다."
+          content="은계성당 주일학교를 소개합니다."
+          titleBtnName="주일학교"
+          titleBtnHref="/school"
+        >
+          <ul className="flex gap-x-4">
+            <li>
+              <MainButton title="메인" href="/" />
+            </li>
+            <li>
+              <MainButton title="메인" href="/" />
+            </li>
+          </ul>
+        </MainIntroduction>
+      </section>
+      <section className="main-section bg-[url('/bg4.png')]">
+        <MainIntroduction
+          title="주일학교입니다."
+          content="은계성당 주일학교를 소개합니다."
+          titleBtnName="주일학교"
+          titleBtnHref="/school"
+        >
+          <ul className="flex gap-x-4">
+            <li>
+              <MainButton title="메인" href="/" />
+            </li>
+            <li>
+              <MainButton title="메인" href="/" />
+            </li>
+          </ul>
+        </MainIntroduction>
+      </section>
       <div className="h-[100dvh] w-[100dvw] bg-orange-400">성당소식</div>
       <div className="h-[100dvh] w-[100dvw] bg-slate-300">공지사항 및 문의</div>
       <div className="h-[180px] w-[100dvw]">풋터</div>
