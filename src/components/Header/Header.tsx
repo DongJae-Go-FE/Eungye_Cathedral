@@ -120,7 +120,7 @@ export default function Header() {
         </div>
         <IconButton
           type="button"
-          className="h-full w-16 mobile:block tablet:block desktop:hidden"
+          className="h-full w-16 mobile:flex tablet:flex desktop:hidden"
           title="모바일 메뉴 아이콘"
           onClick={handleDrawer}
         >
