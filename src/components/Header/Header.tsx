@@ -23,7 +23,7 @@ export default function Header() {
   const depthUlStyle = "overflow-hidden";
 
   const handleDrawer = () => {
-    setIsDrawerOpen((prev) => !prev);
+    setIsDrawerOpen(true);
   };
 
   return (
@@ -34,7 +34,7 @@ export default function Header() {
         <h1 className="w-32">
           <Link href="/">로고</Link>
         </h1>
-        <div className="hidden h-full pr-5 tablet:block">
+        <div className="hidden h-full pr-5 desktop:block">
           <nav className="h-full">
             <ul className="flex h-full items-center">
               <li
@@ -120,7 +120,7 @@ export default function Header() {
         </div>
         <IconButton
           type="button"
-          className="block h-full w-16 tablet:hidden"
+          className="h-full w-16 mobile:block tablet:block desktop:hidden"
           title="모바일 메뉴 아이콘"
           onClick={handleDrawer}
         >

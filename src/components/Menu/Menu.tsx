@@ -29,7 +29,7 @@ export default function Menu({
   return (
     <div
       aria-label="mobile-side-menu"
-      className={`duration-400 fixed right-0 top-0 z-[3000] h-[100dvh] w-[100dvw] bg-white transition-transform tablet:w-[80dvw] ${!isTriggerAnimation && "transform: tablet:translateX(80vw) transform: translateX(100vw)"}`}
+      className={`duration-800 desktop:hidden; fixed right-0 top-0 z-[3000] h-[100dvh] bg-white transition-transform mobile:w-[100dvw] tablet:w-[80dvw] ${isTriggerAnimation ? "translate-x-0" : "mobile:translate-x-[100dvw] tablet:translate-x-[80dvw]"}`}
       onTransitionEnd={handleTransitionEnd}
     >
       <button onClick={onClose}>닫기</button>

@@ -26,9 +26,9 @@ module.exports = {
       tokens,
     },
     screens: {
-      mobile: "768px",
-      tablet: "1281px",
-      desktop: "1600px",
+      mobile: "0px",
+      tablet: "727px",
+      desktop: "1281px",
     },
   },
   plugins: [],
