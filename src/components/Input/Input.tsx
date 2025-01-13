@@ -1,8 +1,8 @@
-import { FC, InputHTMLAttributes, RefObject } from "react";
+import { InputHTMLAttributes, RefObject } from "react";
 
 type InputSize = "sm" | "md" | "lg" | "xLg";
 
-export interface Props
+export interface InputType
   extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
   /**
    * @default "md"
@@ -11,7 +11,7 @@ export interface Props
   ref?: RefObject<HTMLInputElement>;
 }
 
-const Input: FC<Props> = ({ size = "md", ref, ...props }) => {
+export default function Input({ size = "md", ref, ...props }: InputType) {
   let sizeStyle;
 
   switch (size) {
@@ -36,6 +36,4 @@ const Input: FC<Props> = ({ size = "md", ref, ...props }) => {
   const classList = [`${sizeStyle}`];
 
   return <input className={classList.join(" ")} ref={ref} {...props} />;
-};
-
-export default Input;
+}

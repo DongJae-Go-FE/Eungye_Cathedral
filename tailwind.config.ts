@@ -25,6 +25,11 @@ module.exports = {
       fontSize,
       tokens,
     },
+    screens: {
+      mobile: "768px",
+      tablet: "1281px",
+      desktop: "1600px",
+    },
   },
   plugins: [],
 };
