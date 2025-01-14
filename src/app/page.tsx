@@ -2,7 +2,7 @@ import MainSlider from "@/components/MainSlider";
 import Map from "@/components/Map/Map";
 import MainButton from "@/components/MainButton";
 import MainIntroduction from "@/components/MainIntroduction";
-
+import Footer from "@/components/Footer";
 export default async function Home() {
   return (
     <div className="w-[100dvw]">
@@ -145,7 +145,9 @@ export default async function Home() {
       </section>
       <div className="h-[100dvh] w-[100dvw] bg-orange-400">성당소식</div>
       <div className="h-[100dvh] w-[100dvw] bg-slate-300">공지사항 및 문의</div>
-      <div className="h-[180px] w-[100dvw]">풋터</div>
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   );
 }

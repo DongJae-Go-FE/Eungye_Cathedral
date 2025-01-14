@@ -2,8 +2,6 @@ import Link from "next/link";
 
 import { Fragment, PropsWithChildren } from "react";
 
-import MainButton from "../MainButton";
-
 interface MainIntroduction extends PropsWithChildren {
   titleBtnName: string;
   titleBtnHref: string;
