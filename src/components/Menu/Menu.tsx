@@ -6,6 +6,8 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
+import Accordion from "../Accordion/Accordion";
+
 type MenuType = {
   handleTransitionEnd: () => void;
   isTriggerAnimation: boolean;
@@ -35,8 +37,7 @@ export default function Menu({
         <button onClick={onClose}>닫기</button>
         <ul>
           <li>
-            <button type="button">테스트1</button>
-            <div>
+            <Accordion title="테스트">
               <ul>
                 <li>
                   <Link href="">테스트1-1</Link>
@@ -45,7 +46,7 @@ export default function Menu({
                   <Link href="">테스트1-2</Link>
                 </li>
               </ul>
-            </div>
+            </Accordion>
           </li>
           <li>
             <button type="button">테스트2</button>
