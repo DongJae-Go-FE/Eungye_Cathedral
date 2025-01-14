@@ -2,24 +2,40 @@ import MainSlider from "@/components/MainSlider";
 import Map from "@/components/Map/Map";
 import MainButton from "@/components/MainButton";
 import MainIntroduction from "@/components/MainIntroduction";
-import Footer from "@/components/Footer";
+
 export default async function Home() {
   return (
     <div className="w-[100dvw]">
-      <main className="h-[100dvh] w-[100dvw] bg-red-300">
+      <main className="w-[100dvw h-[100dvh]">
         <MainSlider />
       </main>
-      <div className="h-[100dvh] w-[100dvw] bg-gray-800">
+      <div className="main-content">
         <h2>성당 및 미사안내</h2>
         <div className="flex h-[calc(100%-48px)]">
-          <div className="flex-1">
-            <p>주소: 경기 시흥시 은계중앙로 17(우편번호 14922)</p>
-            <p>Tel : 031-317-2021</p>
-            <p>Fax : 031-317-2021</p>
+          <div className="flex-1 border-r border-[#d9d9d9] pr-[120px]">
             <Map />
+            <address className="mt-6 not-italic">
+              <ul>
+                <li className="mb-1">
+                  <strong className="text-heading03b">
+                    주소 : 경기 시흥시 은계중앙로 17(우편번호 14922)
+                  </strong>
+                </li>
+                <li>
+                  <a href="tel:031-317-2021" className="text-body01m text-xl">
+                    - Tel : 031-317-2021
+                  </a>
+                </li>
+                <li>
+                  <a href="tel:031-317-2021" className="text-body01m text-xl">
+                    - Fax : 031-317-2021
+                  </a>
+                </li>
+              </ul>
+            </address>
           </div>
-          <div className="flex-1">
-            <table className="table-fixed">
+          <div className="flex-1 pl-[120px]">
+            <table className="w-full table-fixed border-b-[1px] border-t-[1px] border-gray-200 text-center">
               <caption className="sr-only">은계성당 미사안내</caption>
               <colgroup>
                 <col width="50%" />
@@ -27,41 +43,67 @@ export default async function Home() {
               </colgroup>
               <thead>
                 <tr>
-                  <th>요일</th>
-                  <th>미사시간</th>
+                  <th className="h-14 border-b border-gray-200 bg-gray-100 py-2.5 text-heading04b">
+                    요일
+                  </th>
+                  <th className="h-14 border-b border-gray-200 bg-gray-100 py-2.5 text-heading04b">
+                    미사시간
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th>월요일</th>
-                  <td>오전 9시</td>
+                  <th className="h-14 border-b border-gray-200 py-2.5">
+                    월요일
+                  </th>
+                  <td className="h-14 border-b border-gray-200 py-2.5">
+                    오전 9시
+                  </td>
                 </tr>
                 <tr>
-                  <th>화요일</th>
-                  <td>오후 7시</td>
+                  <th className="h-14 border-b border-gray-200 py-2.5">
+                    화요일
+                  </th>
+                  <td className="h-14 border-b border-gray-200 py-2.5">
+                    오후 7시
+                  </td>
                 </tr>
                 <tr>
-                  <th>수요일</th>
-                  <td>오전 10시</td>
+                  <th className="h-14 border-b border-gray-200 py-2.5">
+                    수요일
+                  </th>
+                  <td className="h-14 border-b border-gray-200 py-2.5">
+                    오전 10시
+                  </td>
                 </tr>
                 <tr>
-                  <th>목요일</th>
-                  <td>오후 7시</td>
+                  <th className="h-14 border-b border-gray-200 py-2.5">
+                    목요일
+                  </th>
+                  <td className="h-14 border-b border-gray-200 py-2.5">
+                    오후 7시
+                  </td>
                 </tr>
                 <tr>
-                  <th>금요일</th>
-                  <td>오전 10시</td>
+                  <th className="h-14 border-b border-gray-200 py-2.5">
+                    금요일
+                  </th>
+                  <td className="h-14 border-b border-gray-200 py-2.5">
+                    오전 10시
+                  </td>
                 </tr>
                 <tr>
-                  <th>토요일</th>
-                  <td>
+                  <th className="h-14 border-b border-gray-200 py-2.5">
+                    토요일
+                  </th>
+                  <td className="h-14 border-b border-gray-200 py-2.5">
                     초등부 - 오후 4시 <br />
                     중고등부 - 오후 7시
                   </td>
                 </tr>
                 <tr>
-                  <th>주일(일요일)</th>
-                  <td>
+                  <th className="h-14 py-2.5">주일(일요일)</th>
+                  <td className="h-14 py-2.5">
                     오전 9시
                     <br />
                     교중미사 - 오전 11시
@@ -71,7 +113,6 @@ export default async function Home() {
                 </tr>
               </tbody>
             </table>
-            <MainButton title="메인" href="/" />
           </div>
         </div>
       </div>
@@ -95,15 +136,15 @@ export default async function Home() {
       <section className="main-section bg-[url('/bg2.png')]">
         <MainIntroduction
           title="주일학교입니다."
-          content="은계성당 주일학교를 소개합니다."
+          content={`은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.\n은계성당 주일학교를 소개합니다.`}
           titleBtnName="주일학교"
           titleBtnHref="/school"
         >
-          <ul className="flex gap-x-4">
-            <li>
+          <ul className="flex mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4">
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
               <MainButton title="메인" href="/" />
             </li>
-            <li>
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
               <MainButton title="메인" href="/" />
             </li>
           </ul>
@@ -112,15 +153,15 @@ export default async function Home() {
       <section className="main-section bg-[url('/bg3.png')]">
         <MainIntroduction
           title="주일학교입니다."
-          content="은계성당 주일학교를 소개합니다."
+          content={`은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.\n은계성당 주일학교를 소개합니다.`}
           titleBtnName="주일학교"
           titleBtnHref="/school"
         >
-          <ul className="flex gap-x-4">
-            <li>
+          <ul className="flex mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4">
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
               <MainButton title="메인" href="/" />
             </li>
-            <li>
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
               <MainButton title="메인" href="/" />
             </li>
           </ul>
@@ -129,15 +170,15 @@ export default async function Home() {
       <section className="main-section bg-[url('/bg4.png')]">
         <MainIntroduction
           title="주일학교입니다."
-          content="은계성당 주일학교를 소개합니다."
+          content={`은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.\n은계성당 주일학교를 소개합니다.`}
           titleBtnName="주일학교"
           titleBtnHref="/school"
         >
-          <ul className="flex gap-x-4">
-            <li>
+          <ul className="flex mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4">
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
               <MainButton title="메인" href="/" />
             </li>
-            <li>
+            <li className="mobile:w-full tablet:w-full desktop:w-auto">
               <MainButton title="메인" href="/" />
             </li>
           </ul>
@@ -145,9 +186,6 @@ export default async function Home() {
       </section>
       <div className="h-[100dvh] w-[100dvw] bg-orange-400">성당소식</div>
       <div className="h-[100dvh] w-[100dvw] bg-slate-300">공지사항 및 문의</div>
-      <footer>
-        <Footer/>
-      </footer>
     </div>
   );
 }

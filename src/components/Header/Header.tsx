@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useState } from "react";
 import { createPortal } from "react-dom";
@@ -38,7 +39,15 @@ export default function Header() {
     >
       <div className="flex h-[64px] w-full items-center border-b border-[#D9D9D9] pl-5">
         <h1 className="w-32">
-          <Link href="/">로고</Link>
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              width={128}
+              height={32}
+              alt="은계성당 로고"
+              priority
+            />
+          </Link>
         </h1>
         <div className="hidden h-full desktop:block">
           <nav className="h-full">
