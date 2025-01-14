@@ -18,12 +18,14 @@ export default function Header() {
   const [hasDrawer, handleTransitionEnd, triggerAnimation] =
     useAnimation(isDrawerOpen);
 
+  const headerStyle = `fixed top-0 z-[1001] w-full border-b border-[#D9D9D9] transition-[height] duration-200 ${isOpen ? "h-[300px] bg-dimmedEffectBlack30D" : "h-[64px]"}`;
+
   const liStyle = "h-full w-32 group";
   const liAfterStyle =
     "after:content-[''] after:absolute after:w-0 after:-bottom-5 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-white after:transition-[width] after:duration-200 group-hover:after:w-full";
   const liSpanStyle = `block text-white text-body01r relative group-hover:text-body01b ${liAfterStyle}`;
   const LinkStyle = "flex h-full w-full items-center justify-center";
-  const depthStyle = "transition-[grid-template-rows] duration-300";
+  const depthStyle = `${isOpen ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"} transition-[grid-template-rows] duration-300`;
   const depthUlStyle = "overflow-hidden";
   const depthLiStyle = "w-full h-[64px]";
   const depthLinkStyle =
@@ -34,9 +36,7 @@ export default function Header() {
   };
 
   return (
-    <header
-      className={`fixed top-0 z-[1001] w-full border-b border-[#D9D9D9] transition-[height] duration-200 ${isOpen ? "h-[300px] bg-dimmedEffectBlack30D" : "h-[64px]"}`}
-    >
+    <header className={headerStyle}>
       <div className="flex h-[64px] w-full items-center border-b border-[#D9D9D9] pl-5">
         <h1 className="w-32">
           <Link href="/">
@@ -64,9 +64,7 @@ export default function Header() {
                 <Link href="/" className={LinkStyle}>
                   <span className={liSpanStyle}>테스트1</span>
                 </Link>
-                <div
-                  className={`${isOpen ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"} ${depthStyle}`}
-                >
+                <div className={depthStyle}>
                   <ul className={depthUlStyle}>
                     <li className={depthLiStyle}>
                       <Link className={depthLinkStyle} href="/">
@@ -93,9 +91,7 @@ export default function Header() {
                 <Link href="/" className={LinkStyle}>
                   <span className={liSpanStyle}>테스트2</span>
                 </Link>
-                <div
-                  className={`${isOpen ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"} ${depthStyle}`}
-                >
+                <div className={depthStyle}>
                   <ul className={depthUlStyle}>
                     <li className={depthLiStyle}>
                       <Link className={depthLinkStyle} href="/">
