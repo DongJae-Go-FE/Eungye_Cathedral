@@ -2,11 +2,11 @@ import Map from "@/components/Map/Map";
 
 export default async function Section02() {
   const containerStyle =
-    "w-[100dvw] bg-white mobile:h-[200dvh] mobile:px-[8vw] mobile:py-[30vw] tablet:h-[200dvh] tablet:px-[10vw] tablet:py-[20vw] desktop:h-[100dvh] desktop:px-[120px] desktop:pb-40 desktop:pt-20";
+    "w-[100dvw] desktop:h-auto desktop:min-h-[100dvh] bg-white mobile:min-h-[200dvh] mobile:px-[8dvw] mobile:py-[30dvw] tablet:min-h-[200dvh] tablet:px-[10dvw] tablet:py-[20dvw]  desktop:px-[120px] desktop:py-20";
   const leftBoxStyle =
-    "mobile:w-full mobile:border-b mobile:border-[#d9d9d9] mobile:pb-[16vw] tablet:w-full tablet:border-b tablet:border-[#d9d9d9] tablet:pb-[10vw] desktop:flex-1 desktop:border-b-0 desktop:border-r desktop:border-[#d9d9d9] desktop:pr-[120px]";
+    "mobile:w-full mobile:border-b mobile:border-[#d9d9d9] mobile:pb-[16dvw] tablet:w-full tablet:border-b tablet:border-[#d9d9d9] tablet:pb-[10dvw] desktop:flex-1 desktop:border-b-0 desktop:border-r desktop:border-[#d9d9d9] desktop:pr-[120px]";
   const rightBoxStyle =
-    "mobile:w-full mobile:pt-[16vw] tablet:w-full tablet:pt-[10vw] desktop:flex-1 desktop:pl-[120px] desktop:pt-0";
+    "mobile:w-full mobile:pt-[16dvw] tablet:w-full tablet:pt-[10dvw] desktop:flex-1 desktop:pl-[120px] desktop:pt-0";
   const aStyle = "text-body01m text-xl";
   const tableStyle =
     "w-full table-fixed border-b-[1px] border-t-[1px] border-gray-200 text-center";
@@ -18,7 +18,7 @@ export default async function Section02() {
   return (
     <div className={containerStyle}>
       <h2>성당 및 미사안내</h2>
-      <div className="flex h-[calc(100%-48px)] mobile:flex-wrap tablet:flex-wrap">
+      <div className="flex h-[calc(100%-128px)] mobile:flex-wrap tablet:flex-wrap">
         <div className={leftBoxStyle}>
           <Map />
           <address className="mt-6 not-italic">

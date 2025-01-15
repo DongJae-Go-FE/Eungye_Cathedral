@@ -19,7 +19,7 @@ h2 {
   }
 
   .main-section {
-    @apply flex h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat mobile:px-[8vw] mobile:pb-[30vw] tablet:px-[10vw] tablet:pb-[20vw] desktop:px-[120px] desktop:pb-40;
+    @apply flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40;
     ul {
       @apply flex mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4;
 
