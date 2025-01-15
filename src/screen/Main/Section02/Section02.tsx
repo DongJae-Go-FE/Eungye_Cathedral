@@ -2,7 +2,7 @@ import Map from "@/components/Map/Map";
 
 export default async function Section02() {
   const containerStyle =
-    "w-[100dvw] desktop:h-auto desktop:min-h-[100dvh] bg-white mobile:min-h-[200dvh] mobile:px-[8dvw] mobile:py-[30dvw] tablet:min-h-[200dvh] tablet:px-[10dvw] tablet:py-[20dvw]  desktop:px-[120px] desktop:py-20";
+    "w-[100dvw] desktop:h-auto desktop:min-h-[100dvh] bg-white mobile:min-h-[150dvh] mobile:px-[8dvw] mobile:py-[30dvw] tablet:min-h-[100dvh] tablet:px-[10dvw] tablet:py-[20dvw]  desktop:px-[120px] desktop:py-20";
   const leftBoxStyle =
     "mobile:w-full mobile:border-b mobile:border-[#d9d9d9] mobile:pb-[16dvw] tablet:w-full tablet:border-b tablet:border-[#d9d9d9] tablet:pb-[10dvw] desktop:flex-1 desktop:border-b-0 desktop:border-r desktop:border-[#d9d9d9] desktop:pr-[120px]";
   const rightBoxStyle =

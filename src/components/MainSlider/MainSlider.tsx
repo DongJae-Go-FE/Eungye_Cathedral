@@ -95,9 +95,10 @@ export default function MainSlider() {
   const panelStyle = "panel";
   const slideAreaStyle = "h-full w-full";
   const btnAreaStyle =
-    "item-inside-viewport absolute z-20 flex w-56 justify-between mobile:bottom-[10dvh] mobile:left-1/2 mobile:-translate-x-1/2 tablet:bottom-[13.5dvh] tablet:left-1/2 tablet:-translate-x-1/2 desktop:bottom-[17dvh] desktop:left-auto desktop:right-32 desktop:translate-x-0";
-  const paginationStyle = "flicking-pagination !relative !bottom-0";
-  const pauseBtnStyle = "mr-4 mobile:hidden tablet:hidden desktop:block";
+    "item-inside-viewport absolute z-20 flex w-68 justify-between mobile:bottom-[10dvh] mobile:left-1/2 mobile:-translate-x-1/2 tablet:bottom-[13.5dvh] tablet:left-1/2 tablet:-translate-x-1/2 desktop:bottom-[17dvh] desktop:left-auto desktop:right-32 desktop:translate-x-0";
+  const paginationStyle = "flicking-pagination !relative !bottom-0 !w-[120px]";
+  const pauseBtnStyle =
+    "mr-4 mobile:hidden tablet:hidden desktop:flex w-[60px] justify-center items-center";
 
   return (
     <div ref={flickingRef} className={viewportStyle}>
