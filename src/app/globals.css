@@ -7,7 +7,11 @@ body {
 }
 
 h2 {
-  @apply mb-10 text-heading02b;
+  @apply mb-10 text-heading02b has-[a]:flex has-[a]:items-center has-[a]:justify-between;
+
+  a {
+    @apply text-body01m text-black;
+  }
 }
 
 @layer components {
@@ -17,7 +21,6 @@ h2 {
   .skeleton-basic {
     @apply rounded-md bg-gray-200;
   }
-
   .main-section {
     @apply flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40;
     ul {
@@ -27,5 +30,8 @@ h2 {
         @apply mobile:w-full tablet:w-full desktop:w-auto;
       }
     }
+  }
+  .main-container {
+    @apply w-[100dvw] bg-white mobile:min-h-[150dvh] mobile:px-[8dvw] mobile:py-[30dvw] tablet:min-h-[100dvh] tablet:px-[10dvw] tablet:py-[20dvw] desktop:h-auto desktop:min-h-[100dvh] desktop:px-[120px] desktop:py-20;
   }
 }
