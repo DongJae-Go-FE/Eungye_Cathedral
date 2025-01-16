@@ -5,6 +5,8 @@ import Section04 from "@/screen/Main/Section04";
 import Section05 from "@/screen/Main/Section05";
 import Section06 from "@/screen/Main/Section06";
 import Section07 from "@/screen/Main/Section07";
+import Section08 from "@/screen/Main/Section08";
+import Section09 from "@/screen/Main/Section09";
 
 export default async function Home() {
   return (
@@ -16,7 +18,8 @@ export default async function Home() {
       <Section05 />
       <Section06 />
       <Section07 />
-      <div className="h-[100dvh] w-[100dvw] bg-slate-300">공지사항 및 문의</div>
+      <Section08 />
+      <Section09 />
     </div>
   );
 }
