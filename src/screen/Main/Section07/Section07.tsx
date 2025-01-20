@@ -111,17 +111,17 @@ export default async function Section07({
           {response.data.list.map(({ id, title, created_at }, index) => {
             return (
               <li
-                className="flex w-full justify-between border-b border-[#e6e6e6] py-7 mobile:flex-col mobile:gap-y-3 tablet:flex-row tablet:items-center"
                 key={index}
+                className="flex w-full justify-between border-b border-[#e6e6e6] py-7 mobile:flex-col mobile:gap-y-3 tablet:flex-row tablet:items-center"
               >
                 <Link
                   href={`/notices/${id}`}
-                  className="w-4/5 truncate text-body01r text-black mobile:!text-[5vw] tablet:!text-lg"
+                  className="w-4/5 truncate text-body01r text-black mobile:!text-lg"
                   title={title}
                 >
                   {title}
                 </Link>
-                <p className="text-body02r text-gray-500 mobile:text-[3vw] tablet:!text-base">
+                <p className="text-body02r text-gray-500 mobile:!text-base">
                   {formatDate(created_at)}
                 </p>
               </li>

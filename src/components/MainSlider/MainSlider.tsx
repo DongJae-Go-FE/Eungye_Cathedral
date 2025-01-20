@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 
-import Flicking from "@egjs/flicking";
+import Flicking, { EVENTS } from "@egjs/flicking";
 
 import { AutoPlay, Pagination } from "@egjs/flicking-plugins";
 
@@ -29,6 +29,11 @@ export default function MainSlider() {
         preventDefaultOnDrag: true,
         useFractionalSize: true,
         moveType: ["strict", { count: 1 }],
+        autoInit: true,
+      });
+
+      flickingInstance.once(EVENTS.READY, () => {
+        flickingInstance.element.classList.remove("flicking-hidden");
       });
 
       const autoplayInstance = new AutoPlay({
@@ -90,7 +95,8 @@ export default function MainSlider() {
     });
   };
 
-  const viewportStyle = "flicking-viewport relative h-[100dvh] w-[100dvw]";
+  const viewportStyle =
+    "flicking-viewport relative h-[100dvh] w-[100dvw] flicking-hidden";
   const cameraStyle = "flicking-camera";
   const panelStyle = "panel";
   const slideAreaStyle = "h-full w-full";
