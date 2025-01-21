@@ -13,8 +13,8 @@ export default function IntersectionObserverContainer({
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach(({ target, isIntersecting }) => {
-          if (target === ref.current) setIsVisible(isIntersecting);
+        entries.forEach(({ intersectionRatio }) => {
+          if (intersectionRatio > 0.3) setIsVisible(true);
         });
       },
       {

@@ -2,12 +2,12 @@ import Link from "next/link";
 
 import { ReactNode } from "react";
 
+import Empty from "@/components/Empty";
+import Spinner from "@/components/Spinner";
+
 import { RequestGetListType } from "@/type";
 
 import { formatDate } from "@/utils/common";
-
-import Empty from "@/components/Empty";
-import Spinner from "@/components/Spinner";
 
 async function PrevUI({ children }: { children: ReactNode }) {
   return (

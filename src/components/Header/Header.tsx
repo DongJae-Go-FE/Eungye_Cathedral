@@ -71,10 +71,10 @@ export default function Header() {
           <Link href="/">
             <Image
               src="/logo.png"
-              width={128}
+              width={118}
               height={32}
               alt="은계성당 로고"
-              priority
+              className="h-full"
             />
           </Link>
         </h1>
