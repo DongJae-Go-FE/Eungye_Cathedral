@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import IconButton from "../IconButton";
@@ -12,13 +12,16 @@ import Menu from "../Menu";
 import useAnimation from "@/hooks/useAnimation";
 
 export default function Header() {
+  const headerRef = useRef<HTMLHeadingElement>(null);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const [hasDrawer, handleTransitionEnd, triggerAnimation] =
     useAnimation(isDrawerOpen);
 
-  const headerStyle = `fixed top-0 z-[1001] w-full border-b border-[#D9D9D9] transition-[height] duration-200 ${isOpen ? "h-[300px] bg-dimmedEffectBlack30D" : "h-[64px]"}`;
+  const headerStyle = `fixed top-0 z-[1001] w-full border-b border-[#D9D9D9] transition-[height, background-color]  text-white ${isVisible ? "bg-black" : isOpen ? "bg-dimmedEffectBlack30D" : "bg-transparent"} duration-200 ${isOpen ? "h-[300px]" : "h-[64px]"}`;
 
   const liStyle = "h-full w-32 group";
   const liAfterStyle =
@@ -35,8 +38,34 @@ export default function Header() {
     setIsDrawerOpen(true);
   };
 
+  let section2 = null;
+  let section3 = null;
+  let section7 = null;
+
+  if (typeof document !== "undefined") {
+    section2 = document.getElementById("section2");
+    section3 = document.getElementById("section3");
+    section7 = document.getElementById("section7");
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (section2 && section2.getBoundingClientRect().top > 0) {
+        setIsVisible(false);
+      }
+      if (section2 && section2.getBoundingClientRect().top < 0) {
+        setIsVisible(true);
+      }
+      if (section3 && section3.getBoundingClientRect().top < 0) {
+        setIsVisible(false);
+      }
+      if (section7 && section7.getBoundingClientRect().top < 0) {
+        setIsVisible(true);
+      }
+    });
+  }, []);
+
   return (
-    <header className={headerStyle}>
+    <header className={headerStyle} ref={headerRef}>
       <div className="flex h-[64px] w-full items-center border-b border-[#D9D9D9] pl-5">
         <h1 className="w-32">
           <Link href="/">
@@ -160,19 +189,19 @@ export default function Header() {
               fillRule="evenodd"
               clipRule="evenodd"
               d="M2.97485 5.9751C2.97485 5.42281 3.42257 4.9751 3.97485 4.9751L19.9749 4.9751C20.5271 4.9751 20.9749 5.42281 20.9749 5.9751C20.9749 6.52738 20.5271 6.9751 19.9749 6.9751L3.97485 6.9751C3.42257 6.9751 2.97485 6.52738 2.97485 5.9751Z"
-              fill="#111"
+              fill={isVisible ? "#fff" : "#111"}
             />
             <path
               fillRule="evenodd"
               clipRule="evenodd"
               d="M2.97485 11.9751C2.97485 11.4228 3.42257 10.9751 3.97485 10.9751L19.9749 10.9751C20.5271 10.9751 20.9749 11.4228 20.9749 11.9751C20.9749 12.5274 20.5271 12.9751 19.9749 12.9751L3.97485 12.9751C3.42257 12.9751 2.97485 12.5274 2.97485 11.9751Z"
-              fill="#111"
+              fill={isVisible ? "#fff" : "#111"}
             />
             <path
               fillRule="evenodd"
               clipRule="evenodd"
               d="M2.97485 17.9751C2.97485 17.4228 3.42257 16.9751 3.97485 16.9751L19.9749 16.9751C20.5271 16.9751 20.9749 17.4228 20.9749 17.9751C20.9749 18.5274 20.5271 18.9751 19.9749 18.9751L3.97485 18.9751C3.42257 18.9751 2.97485 18.5274 2.97485 17.9751Z"
-              fill="#111"
+              fill={isVisible ? "#fff" : "#111"}
             />
           </svg>
         </IconButton>

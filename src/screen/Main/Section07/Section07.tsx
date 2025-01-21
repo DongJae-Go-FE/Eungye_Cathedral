@@ -79,7 +79,7 @@ export default async function Section07({
   }
 
   return (
-    <div className="main-container mobile:min-h-[60dvh]">
+    <div className="main-container mobile:min-h-[60dvh]" id="section7">
       <h2>
         공지사항
         <Link href="/notices" className="flex items-center gap-x-2">
