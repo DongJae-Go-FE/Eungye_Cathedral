@@ -28,7 +28,7 @@ export default function IntersectionObserverContainer({
   const observerStyle = `transition-all duration-[1000ms] ease-in-out ${isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`;
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="w-full">
       <div className={observerStyle}>{children}</div>
     </div>
   );
