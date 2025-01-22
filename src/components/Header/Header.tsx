@@ -47,22 +47,28 @@ export default function Header() {
     section3 = document.getElementById("section3");
     section7 = document.getElementById("section7");
   }
+  const handleScroll = () => {
+    if (section2 && section2.getBoundingClientRect().top > 0) {
+      setIsVisible(false);
+    }
+    if (section2 && section2.getBoundingClientRect().top < 0) {
+      setIsVisible(true);
+    }
+    if (section3 && section3.getBoundingClientRect().top < 0) {
+      setIsVisible(false);
+    }
+    if (section7 && section7.getBoundingClientRect().top < 0) {
+      setIsVisible(true);
+    }
+  };
+
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (section2 && section2.getBoundingClientRect().top > 0) {
-        setIsVisible(false);
-      }
-      if (section2 && section2.getBoundingClientRect().top < 0) {
-        setIsVisible(true);
-      }
-      if (section3 && section3.getBoundingClientRect().top < 0) {
-        setIsVisible(false);
-      }
-      if (section7 && section7.getBoundingClientRect().top < 0) {
-        setIsVisible(true);
-      }
-    });
-  }, []);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [section2, section3, section7]);
 
   return (
     <header className={headerStyle} ref={headerRef}>
