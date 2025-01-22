@@ -87,15 +87,13 @@ export default function MainSlider() {
 
   const handleAutoPlay = () => {
     setIsAutoPlay((prev) => {
-      prev = !isAutoPlay;
-      if (autoPlayInstanceRef.current && !prev) {
-        autoPlayInstanceRef.current.stop();
+      const newValue = !prev;
+      if (autoPlayInstanceRef.current) {
+        newValue
+          ? autoPlayInstanceRef.current.play()
+          : autoPlayInstanceRef.current.stop();
       }
-
-      if (autoPlayInstanceRef.current && prev) {
-        autoPlayInstanceRef.current.play();
-      }
-      return prev;
+      return newValue;
     });
   };
 
