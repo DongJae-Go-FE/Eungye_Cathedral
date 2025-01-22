@@ -1,3 +1,3 @@
 export default async function Page() {
-  return <div></div>;
+  return <div>단체</div>;
 }

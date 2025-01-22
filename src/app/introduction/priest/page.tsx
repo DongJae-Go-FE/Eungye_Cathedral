@@ -1,3 +1,3 @@
 export default async function Page() {
-  return <div></div>;
+  return <div>사제소개</div>;
 }

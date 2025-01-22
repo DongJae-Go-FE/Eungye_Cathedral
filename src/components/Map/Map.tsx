@@ -1,7 +1,7 @@
 "use client";
 
 import Script from "next/script";
-import { useCallback, useRef } from "react";
+import { useCallback, useRef, useEffect } from "react";
 
 const mapId = "naver-map";
 
@@ -30,6 +30,12 @@ export default function Map() {
 
     new naver.maps.Marker(markerOptions);
   }, []);
+
+  useEffect(() => {
+    if (window.naver && window.naver.maps) {
+      initializeMap();
+    }
+  }, [initializeMap]);
 
   return (
     <div>

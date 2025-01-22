@@ -5,7 +5,7 @@ type MainButtonType = {
   title: string;
 };
 
-export default function MainButton({ href, title }: MainButtonType) {
+export default async function MainButton({ href, title }: MainButtonType) {
   const btnCommonStyle =
     "relative z-[1] flex h-12 desktop:w-[120px] tablet:w-full mobile:w-full items-center justify-center border border-gray-100 text-body01r text-white transition-[color] duration-300";
 

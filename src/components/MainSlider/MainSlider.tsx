@@ -9,6 +9,10 @@ import { AutoPlay, Pagination } from "@egjs/flicking-plugins";
 import "@egjs/flicking/dist/flicking.css";
 import "@egjs/flicking-plugins/dist/pagination.css";
 
+import SliderItem01 from "./sliderItem/SliderItem01";
+import SliderItem02 from "./sliderItem/SliderItem02";
+import SliderItem03 from "./sliderItem/SliderItem03";
+
 export default function MainSlider() {
   const flickingRef = useRef<HTMLDivElement>(null);
   const flickingInstanceRef = useRef<Flicking | null>(null);
@@ -110,13 +114,19 @@ export default function MainSlider() {
     <div ref={flickingRef} className={viewportStyle}>
       <div className={cameraStyle}>
         <div className={panelStyle}>
-          <div className={`${slideAreaStyle} bg-blue-200`}>1</div>
+          <div className={slideAreaStyle}>
+            <SliderItem01 />
+          </div>
         </div>
         <div className={panelStyle}>
-          <div className={`${slideAreaStyle} bg-red-200`}>2</div>
+          <div className={slideAreaStyle}>
+            <SliderItem02 />
+          </div>
         </div>
         <div className={panelStyle}>
-          <div className={`${slideAreaStyle} bg-green-200`}>3</div>
+          <div className={slideAreaStyle}>
+            <SliderItem03 />
+          </div>
         </div>
       </div>
       <div className={btnAreaStyle}>

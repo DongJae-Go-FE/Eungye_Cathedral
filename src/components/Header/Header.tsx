@@ -47,6 +47,7 @@ export default function Header() {
     section3 = document.getElementById("section3");
     section7 = document.getElementById("section7");
   }
+
   const handleScroll = () => {
     if (section2 && section2.getBoundingClientRect().top > 0) {
       setIsVisible(false);
@@ -96,19 +97,33 @@ export default function Header() {
                   setIsOpen(false);
                 }}
               >
-                <Link href="/" className={LinkStyle}>
-                  <span className={liSpanStyle}>테스트1</span>
+                <Link href="/introduction/nave" className={LinkStyle}>
+                  <span className={liSpanStyle}>성당 소개</span>
                 </Link>
                 <div className={depthStyle}>
                   <ul className={depthUlStyle}>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트1-1
+                      <Link
+                        className={depthLinkStyle}
+                        href="/introduction/nave"
+                      >
+                        본당 소개
                       </Link>
                     </li>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트1-2
+                      <Link
+                        className={depthLinkStyle}
+                        href="/introduction/priest"
+                      >
+                        역대 본당 주임 사제
+                      </Link>
+                    </li>
+                    <li className={depthLiStyle}>
+                      <Link
+                        className={depthLinkStyle}
+                        href="/introduction/history"
+                      >
+                        성당 연혁
                       </Link>
                     </li>
                   </ul>
@@ -123,24 +138,33 @@ export default function Header() {
                   setIsOpen(false);
                 }}
               >
-                <Link href="/" className={LinkStyle}>
-                  <span className={liSpanStyle}>테스트2</span>
+                <Link href="/parish-information/notices" className={LinkStyle}>
+                  <span className={liSpanStyle}>본당 안내</span>
                 </Link>
                 <div className={depthStyle}>
                   <ul className={depthUlStyle}>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트2-1
+                      <Link
+                        className={depthLinkStyle}
+                        href="/parish-information/notices"
+                      >
+                        공지 사항
                       </Link>
                     </li>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트2-2
+                      <Link
+                        className={depthLinkStyle}
+                        href="/parish-information/news"
+                      >
+                        본당 소식
                       </Link>
                     </li>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트2-3
+                      <Link
+                        className={depthLinkStyle}
+                        href="/parish-information/weeklys"
+                      >
+                        주보
                       </Link>
                     </li>
                   </ul>
@@ -155,21 +179,68 @@ export default function Header() {
                   setIsOpen(false);
                 }}
               >
-                <Link href="/" className={LinkStyle}>
-                  <span className={liSpanStyle}>테스트3</span>
+                <Link href="/religious-life/admission" className={LinkStyle}>
+                  <span className={liSpanStyle}>신앙 생활</span>
                 </Link>
                 <div
                   className={`${isOpen ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"} ${depthStyle}`}
                 >
                   <ul className={depthUlStyle}>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트3-1
+                      <Link
+                        className={depthLinkStyle}
+                        href="/religious-life/admission"
+                      >
+                        입교 안내
                       </Link>
                     </li>
                     <li className={depthLiStyle}>
-                      <Link className={depthLinkStyle} href="/">
-                        테스트3-2
+                      <Link
+                        className={depthLinkStyle}
+                        href="/religious-life/organization"
+                      >
+                        단체 안내
+                      </Link>
+                    </li>
+                    <li className={depthLiStyle}>
+                      <Link
+                        className={depthLinkStyle}
+                        href="/religious-life/youth-group"
+                      >
+                        청년부
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                className={liStyle}
+                onMouseEnter={() => {
+                  setIsOpen(true);
+                }}
+                onMouseLeave={() => {
+                  setIsOpen(false);
+                }}
+              >
+                <Link href="/school/elementary" className={LinkStyle}>
+                  <span className={liSpanStyle}>주일 학교</span>
+                </Link>
+                <div className={depthStyle}>
+                  <ul className={depthUlStyle}>
+                    <li className={depthLiStyle}>
+                      <Link
+                        className={depthLinkStyle}
+                        href="/school/elementary"
+                      >
+                        초등부
+                      </Link>
+                    </li>
+                    <li className={depthLiStyle}>
+                      <Link
+                        className={depthLinkStyle}
+                        href="/school/middle_and_high"
+                      >
+                        중고등부
                       </Link>
                     </li>
                   </ul>

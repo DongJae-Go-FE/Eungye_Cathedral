@@ -72,53 +72,123 @@ export default function Menu({
         </div>
         <ul>
           <li>
-            <Accordion title="테스트">
+            <Accordion title="성당 소개">
               <ul>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트1-1
+                  <Link
+                    href="/introduction/nave"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    본당 소개
                   </Link>
                 </li>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트1-2
+                  <Link
+                    href="/introduction/priest"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    역대 본당 주임 사제
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/introduction/history"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    성당 연혁
                   </Link>
                 </li>
               </ul>
             </Accordion>
           </li>
           <li>
-            <Accordion title="테스트2">
+            <Accordion title="본당 안내">
               <ul>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트2-1
+                  <Link
+                    href="/parish-information/notices"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    공지 사항
                   </Link>
                 </li>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트2-2
+                  <Link
+                    href="/parish-information/news"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    본당 소식
                   </Link>
                 </li>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트2-3
+                  <Link
+                    href="/parish-information/weeklys"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    주보
                   </Link>
                 </li>
               </ul>
             </Accordion>
           </li>
           <li>
-            <Accordion title="테스트3">
+            <Accordion title="신앙 생활">
               <ul>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트3-1
+                  <Link
+                    href="/religious-life/admission"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    입교 안내
                   </Link>
                 </li>
                 <li>
-                  <Link href="" className={menuLiStyle}>
-                    테스트3-2
+                  <Link
+                    href="/religious-life/organization"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    단체 안내
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/religious-life/youth-group"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    청년부
+                  </Link>
+                </li>
+              </ul>
+            </Accordion>
+          </li>
+          <li>
+            <Accordion title="주일 학교">
+              <ul>
+                <li>
+                  <Link
+                    href="/school/elementary"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    초등부
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/school/middle_and_high"
+                    className={menuLiStyle}
+                    onClick={onClose}
+                  >
+                    중고등부
                   </Link>
                 </li>
               </ul>
