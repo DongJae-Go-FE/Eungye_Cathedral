@@ -64,6 +64,8 @@ export default function MainSlider() {
       flickingInstance.on("moveStart", () => setIsAnimating(true));
       flickingInstance.on("moveEnd", () => setIsAnimating(false));
 
+      flickingInstance.resize();
+
       return () => {
         flickingInstance.destroy();
       };
