@@ -47,7 +47,7 @@ export default function MainSlider() {
       const paginationInstance = new Pagination({
         type: "fraction",
         renderFraction: (currentClass, totalClass) => {
-          return `<span class="${currentClass} text-heading01b text-white"></span> <span class="text-heading03r text-gray-600"> / </span> <span class="${totalClass} text-heading03r text-gray-600"></span>`;
+          return `<span class="${currentClass} text-heading01b text-white"></span> <span class="text-heading03r text-gray-100"> / </span> <span class="${totalClass} text-heading03r text-gray-100"></span>`;
         },
         fractionCurrentFormat: (index) => {
           return `0${index.toString()}`;

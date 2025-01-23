@@ -70,7 +70,7 @@ export default async function Section07({
     );
   }
 
-  if (response.data.list.length === 0 || !response.data.list) {
+  if (response.data.list.length === 0 || !response) {
     return (
       <PrevUI>
         <Empty description="공지사항이 없습니다." />

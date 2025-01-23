@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-// import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -20,6 +20,8 @@ export default function Menu({
   isTriggerAnimation,
   onClose,
 }: MenuType) {
+  const pathName = usePathname();
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
 
@@ -29,7 +31,11 @@ export default function Menu({
   }, []);
 
   const menuStyle = `duration-800 fixed right-0 top-0 z-[3000] h-[100dvh] bg-white transition-transform mobile:w-[100dvw] tablet:w-[80dvw] desktop:hidden ${isTriggerAnimation ? "translate-x-0" : "mobile:translate-x-[100dvw] tablet:translate-x-[80dvw]"} overflow-y-auto`;
-  const menuLiStyle = "block h-12 py-2.5 text-body01m text-gray-500";
+  const menuLiStyle = "block h-12 py-2.5 text-body01m";
+
+  const menuLiTextStyle = "text-gray-500";
+  const menuLiTextOnStyle = "text-black";
+
   const bgStyle =
     "fixed left-0 top-0 z-[2001] h-[100dvh] w-[100dvw] cursor-pointer bg-dimmedEffectBlack70D desktop:hidden";
 
@@ -72,12 +78,15 @@ export default function Menu({
         </div>
         <ul>
           <li>
-            <Accordion title="성당 소개">
+            <Accordion
+              title="성당 소개"
+              isOpen={pathName.includes("introduction")}
+            >
               <ul>
                 <li>
                   <Link
                     href="/introduction/nave"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/introduction/nave" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     본당 소개
@@ -86,7 +95,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/introduction/priest"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/introduction/priest" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     역대 본당 주임 사제
@@ -95,7 +104,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/introduction/history"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/introduction/history" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     성당 연혁
@@ -105,12 +114,15 @@ export default function Menu({
             </Accordion>
           </li>
           <li>
-            <Accordion title="본당 안내">
+            <Accordion
+              title="본당 안내"
+              isOpen={pathName.includes("parish-information")}
+            >
               <ul>
                 <li>
                   <Link
                     href="/parish-information/notices"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/parish-information/notices" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     공지 사항
@@ -119,7 +131,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/parish-information/news"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/parish-information/news" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     본당 소식
@@ -128,7 +140,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/parish-information/weeklys"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/parish-information/weeklys" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     주보
@@ -138,12 +150,15 @@ export default function Menu({
             </Accordion>
           </li>
           <li>
-            <Accordion title="신앙 생활">
+            <Accordion
+              title="신앙 생활"
+              isOpen={pathName.includes("religious-life")}
+            >
               <ul>
                 <li>
                   <Link
                     href="/religious-life/admission"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/religious-life/admission" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     입교 안내
@@ -152,7 +167,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/religious-life/organization"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/religious-life/organization" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     단체 안내
@@ -161,7 +176,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/religious-life/youth-group"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/religious-life/youth-group" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     청년부
@@ -171,12 +186,12 @@ export default function Menu({
             </Accordion>
           </li>
           <li>
-            <Accordion title="주일 학교">
+            <Accordion title="주일 학교" isOpen={pathName.includes("school")}>
               <ul>
                 <li>
                   <Link
                     href="/school/elementary"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/school/elementary" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     초등부
@@ -185,7 +200,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/school/middle_and_high"
-                    className={menuLiStyle}
+                    className={`${menuLiStyle} ${pathName === "/school/middle_and_high" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     중고등부
