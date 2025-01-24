@@ -115,7 +115,7 @@ export default async function Section07({
                 className="flex w-full justify-between border-b border-[#e6e6e6] py-7 mobile:flex-col mobile:gap-y-3 tablet:flex-row tablet:items-center"
               >
                 <Link
-                  href={`/notices/${id}`}
+                  href={`/parish-information/notices/${id}`}
                   className="w-4/5 truncate text-body01r text-black mobile:!text-lg"
                   title={title}
                 >

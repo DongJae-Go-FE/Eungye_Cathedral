@@ -1,3 +1,3 @@
 export default async function Page() {
-  return <div>주보</div>;
+  return <div className="sub-container">주보</div>;
 }

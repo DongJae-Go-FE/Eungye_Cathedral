@@ -1,3 +1,3 @@
 export default async function Page() {
-  return <div>본당</div>;
+  return <div className="sub-container">본당</div>;
 }
