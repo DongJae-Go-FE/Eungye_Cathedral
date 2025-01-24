@@ -60,6 +60,8 @@ export default function Header() {
               height={32}
               alt="은계성당 로고"
               className="h-full"
+              style={{ width: "auto", height: "auto" }}
+              priority
             />
           </Link>
         </h1>
