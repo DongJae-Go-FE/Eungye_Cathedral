@@ -1,6 +1,13 @@
-import Link from "next/link";
+"use client";
 
-export default async function Footer() {
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function Footer() {
+  const pathName = usePathname();
+
+  if (pathName === "/introduction/history") return null;
+
   const footerStyle =
     "w-[100dvw]-[45px] flex tablet:h-[296px] justify-between bg-black tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0";
   const pStyle = "text-body02r text-gray-300";
