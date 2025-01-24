@@ -36,6 +36,6 @@ h2 {
   }
 
   .sub-container {
-    @apply w-[100dvw] pt-[64px] mobile:min-h-[calc(100dvh-360px)] mobile:pb-[428px] tablet:min-h-[calc(100dvh-296px)] tablet:pb-[296px];
+    @apply w-[100dvw] pt-[64px] mobile:min-h-[calc(100dvh-360px)] tablet:min-h-[calc(100dvh-296px)];
   }
 }
