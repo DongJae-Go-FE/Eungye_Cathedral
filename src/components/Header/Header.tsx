@@ -147,7 +147,7 @@ export default function Header() {
                         href="/parish-information/notices"
                       >
                         <span
-                          className={`${depthSpanStyle} ${pathName === "/parish-information/notices" ? twoDepthOnStyle : twoDepthStyle}`}
+                          className={`${depthSpanStyle} ${pathName.includes("/parish-information/notices") ? twoDepthOnStyle : twoDepthStyle}`}
                         >
                           공지 사항
                         </span>
@@ -159,7 +159,7 @@ export default function Header() {
                         href="/parish-information/news"
                       >
                         <span
-                          className={`${depthSpanStyle} ${pathName === "/parish-information/news" ? twoDepthOnStyle : twoDepthStyle}`}
+                          className={`${depthSpanStyle} ${pathName.includes("/parish-information/news") ? twoDepthOnStyle : twoDepthStyle}`}
                         >
                           본당 소식
                         </span>
@@ -171,7 +171,7 @@ export default function Header() {
                         href="/parish-information/weeklys"
                       >
                         <span
-                          className={`${depthSpanStyle} ${pathName === "/parish-information/weeklys" ? twoDepthOnStyle : twoDepthStyle}`}
+                          className={`${depthSpanStyle} ${pathName.includes("/parish-information/weeklys") ? twoDepthOnStyle : twoDepthStyle}`}
                         >
                           주보
                         </span>

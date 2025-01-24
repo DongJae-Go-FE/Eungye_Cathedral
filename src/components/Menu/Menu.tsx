@@ -122,7 +122,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/parish-information/notices"
-                    className={`${menuLiStyle} ${pathName === "/parish-information/notices" ? menuLiTextOnStyle : menuLiTextStyle}`}
+                    className={`${menuLiStyle} ${pathName.includes("/parish-information/notices") ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     공지 사항
@@ -131,7 +131,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/parish-information/news"
-                    className={`${menuLiStyle} ${pathName === "/parish-information/news" ? menuLiTextOnStyle : menuLiTextStyle}`}
+                    className={`${menuLiStyle} ${pathName.includes("/parish-information/news") ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     본당 소식
@@ -140,7 +140,7 @@ export default function Menu({
                 <li>
                   <Link
                     href="/parish-information/weeklys"
-                    className={`${menuLiStyle} ${pathName === "/parish-information/weeklys" ? menuLiTextOnStyle : menuLiTextStyle}`}
+                    className={`${menuLiStyle} ${pathName.includes("/parish-information/weeklys") ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
                     주보

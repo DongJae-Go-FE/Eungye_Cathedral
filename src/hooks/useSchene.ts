@@ -10,7 +10,6 @@ import {
 } from "react";
 
 import { Schene, ScheneContext } from "../screen/History/types";
-
 import { reducer } from "../screen/History/reducer";
 
 const useSchene = (
@@ -26,10 +25,11 @@ const useSchene = (
   });
 
   const { currentScheneIndex } = state;
+  const currentSchene = state.schenes[currentScheneIndex];
 
   const ref = useRef<HTMLDivElement>(null);
-
   const [pageHeight, setPageHeight] = useState(0);
+
   const handleResize = () => {
     if (ref.current) {
       setPageHeight(ref.current.scrollHeight);
@@ -38,7 +38,6 @@ const useSchene = (
 
   useEffect(() => {
     handleResize();
-
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -59,12 +58,11 @@ const useSchene = (
 
   const timeoutRef = useRef<NodeJS.Timeout>(null);
 
-  const currentSchene = state.schenes[state.currentScheneIndex];
-
   const hasPrevSchene = useMemo(
     () => state.currentScheneIndex > 0,
     [state.currentScheneIndex],
   );
+
   const hasNextSchene = useMemo(
     () => state.currentScheneIndex < state.schenes.length - 1,
     [state.currentScheneIndex, state.schenes.length],
@@ -80,8 +78,16 @@ const useSchene = (
     [currentSchene.currentFrame, currentSchene.totalFrame],
   );
 
+  const [isWheelActive, setIsWheelActive] = useState(false);
+
   const handleWheel = useCallback(
     (e: WheelEvent) => {
+      e.preventDefault();
+
+      if (isWheelActive) return;
+
+      setIsWheelActive(true);
+
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       } else {
@@ -108,15 +114,16 @@ const useSchene = (
 
       timeoutRef.current = setTimeout(() => {
         timeoutRef.current = null;
-      }, 100);
+        setIsWheelActive(false);
+      }, 1000);
     },
     [
-      currentSchene.currentFrame,
       currentScheneIndex,
       hasNextFrame,
       hasNextSchene,
       hasPrevFrame,
       hasPrevSchene,
+      isWheelActive,
     ],
   );
 
@@ -126,8 +133,14 @@ const useSchene = (
     setTouchStartY(e.touches[0].pageY);
   };
 
+  const [isTouchActive, setIsTouchActive] = useState(false);
+
   const handleTouchMove = useCallback(
     (e: TouchEvent) => {
+      if (isTouchActive) return;
+
+      setIsTouchActive(true);
+
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);
       } else {
@@ -154,7 +167,8 @@ const useSchene = (
 
       timeoutRef.current = setTimeout(() => {
         timeoutRef.current = null;
-      }, 100);
+        setIsTouchActive(false);
+      }, 1000);
     },
     [
       currentSchene.currentFrame,
@@ -164,6 +178,7 @@ const useSchene = (
       hasPrevFrame,
       hasPrevSchene,
       touchStartY,
+      isTouchActive,
     ],
   );
 
@@ -172,10 +187,10 @@ const useSchene = (
   };
 
   useEffect(() => {
-    window.addEventListener("wheel", handleWheel);
-    window.addEventListener("touchstart", handleTouchStart);
-    window.addEventListener("touchmove", handleTouchMove);
-    window.addEventListener("touchend", handleTouchEnd);
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: false });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("touchend", handleTouchEnd, { passive: false });
     return () => {
       window.removeEventListener("wheel", handleWheel);
       window.removeEventListener("touchstart", handleTouchStart);
@@ -187,7 +202,6 @@ const useSchene = (
   return {
     state,
     dispatch,
-
     ref,
   };
 };

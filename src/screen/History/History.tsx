@@ -10,7 +10,7 @@ const History = () => {
       totalFrame: 1,
     },
     {
-      totalFrame: 1,
+      totalFrame: 2,
     },
     {
       totalFrame: 1,
