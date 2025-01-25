@@ -18,9 +18,8 @@ h2 {
   .position-center {
     @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
   }
-  .skeleton-basic {
-    @apply rounded-md bg-gray-200;
-  }
+
+  /* 메인 이미지 배경용 css*/
   .main-section {
     @apply flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40;
     ul {
@@ -31,11 +30,22 @@ h2 {
       }
     }
   }
+
+  /* 메인 콘텐츠 박스 css*/
   .main-container {
     @apply w-[100dvw] bg-white mobile:min-h-[150dvh] mobile:px-[8dvw] mobile:py-[15dvw] tablet:min-h-[100dvh] tablet:px-[10dvw] tablet:py-[10dvw] desktop:h-auto desktop:min-h-[100dvh] desktop:px-[120px] desktop:py-20;
   }
 
+  /* 서브 레이아웃*/
   .sub-container {
     @apply w-[100dvw] pt-[64px] mobile:min-h-[calc(100dvh-360px)] tablet:min-h-[calc(100dvh-296px)];
+  }
+
+  .priest-section {
+    @apply flex h-full w-full;
+
+    > div {
+      @apply flex-1 px-[120px] py-32;
+    }
   }
 }

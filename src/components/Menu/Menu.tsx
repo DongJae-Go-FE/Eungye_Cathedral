@@ -101,15 +101,6 @@ export default function Menu({
                     역대 본당 주임 사제
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    href="/introduction/history"
-                    className={`${menuLiStyle} ${pathName === "/introduction/history" ? menuLiTextOnStyle : menuLiTextStyle}`}
-                    onClick={onClose}
-                  >
-                    성당 연혁
-                  </Link>
-                </li>
               </ul>
             </Accordion>
           </li>

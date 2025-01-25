@@ -110,18 +110,6 @@ export default function Header() {
                         </span>
                       </Link>
                     </li>
-                    <li className={depthLiStyle}>
-                      <Link
-                        className={depthLinkStyle}
-                        href="/introduction/history"
-                      >
-                        <span
-                          className={`${depthSpanStyle} ${pathName === "/introduction/history" ? twoDepthOnStyle : twoDepthStyle}`}
-                        >
-                          성당 연혁
-                        </span>
-                      </Link>
-                    </li>
                   </ul>
                 </div>
               </li>

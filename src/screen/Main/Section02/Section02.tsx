@@ -14,7 +14,7 @@ export default async function Section02() {
   const tableContentLastStyle = "h-14 py-2.5";
 
   return (
-    <div className="main-container" id="section2">
+    <div className="main-container min-h-[60dvh]">
       <h2>성당 및 미사안내</h2>
       <div className="flex h-[calc(100%-128px)] mobile:flex-wrap tablet:flex-wrap">
         <div className={leftBoxStyle}>

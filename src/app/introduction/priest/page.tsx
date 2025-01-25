@@ -1,3 +1,5 @@
+import Priest from "@/screen/Priest/Priest";
+
 export default async function Page() {
-  return <div className="sub-container">사제소개</div>;
+  return <Priest />;
 }
