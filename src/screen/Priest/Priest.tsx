@@ -5,14 +5,19 @@ import Section02 from "./Section02";
 import Section03 from "./Section03";
 import PriestFooter from "./PriestFooter/PriestFooter";
 
-import { HistoryContext } from "./context";
+import BackTop from "@/components/BackTop";
+
+import { PriestContext } from "./context";
 
 import useSchene from "../../hooks/useSchene";
 
 const Priest = () => {
   const schene = useSchene([
     {
-      totalFrame: 1,
+      totalFrame: 2,
+    },
+    {
+      totalFrame: 2,
     },
     {
       totalFrame: 2,
@@ -20,13 +25,23 @@ const Priest = () => {
     {
       totalFrame: 1,
     },
-    {
-      totalFrame: 1,
-    },
   ]);
 
+  const renderBackTop = () => {
+    {
+      switch (schene.state?.currentScheneIndex) {
+        case 1:
+          return <BackTop type="btn" />;
+        case 2:
+          return <BackTop type="btn" />;
+        default:
+          return "";
+      }
+    }
+  };
+
   return (
-    <HistoryContext.Provider value={schene}>
+    <PriestContext.Provider value={schene}>
       <div className="fixed h-full w-full overflow-hidden border-b transition-all duration-1000">
         <div
           ref={schene.ref}
@@ -37,8 +52,9 @@ const Priest = () => {
           <Section03 />
           <PriestFooter />
         </div>
+        {renderBackTop()}
       </div>
-    </HistoryContext.Provider>
+    </PriestContext.Provider>
   );
 };
 

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply scroll-smooth;
+}
+
 body {
   @apply w-[100dvw] bg-gray-100;
 }
@@ -45,7 +49,9 @@ h2 {
     @apply flex h-full w-full;
 
     > div {
-      @apply flex-1 px-[120px] py-32;
+      &:not(.scroll-down) {
+        @apply flex-1 px-[120px] py-32;
+      }
     }
   }
 }

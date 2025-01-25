@@ -4,7 +4,7 @@ import { createContext } from "react";
 
 import { ScheneContext } from "./types";
 
-export const HistoryContext = createContext<ScheneContext>({
+export const PriestContext = createContext<ScheneContext>({
   state: {
     schenes: [],
     currentScheneIndex: 0,

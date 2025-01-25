@@ -8,9 +8,11 @@ import Section07 from "@/screen/Main/Section07";
 import Section08 from "@/screen/Main/Section08";
 import Section09 from "@/screen/Main/Section09";
 
+import BackTop from "@/components/BackTop";
+
 export default async function Home() {
   return (
-    <div className="w-[100dvw]">
+    <div className="w-[100dvw]" id="top">
       <Section01 />
       <Section02 />
       <Section03 />
@@ -20,6 +22,7 @@ export default async function Home() {
       <Section07 />
       <Section08 />
       <Section09 />
+      <BackTop type="link" topGoId="top" />
     </div>
   );
 }
