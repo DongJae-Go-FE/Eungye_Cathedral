@@ -13,10 +13,10 @@ export default function Section01() {
     <section className="priest-section relative">
       <div className="bg-white">
         {frame === 1 && (
-          <div className="animate-fadeInUp h-full w-full bg-gray-600" />
+          <div className="h-full w-full animate-fadeInUp bg-gray-600" />
         )}
         {frame === 2 && (
-          <div className="animate-fadeInUp h-full w-full bg-gray-300" />
+          <div className="h-full w-full animate-fadeInUp bg-gray-300" />
         )}
       </div>
       <div className="flex flex-col">
@@ -31,10 +31,10 @@ export default function Section01() {
           <li>- 신부님 약력</li>
         </ul>
         <p className="mt-auto whitespace-pre-line pb-20 text-heading01b">
-          "asdasdsasdasdsas dasdsasdasdsasdas asda "
+          asdasdsasdasdsas dasdsasdasdsasdas asda
         </p>
       </div>
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 p-0 scroll-down">
+      <div className="scroll-down absolute bottom-8 left-1/2 -translate-x-1/2 p-0">
         <div className="animate-bounce">Scroll Down</div>
       </div>
     </section>
