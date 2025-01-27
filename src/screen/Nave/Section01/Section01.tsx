@@ -13,21 +13,18 @@ export default function Section01() {
         const scrollY = window.scrollY;
 
         if (h3OneRef.current) {
-          const startOne = 1200; // 애니메이션 시작 위치
-          const endOne = 1800; // 애니메이션 최대 투명도 위치
-          const fadeOutStart = 2400; // 애니메이션 종료 위치
-          const fadeOutEnd = 3000; // 투명도 0으로 돌아가는 위치
+          const startOne = 1200;
+          const endOne = 1800;
+          const fadeOutStart = 2400;
+          const fadeOutEnd = 3000;
 
           let opacityOne = 0;
 
           if (scrollY >= startOne && scrollY < endOne) {
-            // 0에서 1로 증가
             opacityOne = (scrollY - startOne) / (endOne - startOne);
           } else if (scrollY >= endOne && scrollY < fadeOutStart) {
-            // 1에서 1로 유지
             opacityOne = 1;
           } else if (scrollY >= fadeOutStart && scrollY < fadeOutEnd) {
-            // 1에서 0으로 감소
             opacityOne = (fadeOutEnd - scrollY) / (fadeOutEnd - fadeOutStart);
           }
 
@@ -41,8 +38,8 @@ export default function Section01() {
         }
 
         if (h3TwoRef.current) {
-          const startTwo = 5400; // 애니메이션 시작 위치
-          const endTwo = 8400; // 애니메이션 종료 위치
+          const startTwo = 5400;
+          const endTwo = 8400;
           const opacityTwo = Math.max(
             0,
             Math.min(1, (scrollY - startTwo) / (endTwo - startTwo)),

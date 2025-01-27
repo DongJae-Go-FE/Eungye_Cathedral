@@ -23,15 +23,15 @@ export default function Section02() {
           <li>- 신부님 약력</li>
         </ul>
         <p className="mt-auto whitespace-pre-line pb-20 text-heading01b">
-          "asdasdsasdasdsas dasdsasdasdsasdas asda "
+          asdasdsasdasdsas dasdsasdasdsasdas asda
         </p>
       </div>
       <div className="bg-white">
         {frame === 1 && (
-          <div className="animate-fadeInUp h-full w-full bg-gray-600" />
+          <div className="h-full w-full animate-fadeInUp bg-gray-600" />
         )}
         {frame === 2 && (
-          <div className="animate-fadeInUp h-full w-full bg-gray-300" />
+          <div className="h-full w-full animate-fadeInUp bg-gray-300" />
         )}
       </div>
     </section>
