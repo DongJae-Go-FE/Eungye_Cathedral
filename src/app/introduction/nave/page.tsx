@@ -1,5 +1,6 @@
 import Section01 from "@/screen/Nave/Section01";
 import Section02 from "@/screen/Nave/Section02";
+import Section03 from "@/screen/Nave/Section03";
 
 export default async function Page() {
   return (
@@ -15,6 +16,10 @@ export default async function Page() {
         </div>
         <div className="relative h-[4000dvh] py-[1500px]">
           <Section02 />
+        </div>
+        <div className="relative h-[1000dvh] bg-[url('/bg1.png')] bg-cover bg-fixed bg-no-repeat py-[600px]">
+          <div className="absolute left-0 top-0  h-[600dvh] w-full bg-white" />
+          <Section03 />
         </div>
       </div>
     </div>
