@@ -1,19 +1,19 @@
 export default async function Section09() {
   const liStyle = "group w-full overflow-hidden";
   const labelBeforeStyle =
-    "before:absolute h-20 before:-bottom-[1px] before:h-[2px] before:w-0 before:bg-black before:content-[''] before:transition-[width] before:duration-[500ms] group-has-[:checked]:before:w-full";
-  const labelStyle = `cursor-pointer flex items-center justify-between relative text-body01r mobile:!text-lg border-b border-b-[#e6e6e6] ${labelBeforeStyle}`;
+    "before:absolute h-20 before:-bottom-[1px] before:h-[2px] before:w-0 before:bg-black before:content-[''] before:transition-[width] before:duration-[500ms] group-has-checked:before:w-full";
+  const labelStyle = `cursor-pointer flex items-center justify-between relative text-body01r mobile:text-lg! border-b border-b-[#e6e6e6] ${labelBeforeStyle}`;
   const labelTitleStyle = "w-3/4 inline-block truncate";
 
   const contentContainerStyle =
-    "grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] group-has-[:checked]:grid-rows-[1fr]";
+    "grid grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] group-has-checked:grid-rows-[1fr]";
   const contentStyle = "overflow-hidden";
   const contentInnerStyle = "px-4 py-8 text-body01r";
 
   const iconContainerStyle = "relative h-5 w-5";
   const iconXStyle = "position-center block h-1 w-5 bg-black";
   const iconYStyle =
-    "position-center block h-5 w-1 rotate-180 bg-black transition-transform duration-[300ms] group-has-[:checked]:rotate-90";
+    "position-center block h-5 w-1 rotate-180 bg-black transition-transform duration-[300ms] group-has-checked:rotate-90";
 
   const faqData = [
     { id: "faq1", title: "테스트1", content: "내용입니다1" },

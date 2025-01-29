@@ -21,7 +21,7 @@ export default function Header() {
   const [hasDrawer, handleTransitionEnd, triggerAnimation] =
     useAnimation(isDrawerOpen);
 
-  const headerStyle = `fixed top-0 z-[1001] w-full border-b border-[#D9D9D9] transition-[height, background-color] text-white bg-black duration-200 ${isOpen ? "h-[300px]" : "h-[64px]"}`;
+  const headerStyle = `fixed top-0 z-1001 w-full border-b border-[#D9D9D9] transition-[height, background-color] text-white bg-black duration-200 ${isOpen ? "h-[300px]" : "h-[64px]"}`;
 
   const liStyle = "h-full w-32";
   const LinkStyle = "flex h-full w-full items-center justify-center";

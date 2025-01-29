@@ -1,61 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html {
-  @apply scroll-smooth; 
+@config '../../tailwind.config.ts';
+
+@utility position-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform;
 }
 
-body {
-  @apply w-[100dvw] bg-gray-100;
-}
-
-h2 {
-  @apply mb-10 text-heading02b has-[a]:flex has-[a]:items-center has-[a]:justify-between;
-
-  a {
-    @apply text-body01m text-black;
-  }
-}
-
-@layer components {
-  .position-center {
-    @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform;
-  }
-
+@utility main-section {
   /* 메인 이미지 배경용 css*/
-  .main-section {
-    @apply flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40;
-    ul {
-      @apply flex mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4;
+  @apply mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40 flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat;
+  ul {
+    @apply mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4 flex;
 
-      li {
-        @apply mobile:w-full tablet:w-full desktop:w-auto;
-      }
+    li {
+      @apply mobile:w-full tablet:w-full desktop:w-auto;
+    }
+  }
+}
+
+@utility main-container {
+  /* 메인 콘텐츠 박스 css*/
+  @apply mobile:min-h-[150dvh] mobile:px-[8dvw] mobile:py-[15dvw] tablet:min-h-[100dvh] tablet:px-[10dvw] tablet:py-[10dvw] desktop:h-auto desktop:min-h-[100dvh] desktop:px-[120px] desktop:py-20 w-[100dvw] bg-white;
+}
+
+@utility main-bg {
+  @apply bg-cover bg-center bg-no-repeat;
+}
+
+@utility sub-container {
+  /* 서브 레이아웃*/
+  @apply mobile:min-h-[calc(100dvh-360px)] tablet:min-h-[calc(100dvh-296px)] w-[100dvw] pt-[64px];
+}
+
+@utility priest-section {
+  @apply flex h-full w-full;
+
+  > div {
+    &:not(.scroll-down) {
+      @apply flex-1 px-[120px] py-32;
+    }
+  }
+}
+
+@layer utilities {
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(8%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  /* 메인 콘텐츠 박스 css*/
-  .main-container {
-    @apply w-[100dvw] bg-white mobile:min-h-[150dvh] mobile:px-[8dvw] mobile:py-[15dvw] tablet:min-h-[100dvh] tablet:px-[10dvw] tablet:py-[10dvw] desktop:h-auto desktop:min-h-[100dvh] desktop:px-[120px] desktop:py-20;
+  .fadeInUp {
+    animation: fadeInUp 1s ease-in-out;
+  }
+  html {
+    @apply scroll-smooth;
   }
 
-  .main-bg {
-    @apply bg-cover bg-center bg-no-repeat;
+  body {
+    @apply w-[100dvw] bg-gray-100;
   }
 
-  /* 서브 레이아웃*/
-  .sub-container {
-    @apply w-[100dvw] pt-[64px] mobile:min-h-[calc(100dvh-360px)] tablet:min-h-[calc(100dvh-296px)];
-  }
+  h2 {
+    @apply text-heading02b mb-10 has-[a]:flex has-[a]:items-center has-[a]:justify-between;
 
-  .priest-section {
-    @apply flex h-full w-full;
-
-    > div {
-      &:not(.scroll-down) {
-        @apply flex-1 px-[120px] py-32;
-      }
+    a {
+      @apply text-body01m text-black;
     }
   }
 }

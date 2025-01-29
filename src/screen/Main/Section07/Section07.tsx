@@ -116,12 +116,12 @@ export default async function Section07({
               >
                 <Link
                   href={`/parish-information/notices/${id}`}
-                  className="w-4/5 truncate text-body01r text-black mobile:!text-lg"
+                  className="w-4/5 truncate text-body01r text-black mobile:text-lg!"
                   title={title}
                 >
                   {title}
                 </Link>
-                <p className="text-body02r text-gray-500 mobile:!text-base">
+                <p className="text-body02r text-gray-500 mobile:text-base!">
                   {formatDate(created_at)}
                 </p>
               </li>

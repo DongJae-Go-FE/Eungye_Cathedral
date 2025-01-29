@@ -24,10 +24,10 @@ export default async function Card({
     return (
       <div className="w-full">
         <div className="flex animate-pulse flex-col mobile:gap-y-3 desktop:gap-y-6">
-          <div className="relative h-[600px] w-full rounded-sm bg-gray-300" />
+          <div className="relative h-[600px] w-full rounded-xs bg-gray-300" />
           <div className="flex flex-col gap-y-1">
-            <div className="h-9 w-11/12 rounded-sm bg-gray-300" />
-            <div className="h-6 w-32 rounded-sm bg-gray-300" />
+            <div className="h-9 w-11/12 rounded-xs bg-gray-300" />
+            <div className="h-6 w-32 rounded-xs bg-gray-300" />
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@ export default async function Card({
             alt={`${title} 이미지`}
           />
         ) : (
-          <div className="relative h-[600px] w-full rounded-sm bg-gray-300">
+          <div className="relative h-[600px] w-full rounded-xs bg-gray-300">
             <Empty description="이 소식은 사진이 없습니다." />
           </div>
         )}
