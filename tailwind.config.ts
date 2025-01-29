@@ -24,21 +24,6 @@ module.exports = {
       colors,
       fontSize,
       tokens,
-      animation: {
-        fadeInUp: "fadeInUp 1s ease-in-out",
-      },
-      keyframes: {
-        fadeInUp: {
-          "0%": {
-            opacity: 0,
-            transform: "translateY(8%)",
-          },
-          "100%": {
-            opacity: 1,
-            transform: "translateY(0)",
-          },
-        },
-      },
     },
     screens: {
       mobile: "0px",

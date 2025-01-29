@@ -30,14 +30,14 @@ export default function Menu({
     };
   }, []);
 
-  const menuStyle = `duration-800 fixed right-0 top-0 z-[3000] h-[100dvh] bg-white transition-transform mobile:w-[100dvw] tablet:w-[80dvw] desktop:hidden ${isTriggerAnimation ? "translate-x-0" : "mobile:translate-x-[100dvw] tablet:translate-x-[80dvw]"} overflow-y-auto`;
+  const menuStyle = `duration-800 fixed right-0 top-0 z-3000 h-[100dvh] bg-white transition-transform mobile:w-[100dvw] tablet:w-[80dvw] desktop:hidden ${isTriggerAnimation ? "translate-x-0" : "mobile:translate-x-[100dvw] tablet:translate-x-[80dvw]"} overflow-y-auto`;
   const menuLiStyle = "block h-12 py-2.5 text-body01m";
 
   const menuLiTextStyle = "text-gray-500";
   const menuLiTextOnStyle = "text-black";
 
   const bgStyle =
-    "fixed left-0 top-0 z-[2001] h-[100dvh] w-[100dvw] cursor-pointer bg-dimmedEffectBlack70D desktop:hidden";
+    "fixed left-0 top-0 z-2001 h-[100dvh] w-[100dvw] cursor-pointer bg-dimmedEffectBlack70D desktop:hidden";
 
   return (
     <div>

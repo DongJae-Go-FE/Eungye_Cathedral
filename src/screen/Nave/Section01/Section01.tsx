@@ -66,14 +66,11 @@ export default function Section01() {
 
   return (
     <div className="sticky top-1/2 -translate-y-1/2 text-center">
-      <h3 className="inline-flex gap-x-3 text-heading01b text-white">
+      <h3 className="text-heading01b inline-flex gap-x-3 text-white">
         지금부터
         <div className="inline-flex gap-x-3">
           <div className="relative w-[139px]">
-            <h3
-              className="absolute top-0 translate-y-[130px] opacity-0"
-              ref={h3OneRef}
-            >
+            <h3 className="absolute top-0 opacity-0" ref={h3OneRef}>
               은계성당
             </h3>
             <h3

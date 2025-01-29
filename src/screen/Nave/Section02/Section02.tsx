@@ -227,54 +227,54 @@ export default function Section02() {
           className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-red-100 text-white opacity-0"
           ref={liOne}
         >
-          <h4 ref={liOneH4} className="translate-y-[120px] opacity-0">
+          <h4 ref={liOneH4} className="opacity-0">
             테스트1
           </h4>
-          <p ref={liOneP} className="translate-y-[120px] opacity-0">
+          <p ref={liOneP} className="opacity-0">
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 translate-y-[120px] rounded-2xl bg-blue-100 text-white opacity-0"
+          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-blue-100 text-white opacity-0"
           ref={liTwo}
         >
-          <h4 ref={liTwoH4} className="translate-y-[120px] opacity-0">
+          <h4 ref={liTwoH4} className="opacity-0">
             테스트2
           </h4>
-          <p ref={liTwoP} className="translate-y-[120px] opacity-0">
+          <p ref={liTwoP} className="opacity-0">
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 translate-y-[120px] rounded-2xl bg-green-100 text-white opacity-0"
+          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-green-100 text-white opacity-0"
           ref={liThree}
         >
-          <h4 ref={liThreeH4} className="translate-y-[120px] opacity-0">
+          <h4 ref={liThreeH4} className="opacity-0">
             테스트3
           </h4>
-          <p ref={liThreeP} className="translate-y-[120px] opacity-0">
+          <p ref={liThreeP} className="opacity-0">
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 translate-y-[120px] rounded-2xl bg-yellow-100 text-white opacity-0"
+          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-yellow-100 text-white opacity-0"
           ref={liFour}
         >
-          <h4 ref={liFourH4} className="translate-y-[120px] opacity-0">
+          <h4 ref={liFourH4} className="opacity-0">
             테스트4
           </h4>
-          <p ref={liFourP} className="translate-y-[120px] opacity-0">
+          <p ref={liFourP} className="opacity-0">
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 translate-y-[120px] rounded-2xl bg-purple-100 text-white opacity-0"
+          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-purple-100 text-white opacity-0"
           ref={liFive}
         >
-          <h4 ref={liFiveH4} className="translate-y-[120px] opacity-0">
+          <h4 ref={liFiveH4} className="opacity-0">
             테스트5
           </h4>
-          <p ref={liFiveP} className="translate-y-[120px] opacity-0">
+          <p ref={liFiveP} className="opacity-0">
             문구
           </p>
         </li>
