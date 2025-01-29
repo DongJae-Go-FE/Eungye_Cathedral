@@ -68,18 +68,18 @@ export default function Section03() {
           const fadeProgress =
             (scrollY - fadeContainerStart) /
             (fadeContainerEnd - fadeContainerStart);
-          const opacity = fadeProgress; // 0에서 1로 증가
+          const opacity = fadeProgress;
 
           if (containerRef.current) {
             containerRef.current.style.opacity = opacity.toString();
           }
         } else if (scrollY < fadeContainerStart) {
           if (containerRef.current) {
-            containerRef.current.style.opacity = "0"; // 시작 이전에는 0
+            containerRef.current.style.opacity = "0";
           }
         } else if (scrollY > fadeContainerEnd) {
           if (containerRef.current) {
-            containerRef.current.style.opacity = "1"; // 끝 이후에는 1
+            containerRef.current.style.opacity = "1";
           }
         }
 
