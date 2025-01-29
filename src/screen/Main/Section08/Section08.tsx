@@ -42,7 +42,7 @@ export default async function Section08({
         <ul className="flex w-full gap-6 mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10">
           {[...new Array(2)].map((_, index) => {
             return (
-              <li className={liStyle} key={index}>
+              <li key={index} className={liStyle}>
                 <IntersectionObserverContainer>
                   <Card isLoading />
                 </IntersectionObserverContainer>
@@ -69,7 +69,7 @@ export default async function Section08({
         <ul className="flex w-full gap-6 mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10">
           {response.data.list.map(({ id, title, created_at, imgUrl }) => {
             return (
-              <li className={liStyle} key={id}>
+              <li key={id} className={liStyle}>
                 <IntersectionObserverContainer>
                   <Card
                     id={id}

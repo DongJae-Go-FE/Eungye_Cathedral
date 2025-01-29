@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  @apply scroll-smooth;
+  @apply scroll-smooth; 
 }
 
 body {
@@ -38,6 +38,10 @@ h2 {
   /* 메인 콘텐츠 박스 css*/
   .main-container {
     @apply w-[100dvw] bg-white mobile:min-h-[150dvh] mobile:px-[8dvw] mobile:py-[15dvw] tablet:min-h-[100dvh] tablet:px-[10dvw] tablet:py-[10dvw] desktop:h-auto desktop:min-h-[100dvh] desktop:px-[120px] desktop:py-20;
+  }
+
+  .main-bg {
+    @apply bg-cover bg-center bg-no-repeat;
   }
 
   /* 서브 레이아웃*/

@@ -3,7 +3,7 @@ import MainIntroduction from "@/components/MainIntroduction";
 
 export default async function Section06() {
   return (
-    <section className="main-section bg-[url('/bg4.png')]">
+    <section className="main-section main-bg bg-[url('/bg4.png')]">
       <MainIntroduction
         title="주일학교입니다."
         content={`은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.\n은계성당 주일학교를 소개합니다.`}

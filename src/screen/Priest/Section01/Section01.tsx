@@ -2,6 +2,8 @@
 
 import { useContext } from "react";
 
+import ScrollDown from "@/components/ScrollDown";
+
 import { PriestContext } from "@/screen/Priest/context";
 
 export default function Section01() {
@@ -34,9 +36,7 @@ export default function Section01() {
           asdasdsasdasdsas dasdsasdasdsasdas asda
         </p>
       </div>
-      <div className="scroll-down absolute bottom-8 left-1/2 -translate-x-1/2 p-0">
-        <div className="animate-bounce">Scroll Down</div>
-      </div>
+      <ScrollDown />
     </section>
   );
 }
