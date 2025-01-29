@@ -124,6 +124,7 @@ const useSchene = (
       hasPrevFrame,
       hasPrevSchene,
       isWheelActive,
+      currentSchene.currentFrame,
     ],
   );
 

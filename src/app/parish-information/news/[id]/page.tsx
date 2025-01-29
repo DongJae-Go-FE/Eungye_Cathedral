@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { RequestGetListType, RequestGetDetailType } from "@/type";
-import { formatDate } from "@/utils/common";
+// import { formatDate } from "@/utils/common";
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const response: RequestGetListType = await fetch(
@@ -45,6 +45,7 @@ export default async function Page({
   }
 
   const data: RequestGetDetailType = await response.json();
+  console.log(data);
 
   return <div className="sub-container">성당소식 상세</div>;
 }
