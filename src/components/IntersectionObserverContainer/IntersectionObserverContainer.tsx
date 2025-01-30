@@ -14,11 +14,12 @@ export default function IntersectionObserverContainer({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(({ intersectionRatio }) => {
-          if (intersectionRatio > 0.3) setIsVisible(true);
+          if (intersectionRatio > 0.1) setIsVisible(true);
         });
       },
       {
-        threshold: 1,
+        threshold: 0.1,
+        rootMargin: "0px 0px -50% 0px",
       },
     );
     if (ref.current) observer.observe(ref.current);

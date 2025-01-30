@@ -2,6 +2,8 @@
 
 import { useContext } from "react";
 
+import PriestInfo from "@/components/PriestInfo";
+
 import { PriestContext } from "@/screen/Priest/context";
 
 export default function Section02() {
@@ -11,24 +13,24 @@ export default function Section02() {
 
   return (
     <section className="priest-section">
-      <div className="flex flex-col">
-        <h2>2대 신부</h2>
-        <strong className="text-heading03b block">김용수 마테오</strong>
-        <span className="mb-6 block">축일: 2024.12.12</span>
-        <p className="text-heading04b mb-2">약력</p>
-        <ul className="flex flex-col gap-y-0.5">
-          <li>- 신부님 약력</li>
-          <li>- 신부님 약력</li>
-          <li>- 신부님 약력</li>
-          <li>- 신부님 약력</li>
-        </ul>
-        <p className="text-heading01b mt-auto pb-20 whitespace-pre-line">
-          asdasdsasdasdsas dasdsasdasdsasdas asda
-        </p>
-      </div>
       <div className="bg-white">
         {frame === 1 && <div className="fadeInUp h-full w-full bg-gray-600" />}
         {frame === 2 && <div className="fadeInUp h-full w-full bg-gray-300" />}
+      </div>
+      <div>
+        <PriestInfo
+          title="2대 신부"
+          name="김용수"
+          christianName="마테오"
+          feteDay="2024.12.12"
+          briefHistory={[
+            "신부님 약력",
+            "신부님 약력",
+            "신부님 약력",
+            "신부님 약력",
+          ]}
+          scripture="asdasdsasdasdsas dasdsasdasdsasdas asda"
+        />
       </div>
     </section>
   );

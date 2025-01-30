@@ -23,7 +23,7 @@ export default async function Card({
   if (isLoading) {
     return (
       <div className="w-full">
-        <div className="flex animate-pulse flex-col mobile:gap-y-3 desktop:gap-y-6">
+        <div className="mobile:gap-y-3 desktop:gap-y-6 flex animate-pulse flex-col">
           <div className="relative h-[600px] w-full rounded-xs bg-gray-300" />
           <div className="flex flex-col gap-y-1">
             <div className="h-9 w-11/12 rounded-xs bg-gray-300" />
@@ -36,7 +36,7 @@ export default async function Card({
 
   return (
     <Link href={`/parish-information/news/${id}`} className="w-full">
-      <figure className="flex flex-col mobile:gap-y-3 desktop:gap-y-6">
+      <figure className="mobile:gap-y-3 desktop:gap-y-6 flex flex-col">
         {imgUrl ? (
           <Image
             width={300}
@@ -51,7 +51,7 @@ export default async function Card({
           </div>
         )}
         <figcaption className="flex flex-col gap-y-1">
-          <h4 className="w-11/12 truncate text-heading03b" title={title}>
+          <h4 className="text-heading03b w-11/12 truncate" title={title}>
             {title}
           </h4>
           <p className="text-body01b text-gray-600">

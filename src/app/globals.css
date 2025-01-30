@@ -33,11 +33,16 @@
 }
 
 @utility priest-section {
-  @apply flex h-full w-full;
+  @apply mobile:flex-wrap desktop:flex-nowrap flex h-full w-full;
 
   > div {
     &:not(.scroll-down) {
-      @apply flex-1 px-[120px] py-32;
+      &:nth-child(1) {
+        @apply desktop:py-[13vh] desktop:px-[5vw] mobile:px-[3vw] mobile:py-[3vh] mobile:pt-[70px] desktop:flex-1 mobile:h-[70dvh] mobile:w-full desktop:h-full;
+      }
+      &:nth-child(2) {
+        @apply desktop:py-[13vh] desktop:px-[5vw] mobile:px-[3vw] mobile:py-[3vh] mobile:h-[30dvh] desktop:flex-1 desktop:h-full mobile:w-full;
+      }
     }
   }
 }

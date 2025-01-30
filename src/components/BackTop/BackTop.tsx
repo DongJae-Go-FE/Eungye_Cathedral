@@ -31,13 +31,13 @@ export default function BackTop({ type, topGoId }: BackTopType) {
 
   const debouncedScrollValue = useDebounce({ value: scroll, delay: 100 });
 
+  const backTopCommonStyle =
+    "mobile:bottom-5 mobile:right-5 tablet:bottom-11 tablet:right-11 z-10 block h-14 w-14 rounded-full bg-white";
+
   if (type === "link") {
     return (
       debouncedScrollValue > 10 && (
-        <a
-          href={`#${topGoId}`}
-          className="fixed bottom-11 right-11 z-10 block h-14 w-14 rounded-full bg-white"
-        >
+        <a href={`#${topGoId}`} className={`${backTopCommonStyle} fixed`}>
           백탑
         </a>
       )
@@ -47,7 +47,7 @@ export default function BackTop({ type, topGoId }: BackTopType) {
   return (
     <button
       type="button"
-      className="absolute bottom-11 right-11 z-10 h-14 w-14 rounded-full bg-white"
+      className={`${backTopCommonStyle} absolute`}
       onClick={() => {
         dispatch({ type: "moveToTop", payload: undefined });
       }}

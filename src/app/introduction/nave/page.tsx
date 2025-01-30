@@ -9,7 +9,7 @@ export default async function Page() {
     <div className="sub-container relative">
       <div className="bg-black">
         <div className="relative flex h-[calc(100dvh-64px)] w-[100dvw] items-center justify-center">
-          <h2 className="mb-0 text-heading01b text-white">
+          <h2 className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b mb-0 text-white">
             안녕하세요 은계성당 입니다.
           </h2>
           <ScrollDown color="white" isVisible />
@@ -21,7 +21,7 @@ export default async function Page() {
           <Section02 />
         </div>
         <div className="relative h-[1000dvh] bg-[url('/bg1.png')] bg-cover bg-fixed bg-center bg-no-repeat py-[600px]">
-          <div className="absolute left-0 top-0 h-[600dvh] w-full bg-white" />
+          <div className="absolute top-0 left-0 h-[600dvh] w-full bg-white" />
           <Section03 />
         </div>
       </div>

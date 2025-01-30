@@ -66,10 +66,10 @@ export default function Section01() {
 
   return (
     <div className="sticky top-1/2 -translate-y-1/2 text-center">
-      <h3 className="text-heading01b inline-flex gap-x-3 text-white">
+      <h3 className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b desktop:flex-row mobile:flex-col flex justify-center gap-x-3 text-white">
         지금부터
-        <div className="inline-flex gap-x-3">
-          <div className="relative w-[139px]">
+        <div className="desktop:flex-row mobile:flex-col flex gap-x-3">
+          <div className="desktop:w-[139px] mobile:w-full mobile:flex desktop:block mobile:justify-center desktop:justify-normal desktop:h-0 mobile:h-9 tablet:h-[48px] relative">
             <h3 className="absolute top-0 opacity-0" ref={h3OneRef}>
               은계성당
             </h3>

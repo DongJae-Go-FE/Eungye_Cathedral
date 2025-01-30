@@ -40,7 +40,7 @@ export default function ScrollDown({
 
   return (
     <div
-      className={`scroll-down absolute bottom-8 left-1/2 -translate-x-1/2 p-0 ${hide ? "invisible opacity-0" : ""}`}
+      className={`scroll-down mobile:bottom-2 tablet:bottom-8 absolute left-1/2 -translate-x-1/2 p-0 ${hide ? "invisible opacity-0" : ""}`}
     >
       <div
         className={`animate-bounce ${color === "black" ? "text-black" : "text-white"}`}

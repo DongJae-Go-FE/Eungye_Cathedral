@@ -101,11 +101,17 @@ export default function Section03() {
   }, []);
 
   return (
-    <div className="sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3">
-      <p className="text-heading01b" ref={pOneRef}>
+    <div className="sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3 overflow-x-hidden">
+      <p
+        className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b"
+        ref={pOneRef}
+      >
         <strong>은계성당</strong> 이야기에
       </p>
-      <p className="text-heading01b" ref={pTwoRef}>
+      <p
+        className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b"
+        ref={pTwoRef}
+      >
         함께 해주실래요?
       </p>
       <div className="position-center opacity-0" ref={containerRef}>
