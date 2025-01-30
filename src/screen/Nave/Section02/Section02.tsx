@@ -29,12 +29,13 @@ export default function Section02() {
     if (!ticking.current) {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
 
         if (liOne.current) {
-          const startOne = 15000;
-          const endOne = 17000;
-          const fadeOutStart = 20000;
-          const fadeOutEnd = 24000;
+          const startOne = windowHeight * 15;
+          const endOne = windowHeight * 17;
+          const fadeOutStart = windowHeight * 20;
+          const fadeOutEnd = windowHeight * 24;
 
           let opacityOne = 0;
           let translateYOne = 120;
@@ -65,10 +66,10 @@ export default function Section02() {
         }
 
         if (liTwo.current) {
-          const startTwo = 21000;
-          const endTwo = 23000;
-          const fadeOutStart = 26000;
-          const fadeOutEnd = 29000;
+          const startTwo = windowHeight * 21;
+          const endTwo = windowHeight * 23;
+          const fadeOutStart = windowHeight * 26;
+          const fadeOutEnd = windowHeight * 29;
 
           let opacityTwo = 0;
           let translateYTwo = 120;
@@ -100,10 +101,10 @@ export default function Section02() {
         }
 
         if (liThree.current) {
-          const startThree = 27000;
-          const endThree = 29000;
-          const fadeOutStart = 32000;
-          const fadeOutEnd = 35000;
+          const startThree = windowHeight * 27;
+          const endThree = windowHeight * 29;
+          const fadeOutStart = windowHeight * 32;
+          const fadeOutEnd = windowHeight * 35;
 
           let opacityThree = 0;
           let translateYThree = 120;
@@ -135,10 +136,10 @@ export default function Section02() {
         }
 
         if (liFour.current) {
-          const startFour = 33000;
-          const endFour = 35000;
-          const fadeOutStart = 38000;
-          const fadeOutEnd = 41000;
+          const startFour = windowHeight * 33;
+          const endFour = windowHeight * 35;
+          const fadeOutStart = windowHeight * 38;
+          const fadeOutEnd = windowHeight * 41;
 
           let opacityFour = 0;
           let translateYFour = 120;
@@ -170,10 +171,10 @@ export default function Section02() {
         }
 
         if (liFive.current) {
-          const startFive = 39000;
-          const endFive = 41000;
-          const fadeOutStart = 44000;
-          const fadeOutEnd = 47000;
+          const startFive = windowHeight * 39;
+          const endFive = windowHeight * 41;
+          const fadeOutStart = windowHeight * 44;
+          const fadeOutEnd = windowHeight * 47;
 
           let opacityFive = 0;
           let translateYFive = 120;

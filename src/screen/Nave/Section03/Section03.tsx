@@ -12,13 +12,14 @@ export default function Section03() {
     if (!ticking.current) {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
 
-        const translateStart = 50000;
-        const translateEnd = 53000;
-        const fadeOutStart = 54000;
-        const fadeOutEnd = 57000;
-        const fadeContainerStart = 55000;
-        const fadeContainerEnd = 58000;
+        const translateStart = windowHeight * 50;
+        const translateEnd = windowHeight * 53;
+        const fadeOutStart = windowHeight * 54;
+        const fadeOutEnd = windowHeight * 57;
+        const fadeContainerStart = windowHeight * 55;
+        const fadeContainerEnd = windowHeight * 58;
 
         if (scrollY >= translateStart && scrollY <= translateEnd) {
           const progress =

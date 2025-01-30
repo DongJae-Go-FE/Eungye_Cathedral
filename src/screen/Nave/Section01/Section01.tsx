@@ -11,13 +11,13 @@ export default function Section01() {
     if (!ticking.current) {
       window.requestAnimationFrame(() => {
         const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
 
         if (h3OneRef.current) {
-          const startOne = 1200;
-          const endOne = 1800;
-          const fadeOutStart = 2400;
-          const fadeOutEnd = 3000;
-
+          const startOne = windowHeight * 1.2;
+          const endOne = windowHeight * 1.8;
+          const fadeOutStart = windowHeight * 2.4;
+          const fadeOutEnd = windowHeight * 3.0;
           let opacityOne = 0;
 
           if (scrollY >= startOne && scrollY < endOne) {
@@ -38,8 +38,8 @@ export default function Section01() {
         }
 
         if (h3TwoRef.current) {
-          const startTwo = 5400;
-          const endTwo = 8400;
+          const startTwo = windowHeight * 5.4;
+          const endTwo = windowHeight * 8.4;
           const opacityTwo = Math.max(
             0,
             Math.min(1, (scrollY - startTwo) / (endTwo - startTwo)),
