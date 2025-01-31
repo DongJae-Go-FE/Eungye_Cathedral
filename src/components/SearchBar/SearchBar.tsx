@@ -23,6 +23,17 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
     }
   };
 
+  const handleReset = () => {
+    if (handleSearch) {
+      setSearch((prev) => {
+        prev = "";
+        return prev;
+      });
+      handleSearch("");
+    }
+  };
+  ㅌ;
+
   return (
     <form className="mobile:sticky mobile:top-[64px] desktop:static desktop:top-auto desktop:max-w-[700px] mobile:pt-[3dvw] desktop:pt-[0] w-full bg-white pb-[3dvw]">
       <label htmlFor="search" className="text-heading03b mb-3 block">
@@ -75,7 +86,7 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
           <button
             type="button"
             className="flex h-full w-[62px] cursor-pointer items-center gap-x-1"
-            onClick={handleSubmit}
+            onClick={handleReset}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
