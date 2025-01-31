@@ -32,7 +32,6 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
       handleSearch("");
     }
   };
-  ㅌ;
 
   return (
     <form className="mobile:sticky mobile:top-[64px] desktop:static desktop:top-auto desktop:max-w-[700px] mobile:pt-[3dvw] desktop:pt-[0] w-full bg-white pb-[3dvw]">
