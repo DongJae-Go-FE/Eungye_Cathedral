@@ -39,7 +39,7 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
 
   return (
     <form
-      className={`${pathName.includes("/parish-information/notices") ? "" : "mobile:sticky mobile:top-[64px]"} desktop:static desktop:top-auto desktop:max-w-[700px] mobile:pt-[3dvw] desktop:pt-[0] w-full bg-white pb-[3dvw]`}
+      className={`${pathName.includes("/parish-information/notices") ? "" : "mobile:sticky mobile:top-[64px] mobile:pt-[3dvw] mobile:z-10"} desktop:static desktop:top-auto desktop:max-w-[700px] desktop:pt-[0] w-full bg-white pb-[3dvw]`}
     >
       <label htmlFor="search" className="text-heading03b mb-3 block">
         검색
