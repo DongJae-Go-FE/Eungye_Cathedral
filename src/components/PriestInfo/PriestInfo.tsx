@@ -15,6 +15,9 @@ export default function PriestInfo({
   briefHistory,
   scripture,
 }: PriestInfo) {
+  const scriptureStyle =
+    "mobile:hidden desktop:block desktop:text-heading01b tablet:text-heading03b mobile:text-body01m desktop:pb-20 mt-2 whitespace-pre-line";
+
   return (
     <div className="flex h-full w-full flex-col">
       <h2 className="mobile:mb-[2dvh] desktop:text-heading02b mobile:text-heading03b">
@@ -34,9 +37,7 @@ export default function PriestInfo({
           return <li key={index}>- {value}</li>;
         })}
       </ul>
-      <p className="mobile:hidden desktop:block desktop:text-heading01b tablet:text-heading03b mobile:text-body01m desktop:pb-20 mt-2 whitespace-pre-line">
-        {scripture}
-      </p>
+      <p className={scriptureStyle}>{scripture}</p>
     </div>
   );
 }

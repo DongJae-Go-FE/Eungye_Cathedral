@@ -100,18 +100,18 @@ export default function Section03() {
     };
   }, []);
 
+  const containerStyle =
+    "sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3 overflow-x-hidden";
+
+  const pStyle =
+    "desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b";
+
   return (
-    <div className="sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3 overflow-x-hidden">
-      <p
-        className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b"
-        ref={pOneRef}
-      >
+    <div className={containerStyle}>
+      <p className={pStyle} ref={pOneRef}>
         <strong>은계성당</strong> 이야기에
       </p>
-      <p
-        className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b"
-        ref={pTwoRef}
-      >
+      <p className={pStyle} ref={pTwoRef}>
         함께 해주실래요?
       </p>
       <div className="position-center opacity-0" ref={containerRef}>

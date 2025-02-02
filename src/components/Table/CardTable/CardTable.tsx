@@ -51,11 +51,14 @@ export default function CardTable({
     );
   }
 
+  const ulStyle =
+    "relative grid min-h-[942px] justify-center gap-5 rounded-b-md";
+
   return (
     <div className={CardContainerStyle}>
       <span className="text-body02m">총{totalCount}건</span>
       <ul
-        className="relative grid min-h-[942px] justify-center gap-5 rounded-b-md"
+        className={ulStyle}
         style={{
           gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
         }}

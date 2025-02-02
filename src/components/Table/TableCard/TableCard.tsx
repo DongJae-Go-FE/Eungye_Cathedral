@@ -18,13 +18,17 @@ export default function TableCard({
   const TableCardTextContainerStyle = "flex w-full flex-col gap-y-3 px-6 pb-6";
 
   if (isLoading) {
+    const LoadingStyle = "rounded-sm bg-gray-200";
+
     return (
       <div className="animate-pulse">
         <div className={TableCardContainerStyle}>
-          <div className="aspect-[9/10] max-h-[435px] w-full bg-gray-200" />
+          <div
+            className={`aspect-[9/10] max-h-[435px] w-full ${LoadingStyle}`}
+          />
           <div className={TableCardTextContainerStyle}>
-            <div className="h-[24px] w-3/4 rounded-sm bg-gray-200" />
-            <div className="h-[18px] w-1/4 rounded-sm bg-gray-200" />
+            <div className={`${LoadingStyle} h-[24px] w-3/4`} />
+            <div className={`${LoadingStyle} h-[18px] w-1/4`} />
           </div>
         </div>
       </div>

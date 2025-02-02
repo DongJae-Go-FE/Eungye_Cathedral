@@ -15,13 +15,13 @@ export default function Accordion({ title, children, isOpen }: AccordionType) {
     setIsAccordionOpen((prev) => !prev);
   };
 
+  const btnStyle =
+    "flex h-14 w-full items-center justify-between px-6 py-1.5 text-body01b text-black";
+  const contentStyle = `grid ${isAccordionOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} overflow-hidden transition-[grid-template-rows] duration-500`;
+
   return (
     <div className="w-full overflow-hidden">
-      <button
-        type="button"
-        className="flex h-14 w-full items-center justify-between px-6 py-1.5 text-body01b text-black"
-        onClick={handleOpen}
-      >
+      <button type="button" className={btnStyle} onClick={handleOpen}>
         {title}
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -39,9 +39,7 @@ export default function Accordion({ title, children, isOpen }: AccordionType) {
           />
         </svg>
       </button>
-      <div
-        className={`grid ${isAccordionOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} overflow-hidden transition-[grid-template-rows] duration-500`}
-      >
+      <div className={contentStyle}>
         <div className="overflow-hidden px-8">{children}</div>
       </div>
     </div>

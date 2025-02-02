@@ -9,12 +9,14 @@ export default function Footer() {
   if (pathName === "/introduction/priest") return null;
 
   const footerStyle = `w-[100dvw]-[45px] flex tablet:h-[296px] justify-between ${pathName.includes("/introduction/nave") ? "bg-black" : "bg-[#292A30]"}  tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0`;
+  const addressContainer =
+    "mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none flex flex-col";
   const pStyle = "text-body02r text-gray-300";
   const linkStyle = "text-body02r underline underline-offset-4";
 
   return (
     <footer className={footerStyle}>
-      <div className="mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none flex flex-col">
+      <div className={addressContainer}>
         <h3 className="mb-[50px]">로고</h3>
         <address className="not-italic">
           <ul className={`flex flex-col gap-y-2 ${pStyle}`}>

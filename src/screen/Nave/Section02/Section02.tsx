@@ -221,61 +221,65 @@ export default function Section02() {
     };
   }, []);
 
+  const ulStyle = "relative flex w-full flex-col items-center justify-center";
+  const boxStyle = "absolute top-0 h-[70dvh] w-3/4 rounded-2xl";
+  const opacityStyle = "opacity-0";
+
   return (
     <div className="sticky top-[20%] w-full">
-      <ul className="relative flex w-full flex-col items-center justify-center">
+      <ul className={ulStyle}>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-red-100 text-white opacity-0"
+          className={`${boxStyle} bg-red-100 text-white opacity-0`}
           ref={liOne}
         >
-          <h4 ref={liOneH4} className="opacity-0">
+          <h4 ref={liOneH4} className={opacityStyle}>
             테스트1
           </h4>
-          <p ref={liOneP} className="opacity-0">
+          <p ref={liOneP} className={opacityStyle}>
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-blue-100 text-white opacity-0"
+          className={`${boxStyle} bg-blue-100 text-white opacity-0`}
           ref={liTwo}
         >
-          <h4 ref={liTwoH4} className="opacity-0">
+          <h4 ref={liTwoH4} className={opacityStyle}>
             테스트2
           </h4>
-          <p ref={liTwoP} className="opacity-0">
+          <p ref={liTwoP} className={opacityStyle}>
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-green-100 text-white opacity-0"
+          className={`${boxStyle} bg-green-100 text-white opacity-0`}
           ref={liThree}
         >
-          <h4 ref={liThreeH4} className="opacity-0">
+          <h4 ref={liThreeH4} className={opacityStyle}>
             테스트3
           </h4>
-          <p ref={liThreeP} className="opacity-0">
+          <p ref={liThreeP} className={opacityStyle}>
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-yellow-100 text-white opacity-0"
+          className="${boxStyle} bg-yellow-100 text-white opacity-0"
           ref={liFour}
         >
-          <h4 ref={liFourH4} className="opacity-0">
+          <h4 ref={liFourH4} className={opacityStyle}>
             테스트4
           </h4>
-          <p ref={liFourP} className="opacity-0">
+          <p ref={liFourP} className={opacityStyle}>
             문구
           </p>
         </li>
         <li
-          className="absolute top-0 h-[70dvh] w-3/4 rounded-2xl bg-purple-100 text-white opacity-0"
+          className={`${boxStyle} bg-purple-100 text-white opacity-0`}
           ref={liFive}
         >
-          <h4 ref={liFiveH4} className="opacity-0">
+          <h4 ref={liFiveH4} className={opacityStyle}>
             테스트5
           </h4>
-          <p ref={liFiveP} className="opacity-0">
+          <p ref={liFiveP} className={opacityStyle}>
             문구
           </p>
         </li>

@@ -64,23 +64,28 @@ export default function Section01() {
     };
   }, []);
 
+  const h3Style =
+    "desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b desktop:flex-row mobile:flex-col flex justify-center gap-x-3 text-white";
+  const mouseAnimationBoxStyle =
+    "desktop:w-[139px] mobile:w-full mobile:flex desktop:block mobile:justify-center desktop:justify-normal desktop:h-0 mobile:h-9 tablet:h-[48px] relative";
+
   return (
     <div className="sticky top-1/2 -translate-y-1/2 text-center">
-      <h3 className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b desktop:flex-row mobile:flex-col flex justify-center gap-x-3 text-white">
+      <h3 className={h3Style}>
         지금부터
         <div className="desktop:flex-row mobile:flex-col flex gap-x-3">
-          <div className="desktop:w-[139px] mobile:w-full mobile:flex desktop:block mobile:justify-center desktop:justify-normal desktop:h-0 mobile:h-9 tablet:h-[48px] relative">
-            <h3 className="absolute top-0 opacity-0" ref={h3OneRef}>
+          <div className={mouseAnimationBoxStyle}>
+            <h4 className="absolute top-0 opacity-0" ref={h3OneRef}>
               은계성당
-            </h3>
-            <h3
+            </h4>
+            <h4
               className="absolute top-0 text-blue-600 opacity-0"
               ref={h3TwoRef}
             >
               은계성당
-            </h3>
+            </h4>
           </div>
-          <h3>이야기를 들어보실래요?</h3>
+          <h4>이야기를 들어보실래요?</h4>
         </div>
       </h3>
     </div>

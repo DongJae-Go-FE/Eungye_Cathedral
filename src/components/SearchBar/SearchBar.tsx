@@ -37,17 +37,18 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
     }
   };
 
+  const formStyle = `${pathName.includes("/parish-information/notices") ? "" : "mobile:sticky mobile:top-[64px] mobile:pt-[3dvw] mobile:z-10"} desktop:static desktop:top-auto desktop:max-w-[700px] desktop:pt-[0] w-full bg-white pb-[3dvw]`;
+  const inputContainerStyle = `text-body1m flex h-12 w-full items-center justify-between rounded-sm border px-4 ${isFocus ? "border-black" : "border-gray-300"}`;
+  const btnContainerStyle =
+    "before:w[1px] relative flex gap-x-4 before:absolute before:top-1/2 before:-left-[9px] before:block before:h-[21px] before:w-[1px] before:-translate-y-1/2 before:bg-gray-200 before:content-['']";
+
   return (
-    <form
-      className={`${pathName.includes("/parish-information/notices") ? "" : "mobile:sticky mobile:top-[64px] mobile:pt-[3dvw] mobile:z-10"} desktop:static desktop:top-auto desktop:max-w-[700px] desktop:pt-[0] w-full bg-white pb-[3dvw]`}
-    >
+    <form className={formStyle}>
       <label htmlFor="search" className="text-heading03b mb-3 block">
         검색
       </label>
       <div className="flex gap-x-4">
-        <div
-          className={`text-body1m flex h-12 w-full items-center justify-between rounded-sm border px-4 ${isFocus ? "border-black" : "border-gray-300"}`}
-        >
+        <div className={inputContainerStyle}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="20"
@@ -87,7 +88,7 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
             }}
           />
         </div>
-        <div className="before:w[1px] relative flex gap-x-4 before:absolute before:top-1/2 before:-left-[9px] before:block before:h-[21px] before:w-[1px] before:-translate-y-1/2 before:bg-gray-200 before:content-['']">
+        <div className={btnContainerStyle}>
           <button
             type="button"
             className="flex h-full w-[62px] cursor-pointer items-center gap-x-1"
