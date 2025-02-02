@@ -49,6 +49,7 @@ export default function Menu({
         <div className="sticky top-0 z-10 flex w-full flex-col">
           <div className="flex h-14 items-center bg-white px-3">
             <IconButton
+              className="cursor-pointer"
               icons={
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

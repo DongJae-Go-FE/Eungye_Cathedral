@@ -16,7 +16,7 @@ export default function Accordion({ title, children, isOpen }: AccordionType) {
   };
 
   const btnStyle =
-    "flex h-14 w-full items-center justify-between px-6 py-1.5 text-body01b text-black";
+    "flex h-14 w-full items-center justify-between px-6 py-1.5 text-body01b text-black cursor-pointer";
   const contentStyle = `grid ${isAccordionOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"} overflow-hidden transition-[grid-template-rows] duration-500`;
 
   return (

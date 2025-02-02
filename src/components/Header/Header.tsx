@@ -279,7 +279,7 @@ export default function Header() {
         </div>
         <IconButton
           type="button"
-          className="mobile:flex tablet:flex desktop:hidden ml-auto h-full w-16"
+          className="mobile:flex tablet:flex desktop:hidden ml-auto h-full w-16 cursor-pointer"
           title="모바일 메뉴 아이콘"
           onClick={handleDrawer}
         >

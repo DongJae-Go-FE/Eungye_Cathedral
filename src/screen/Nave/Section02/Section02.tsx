@@ -262,7 +262,7 @@ export default function Section02() {
           </p>
         </li>
         <li
-          className="${boxStyle} bg-yellow-100 text-white opacity-0"
+          className={`${boxStyle} bg-yellow-100 text-white opacity-0`}
           ref={liFour}
         >
           <h4 ref={liFourH4} className={opacityStyle}>

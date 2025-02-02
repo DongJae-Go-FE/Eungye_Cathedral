@@ -32,7 +32,7 @@ export default function BackTop({ type, topGoId }: BackTopType) {
   const debouncedScrollValue = useDebounce({ value: scroll, delay: 100 });
 
   const backTopCommonStyle =
-    "mobile:bottom-5 mobile:right-5 tablet:bottom-11 tablet:right-11 z-10 block h-14 w-14 rounded-full bg-white";
+    "mobile:bottom-5 mobile:right-5 tablet:bottom-11 tablet:right-11 z-10 block h-14 w-14 rounded-full bg-white cursor-pointer";
 
   if (type === "link") {
     return (
