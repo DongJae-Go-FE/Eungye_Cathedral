@@ -32,8 +32,8 @@ const Empty: FC<Props> = ({
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="50"
-          height="50"
+          width="30"
+          height="30"
           viewBox="0 0 24 24"
           fill="none"
           className="mx-auto mb-2"
@@ -59,7 +59,7 @@ const Empty: FC<Props> = ({
           />
         </svg>
       )}
-      <p className="desktop:text-heading02r tablet:text-heading03r text-gray-500">{description}</p>
+      <p className="desktop:text-heading03r mobile:text-heading03r text-gray-500">{description}</p>
     </div>
   );
 };

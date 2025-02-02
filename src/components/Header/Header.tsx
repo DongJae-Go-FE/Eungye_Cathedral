@@ -21,7 +21,7 @@ export default function Header() {
   const [hasDrawer, handleTransitionEnd, triggerAnimation] =
     useAnimation(isDrawerOpen);
 
-  const headerStyle = `fixed top-0 z-1001 w-full border-b border-[#D9D9D9] transition-[height, background-color] text-white bg-black duration-200 ${isOpen ? "h-[300px]" : "h-[64px]"}`;
+  const headerStyle = `fixed top-0 z-1001 w-full border-b border-[#46464B] transition-[height, background-color] text-white ${pathName.includes("/introduction/nave") ? "bg-black" : "bg-[#292A30]"} duration-200 ${isOpen ? "h-[300px]" : "h-[64px]"}`;
 
   const liStyle = "h-full w-32";
   const LinkStyle = "flex h-full w-full items-center justify-center";
@@ -51,7 +51,7 @@ export default function Header() {
 
   return (
     <header className={headerStyle}>
-      <div className="flex h-[64px] w-full items-center border-b border-[#D9D9D9] pl-5">
+      <div className="flex h-[64px] w-full items-center border-b border-[#46464B] pl-5">
         <h1 className="w-32">
           <Link href="/">
             <Image
@@ -65,7 +65,7 @@ export default function Header() {
             />
           </Link>
         </h1>
-        <div className="hidden h-full desktop:block">
+        <div className="desktop:block hidden h-full">
           <nav className="h-full">
             <ul className="flex h-full items-center">
               <li
@@ -279,7 +279,7 @@ export default function Header() {
         </div>
         <IconButton
           type="button"
-          className="ml-auto h-full w-16 mobile:flex tablet:flex desktop:hidden"
+          className="mobile:flex tablet:flex desktop:hidden ml-auto h-full w-16"
           title="모바일 메뉴 아이콘"
           onClick={handleDrawer}
         >

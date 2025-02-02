@@ -1,5 +1,7 @@
 "use client";
 
+import { usePathname } from "next/navigation";
+
 import { useState, KeyboardEvent } from "react";
 import Button from "../Button";
 
@@ -9,6 +11,8 @@ type SearchType = {
 };
 
 export default function SearchBar({ handleSearch, isLoading }: SearchType) {
+  const pathName = usePathname();
+
   const [search, setSearch] = useState("");
   const [isFocus, setIsFocus] = useState(false);
 
@@ -34,7 +38,9 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
   };
 
   return (
-    <form className="mobile:sticky mobile:top-[64px] desktop:static desktop:top-auto desktop:max-w-[700px] mobile:pt-[3dvw] desktop:pt-[0] w-full bg-white pb-[3dvw]">
+    <form
+      className={`${pathName.includes("/parish-information/notices") ? "" : "mobile:sticky mobile:top-[64px]"} desktop:static desktop:top-auto desktop:max-w-[700px] mobile:pt-[3dvw] desktop:pt-[0] w-full bg-white pb-[3dvw]`}
+    >
       <label htmlFor="search" className="text-heading03b mb-3 block">
         검색
       </label>

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function PriestFooter() {
   const footerStyle =
-    "w-[100dvw]-[45px] flex tablet:h-[296px] justify-between bg-black tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0";
+    "w-[100dvw]-[45px] flex tablet:h-[296px] justify-between bg-[#292A30] tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0";
   const pStyle = "text-body02r text-gray-300";
   const linkStyle = "text-body02r underline underline-offset-4";
 

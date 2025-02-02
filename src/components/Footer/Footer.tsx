@@ -8,14 +8,13 @@ export default function Footer() {
 
   if (pathName === "/introduction/priest") return null;
 
-  const footerStyle =
-    "w-[100dvw]-[45px] flex tablet:h-[296px] justify-between bg-black tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0";
+  const footerStyle = `w-[100dvw]-[45px] flex tablet:h-[296px] justify-between ${pathName.includes("/introduction/nave") ? "bg-black" : "bg-[#292A30]"}  tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0`;
   const pStyle = "text-body02r text-gray-300";
   const linkStyle = "text-body02r underline underline-offset-4";
 
   return (
     <footer className={footerStyle}>
-      <div className="flex flex-col mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none">
+      <div className="mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none flex flex-col">
         <h3 className="mb-[50px]">로고</h3>
         <address className="not-italic">
           <ul className={`flex flex-col gap-y-2 ${pStyle}`}>
@@ -25,11 +24,11 @@ export default function Footer() {
           </ul>
         </address>
       </div>
-      <hr className="h-[1px] bg-white mobile:block tablet:hidden" />
+      <hr className="mobile:block tablet:hidden h-[1px] bg-white" />
       <div className="mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none">
         <h3 className="text-heading03b">031-311-1111</h3>
         <p className={pStyle}>운영시간: 10:00 ~ 18:00</p>
-        <ul className="mb-12 mt-4 flex gap-x-4">
+        <ul className="mt-4 mb-12 flex gap-x-4">
           <li>
             <Link href="/" className={linkStyle}>
               인천교구청

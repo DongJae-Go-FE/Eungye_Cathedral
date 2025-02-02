@@ -9,7 +9,7 @@ export default async function Page() {
       </div>
       <div className="content-area">
         <SearchBar />
-        <CardTable />
+        <CardTable initialData={[{}, {}, {}, {}, {}, {}, {}]} totalCount={20} />
       </div>
     </div>
   );

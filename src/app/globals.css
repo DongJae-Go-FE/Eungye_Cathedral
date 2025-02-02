@@ -32,7 +32,7 @@
   @apply mobile:min-h-[calc(100dvh-360px)] tablet:min-h-[calc(100dvh-296px)] w-[100dvw] pt-[64px];
 
   .title-area {
-    @apply flex h-[235px] items-center bg-black pl-[10dvw];
+    @apply flex h-[235px] items-center bg-[#292A30] pl-[10dvw];
   }
 
   .content-area {
