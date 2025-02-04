@@ -102,7 +102,7 @@ export default function ListTable({
           </div>
         )}
         <div className="table-body relative w-full">
-          <table className="w-full">
+          <table className="w-full table-fixed">
             <caption className="sr-only">{caption}</caption>
             <colgroup>
               {columns.map(({ width }, index) => {
@@ -130,7 +130,8 @@ export default function ListTable({
                   {columnsKey.map((key, index2) => (
                     <td
                       key={key + index}
-                      className="text-body02r h-12 border-b-2 border-gray-100 px-5 text-center"
+                      title={`${item[key]}`}
+                      className="text-body02r h-12 truncate border-b-2 border-gray-100 px-5 text-center"
                     >
                       {Object.keys(item)[index2] === "title" ? (
                         <Link

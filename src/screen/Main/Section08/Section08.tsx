@@ -4,13 +4,13 @@ import IntersectionObserverContainer from "@/components/IntersectionObserverCont
 import Card from "@/components/Card";
 import Empty from "@/components/Empty";
 
-import { RequestGetListType } from "@/type";
+import GetApi from "@/utils/getApi";
 
 async function PrevUI({ children }: { children: ReactNode }) {
   return (
-    <div className="main-container bg-gray-100 desktop:h-[100dvh]">
+    <div className="main-container desktop:h-[100dvh] bg-gray-100">
       <h2>성당소식</h2>
-      <div className="relative flex h-[calc(100%-128px)] mobile:flex-wrap tablet:flex-wrap desktop:flex-nowrap">
+      <div className="mobile:flex-wrap tablet:flex-wrap desktop:flex-nowrap relative flex h-[calc(100%-128px)]">
         {children}
       </div>
     </div>
@@ -24,22 +24,19 @@ export default async function Section08({
 }) {
   const liStyle = "mobile:w-full tablet:flex tablet:w-full desktop:flex-1";
 
-  const response: RequestGetListType = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_SERVER_API_URL}/news?page=1&limit=2`,
-    {
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
+  const newsList = await GetApi.getNews({
+    page: "1",
+    limit: "2",
+    search: "",
+    config: {
       next: { tags: ["serverNewsList"] },
     },
-  ).then((res) => res.json());
+  });
 
   if (isLoading) {
     return (
       <PrevUI>
-        <ul className="flex w-full gap-6 mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10">
+        <ul className="mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10 flex w-full gap-6">
           {[...new Array(2)].map((_, index) => {
             return (
               <li key={index} className={liStyle}>
@@ -54,7 +51,7 @@ export default async function Section08({
     );
   }
 
-  if (response.data.list.length === 0 || !response) {
+  if (newsList.data.list.length === 0 || !newsList) {
     return (
       <PrevUI>
         <Empty description="성당소식이 없습니다." />
@@ -65,9 +62,9 @@ export default async function Section08({
   return (
     <div className="main-container bg-gray-100">
       <h2>성당소식</h2>
-      <div className="flex h-[calc(100%-128px)] mobile:flex-wrap tablet:flex-wrap desktop:flex-nowrap">
-        <ul className="flex w-full gap-6 mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10">
-          {response.data.list.map(({ id, title, created_at, imgUrl }) => {
+      <div className="mobile:flex-wrap tablet:flex-wrap desktop:flex-nowrap flex h-[calc(100%-128px)]">
+        <ul className="mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10 flex w-full gap-6">
+          {newsList.data.list.map(({ id, title, created_at, imgUrl }) => {
             return (
               <li key={id} className={liStyle}>
                 <IntersectionObserverContainer>

@@ -5,13 +5,12 @@ import { ReactNode } from "react";
 import Empty from "@/components/Empty";
 import Spinner from "@/components/Spinner";
 
-import { RequestGetListType } from "@/type";
-
+import GetApi from "@/utils/getApi";
 import { formatDate } from "@/utils/common";
 
 async function PrevUI({ children }: { children: ReactNode }) {
   return (
-    <div className="main-container relative mobile:min-h-[60dvh]">
+    <div className="main-container mobile:min-h-[60dvh] relative">
       <h2>
         공지사항
         <Link href="/notices" className="flex items-center gap-x-2">
@@ -50,17 +49,14 @@ export default async function Section07({
 }: {
   isLoading?: boolean;
 }) {
-  const response: RequestGetListType = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_SERVER_API_URL}/notices?page=1&limit=5`,
-    {
-      method: "GET",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
+  const noticesList = await GetApi.getNotices({
+    page: "1",
+    limit: "5",
+    search: "",
+    config: {
       next: { tags: ["serverNoticesList"] },
     },
-  ).then((res) => res.json());
+  });
 
   if (isLoading) {
     return (
@@ -70,7 +66,7 @@ export default async function Section07({
     );
   }
 
-  if (response.data.list.length === 0 || !response) {
+  if (noticesList.data.list.length === 0 || !noticesList) {
     return (
       <PrevUI>
         <Empty description="공지사항이 없습니다." />
@@ -108,20 +104,20 @@ export default async function Section07({
       </h2>
       <div className="h-[calc(100%-128px)]">
         <ul className="flex w-full flex-col border-t border-black">
-          {response.data.list.map(({ id, title, created_at }, index) => {
+          {noticesList.data.list.map(({ id, title, created_at }, index) => {
             return (
               <li
                 key={index}
-                className="flex w-full justify-between border-b border-[#e6e6e6] py-7 mobile:flex-col mobile:gap-y-3 tablet:flex-row tablet:items-center"
+                className="mobile:flex-col mobile:gap-y-3 tablet:flex-row tablet:items-center flex w-full justify-between border-b border-[#e6e6e6] py-7"
               >
                 <Link
                   href={`/parish-information/notices/${id}`}
-                  className="w-4/5 truncate text-body01r text-black mobile:text-lg!"
+                  className="text-body01r mobile:text-lg! w-4/5 truncate text-black"
                   title={title}
                 >
                   {title}
                 </Link>
-                <p className="text-body02r text-gray-500 mobile:text-base!">
+                <p className="text-body02r mobile:text-base! text-gray-500">
                   {formatDate(created_at)}
                 </p>
               </li>

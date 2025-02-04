@@ -92,6 +92,7 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
           <button
             type="button"
             className="flex h-full w-[62px] cursor-pointer items-center gap-x-1"
+            disabled={isLoading}
             onClick={handleReset}
           >
             <svg
@@ -116,7 +117,12 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
             </svg>
             초기화
           </button>
-          <Button type="button" size="lg" onClick={handleSubmit}>
+          <Button
+            type="button"
+            size="lg"
+            disabled={isLoading}
+            onClick={handleSubmit}
+          >
             검색
           </Button>
         </div>
