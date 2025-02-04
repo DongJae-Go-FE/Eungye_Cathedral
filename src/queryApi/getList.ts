@@ -7,6 +7,8 @@ export type ListParamsType = {
   search?: string;
 };
 
+//
+
 class getList extends queryRequest {
   getNews({ page, limit, search }: ListParamsType) {
     return this.http.get<RequestGetListType>(
