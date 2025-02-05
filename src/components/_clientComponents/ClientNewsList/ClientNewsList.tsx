@@ -4,13 +4,43 @@ import { useState } from "react";
 
 import SearchBar from "@/components/SearchBar";
 import CardTable from "@/components/Table/CardTable/CardTable";
+import InfiniteList from "@/components/Table/InfiniteList/InfiniteList";
 
 import { useNews } from "@/queryApi/useListQuery";
 import { formatDate } from "@/utils/common";
 
+import { useInfiniteQuery } from "@tanstack/react-query";
+
+import GetList from "@/utils/getApi";
+
 export default function ClientNewsList() {
   const [page, setPage] = useState("1");
   const [search, setSearch] = useState("");
+
+  const {
+    data: newsInfiniteList,
+    fetchNextPage,
+    isFetchingNextPage,
+    status,
+    isLoading: InfiniteIsLoading,
+  } = useInfiniteQuery({
+    queryKey: ["notices", search],
+    queryFn: ({ pageParam = 1 }) =>
+      GetList.getNews({
+        page: pageParam.toString(),
+        limit: "8",
+        search: search,
+      }),
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => {
+      if (lastPage) {
+        const last = Number(lastPage.page);
+        const totalPage = lastPage.data.totalPages;
+        if (last === totalPage) return;
+        if (last < totalPage) return Math.min(totalPage, last + 1);
+      }
+    },
+  });
 
   const { data: newsList, isLoading } = useNews({
     page: page,
@@ -46,6 +76,15 @@ export default function ClientNewsList() {
             return prev;
           });
         }}
+      />
+      <InfiniteList
+        data={newsInfiniteList}
+        fetchNextPage={fetchNextPage}
+        status={status}
+        href="/parish-information/news"
+        isFetchingNextPage={isFetchingNextPage}
+        isLoading={InfiniteIsLoading}
+        totalCount={newsInfiniteList?.pages[0].data.total}
       />
     </div>
   );

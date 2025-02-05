@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { formatDate } from "@/utils/common";
 
 type TableCardType = {
   imgUrl: string;
@@ -51,8 +52,11 @@ export default function TableCard({
           <h5 className="text-body01b truncate text-black" title={title}>
             {title}
           </h5>
-          <p className="text-body03m truncate text-gray-500" title={date}>
-            {date}
+          <p
+            className="text-body03m truncate text-gray-500"
+            title={formatDate(date) || ""}
+          >
+            {formatDate(date)}
           </p>
         </div>
       </div>

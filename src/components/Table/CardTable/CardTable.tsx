@@ -65,40 +65,42 @@ export default function CardTable({
     "relative grid min-h-[942px] justify-center gap-5 rounded-b-md";
 
   return (
-    <div className={CardContainerStyle}>
-      <span className="text-body02m">총{totalCount}건</span>
-      <ul
-        className={ulStyle}
-        style={{
-          gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
-        }}
-      >
-        {initialData.map(({ title, date, imgUrl, id }) => {
-          return (
-            <li key={id}>
-              <TableCard
-                title={title}
-                date={date}
-                imgUrl={imgUrl}
-                href={href}
-                id={id}
-              />
-            </li>
-          );
-        })}
-      </ul>
-      {totalPage > 1 && (
-        <div className="mt-4 flex w-full justify-center">
-          <Pagination
-            current={page || 1}
-            total={totalPage}
-            numericOptions={{
-              max: 10,
-            }}
-            onChange={onPageChange}
-          />
-        </div>
-      )}
+    <div className="mobile:hidden desktop:block">
+      <div className={CardContainerStyle}>
+        <span className="text-body02m">총{totalCount}건</span>
+        <ul
+          className={ulStyle}
+          style={{
+            gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
+          }}
+        >
+          {initialData.map(({ title, date, imgUrl, id }) => {
+            return (
+              <li key={id}>
+                <TableCard
+                  title={title}
+                  date={date}
+                  imgUrl={imgUrl}
+                  href={href}
+                  id={id}
+                />
+              </li>
+            );
+          })}
+        </ul>
+        {totalPage > 1 && (
+          <div className="mt-4 flex w-full justify-center">
+            <Pagination
+              current={page || 1}
+              total={totalPage}
+              numericOptions={{
+                max: 10,
+              }}
+              onChange={onPageChange}
+            />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
