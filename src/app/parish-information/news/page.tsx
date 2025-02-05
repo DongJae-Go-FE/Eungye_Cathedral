@@ -1,5 +1,4 @@
-import SearchBar from "@/components/SearchBar";
-import CardTable from "@/components/Table/CardTable/CardTable";
+import ClientNewsList from "@/components/_clientComponents/ClientNewsList";
 
 export default async function Page() {
   return (
@@ -8,8 +7,7 @@ export default async function Page() {
         <h2 className="text-white">본당 소식</h2>
       </div>
       <div className="content-area">
-        <SearchBar />
-        <CardTable initialData={[{}, {}, {}, {}, {}, {}, {}]} totalCount={20} />
+        <ClientNewsList />
       </div>
     </div>
   );

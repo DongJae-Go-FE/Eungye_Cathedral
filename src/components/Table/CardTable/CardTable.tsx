@@ -5,11 +5,20 @@ import Empty from "@/components/Empty";
 import Spinner from "@/components/Spinner";
 import Pagination from "@/components/Pagination";
 
+type ItemType = {
+  no?: number;
+  title: string;
+  date: string;
+  imgUrl: string;
+  id?: number;
+};
+
 type CardTableType = {
   // eslint-disable-next-line
-  initialData: any[];
+  initialData: ItemType[];
   isLoading?: boolean;
   totalCount: number;
+  href?: string;
   page?: number;
   pageSize?: number;
   onPageChange?: (page: number) => void;
@@ -30,6 +39,7 @@ export default function CardTable({
   initialData,
   isLoading,
   totalCount,
+  href,
   page,
   pageSize,
   onPageChange,
@@ -63,63 +73,19 @@ export default function CardTable({
           gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
         }}
       >
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-          />
-        </li>
-        <li>
-          <TableCard
-            title="테스트테스트테스트테스트테스트테스트테스트"
-            date="2025.01.01"
-            imgUrl="123"
-            isLoading
-          />
-        </li>
+        {initialData.map(({ title, date, imgUrl, id }) => {
+          return (
+            <li key={id}>
+              <TableCard
+                title={title}
+                date={date}
+                imgUrl={imgUrl}
+                href={href}
+                id={id}
+              />
+            </li>
+          );
+        })}
       </ul>
       {totalPage > 1 && (
         <div className="mt-4 flex w-full justify-center">

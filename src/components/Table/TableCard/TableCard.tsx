@@ -4,6 +4,8 @@ type TableCardType = {
   imgUrl: string;
   title: string;
   date: string;
+  id?: number;
+  href?: string;
   isLoading?: boolean;
 };
 
@@ -11,6 +13,8 @@ export default function TableCard({
   imgUrl,
   date,
   title,
+  href,
+  id,
   isLoading,
 }: TableCardType) {
   const TableCardContainerStyle =
@@ -36,7 +40,7 @@ export default function TableCard({
   }
 
   return (
-    <Link href="/">
+    <Link href={`${href}/${id}`}>
       <div className={TableCardContainerStyle}>
         {imgUrl ? (
           <div className="aspect-[9/10] max-h-[435px] w-full bg-gray-200" />

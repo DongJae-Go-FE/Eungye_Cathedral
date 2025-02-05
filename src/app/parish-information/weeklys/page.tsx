@@ -1,5 +1,5 @@
 import SearchBar from "@/components/SearchBar";
-import CardTable from "@/components/Table/CardTable/CardTable";
+// import CardTable from "@/components/Table/CardTable/CardTable";
 
 export default async function Page() {
   return (
@@ -9,7 +9,7 @@ export default async function Page() {
       </div>
       <div className="content-area">
         <SearchBar />
-        <CardTable initialData={[{}, {}, {}, {}, {}, {}, {}]} totalCount={20} />
+        {/* <CardTable initialData={[{}, {}, {}, {}, {}, {}, {}]} totalCount={20} /> */}
       </div>
     </div>
   );
