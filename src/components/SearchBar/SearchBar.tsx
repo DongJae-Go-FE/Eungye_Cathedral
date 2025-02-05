@@ -76,6 +76,7 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
             className="h-full w-[calc(100%-30px)] text-black placeholder:text-gray-300 focus:outline-0"
             disabled={isLoading}
             placeholder="제목을 입력해주세요."
+            value={search}
             onChange={(e) => setSearch(e.target.value)}
             onFocus={() => {
               setIsFocus(true);
