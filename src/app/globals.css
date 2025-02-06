@@ -36,7 +36,7 @@
   }
 
   .content-area {
-    @apply flex flex-col bg-white px-[10dvw] py-[5dvw];
+    @apply mobile:w-[100dvw] desktop:w-[calc(100dvw-240px)] flex flex-col bg-white px-[4dvw] py-[3dvw];
   }
 }
 

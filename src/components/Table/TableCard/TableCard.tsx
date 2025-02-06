@@ -19,7 +19,7 @@ export default function TableCard({
   isLoading,
 }: TableCardType) {
   const TableCardContainerStyle =
-    "flex w-full flex-col gap-y-[15px] rounded-sm border-b border-gray-200";
+    "flex w-full flex-col gap-y-[15px] border-b border-gray-200";
   const TableCardTextContainerStyle = "flex w-full flex-col gap-y-3 px-6 pb-6";
 
   if (isLoading) {

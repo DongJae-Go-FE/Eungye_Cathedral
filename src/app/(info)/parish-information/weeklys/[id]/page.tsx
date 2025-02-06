@@ -1,14 +1,14 @@
 import GetApi from "@/utils/getApi";
 
 export async function generateStaticParams(): Promise<{ id: string }[]> {
-  const newsList = await GetApi.getNews({
+  const weeklysList = await GetApi.getWeeklys({
     page: "1",
     limit: "5",
     search: "",
   });
 
   return (
-    newsList.data.list.map((value) => ({
+    weeklysList.data.list.map((value) => ({
       id: value.id.toString(),
     })) || []
   );
@@ -21,8 +21,8 @@ export default async function Page({
 }) {
   const { id } = await params;
 
-  const newsDetail = await GetApi.getNewsDetail({ id });
-  console.log(newsDetail);
+  const weeklysDetail = await GetApi.getWeeklysDetail({ id });
+  console.log(weeklysDetail);
 
-  return <div className="sub-container">성당소식 상세</div>;
+  return <div></div>;
 }

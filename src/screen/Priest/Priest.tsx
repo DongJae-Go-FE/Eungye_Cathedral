@@ -42,17 +42,19 @@ const Priest = () => {
 
   return (
     <PriestContext.Provider value={schene}>
-      <div className="fixed h-full w-full overflow-hidden border-b transition-all duration-1000">
-        <div
-          ref={schene.ref}
-          className="h-full w-full transition-all duration-1000"
-        >
-          <Section01 />
-          <Section02 />
-          <Section03 />
-          <PriestFooter />
+      <div>
+        <div className="fixed h-full w-full overflow-hidden border-b transition-all duration-1000">
+          <div
+            ref={schene.ref}
+            className="h-full w-full transition-all duration-1000"
+          >
+            <Section01 />
+            <Section02 />
+            <Section03 />
+            <PriestFooter />
+          </div>
+          {renderBackTop()}
         </div>
-        {renderBackTop()}
       </div>
     </PriestContext.Provider>
   );

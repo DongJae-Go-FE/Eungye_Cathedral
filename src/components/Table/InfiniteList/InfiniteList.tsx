@@ -32,7 +32,7 @@ type InfiniteListType = {
   isLoading?: boolean;
 };
 
-const CardContainerStyle = "flex min-h-[975px] flex-col gap-y-3";
+const CardContainerStyle = "flex min-h-[975px] flex-col gap-y-3 py-4";
 
 const RenderPrevUI = ({ children }: { children: ReactNode }) => {
   return (
@@ -83,7 +83,7 @@ export default function InfiniteList({
   }
 
   const ulStyle =
-    "relative grid min-h-[942px] justify-center gap-5 rounded-b-md";
+    "relative grid min-h-[942px] justify-center gap-5 rounded-b-md ";
 
   return (
     <div className="mobile:block desktop:hidden">

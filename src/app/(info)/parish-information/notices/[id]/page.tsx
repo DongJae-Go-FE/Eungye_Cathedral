@@ -24,5 +24,5 @@ export default async function Page({
   const noticesDetail = await GetApi.getNoticesDetail({ id });
   console.log(noticesDetail);
 
-  return <div className="sub-container">공지사항 상세</div>;
+  return <div></div>;
 }

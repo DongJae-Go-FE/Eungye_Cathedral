@@ -19,7 +19,7 @@ export default function BackTop({ type, topGoId }: BackTopType) {
 
   useEffect(() => {
     if (type === "link") {
-      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll, { passive: true });
     }
 
     return () => {

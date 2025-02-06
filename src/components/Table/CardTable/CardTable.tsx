@@ -71,7 +71,7 @@ export default function CardTable({
         <ul
           className={ulStyle}
           style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(330px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
           }}
         >
           {initialData.map(({ title, date, imgUrl, id }) => {
