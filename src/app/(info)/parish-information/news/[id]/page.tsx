@@ -1,5 +1,7 @@
 import GetApi from "@/utils/getApi";
 
+import DetailContent from "@/components/DetailContent";
+
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const newsList = await GetApi.getNews({
     page: "1",
@@ -24,5 +26,15 @@ export default async function Page({
   const newsDetail = await GetApi.getNewsDetail({ id });
   console.log(newsDetail);
 
-  return <div></div>;
+  return (
+    <div>
+      <DetailContent
+        id={id}
+        title={newsDetail.title}
+        content={newsDetail.content}
+        href="news"
+        imgUrl={newsDetail.imgUrl}
+      />
+    </div>
+  );
 }
