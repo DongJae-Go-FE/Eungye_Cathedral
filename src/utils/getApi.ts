@@ -1,5 +1,5 @@
 import getRequest from "@/utils/getRequest";
-import { RequestGetListType, RequestGetDetailType } from "@/type";
+import { RequestGetListType, RequestGetDetailType, AdjacentType } from "@/type";
 
 export type ListParamsType = {
   page?: string;
@@ -10,6 +10,12 @@ export type ListParamsType = {
 
 export type DetailParamsType = {
   id: string;
+  config?: RequestInit;
+};
+
+export type AdjacentParamsType = {
+  id: string;
+  href: string;
   config?: RequestInit;
 };
 
@@ -45,6 +51,10 @@ class getApi extends getRequest {
 
   getWeeklysDetail({ id, config }: DetailParamsType) {
     return this.http.get<RequestGetDetailType>(`/weeklys/${id}`, config);
+  }
+
+  getAdjacent({ id, href, config }: AdjacentParamsType) {
+    return this.http.get<AdjacentType>(`/${href}/${id}/adjacent`, config);
   }
 }
 

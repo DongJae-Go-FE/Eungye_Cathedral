@@ -1,3 +1,3 @@
-import ClientDetailContentBox from "./ClientDetailContentBox";
+import ClientContent from "./ClientContent";
 
-export default ClientDetailContentBox;
+export default ClientContent;

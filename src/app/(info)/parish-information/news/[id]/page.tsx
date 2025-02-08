@@ -24,7 +24,6 @@ export default async function Page({
   const { id } = await params;
 
   const newsDetail = await GetApi.getNewsDetail({ id });
-  console.log(newsDetail);
 
   return (
     <div>
@@ -34,6 +33,7 @@ export default async function Page({
         content={newsDetail.content}
         href="news"
         imgUrl={newsDetail.imgUrl}
+        date={newsDetail.created_at}
       />
     </div>
   );
