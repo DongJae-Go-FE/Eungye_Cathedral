@@ -30,12 +30,12 @@ export default async function DetailContent({
     <div className="flex w-full flex-col gap-y-20">
       <div className={colStyle}>
         <h3 className="text-heading02b text-black">{title}</h3>
-        {content && <ClientContent content={content} />}
         {date && (
-          <div className="relative min-h-[300px]">
-            <ClientDateBox date={date} />
+          <div className="text-body02r relative text-gray-500">
+            생성일 : <ClientDateBox date={date} />
           </div>
         )}
+        {content && <ClientContent content={content} />}
       </div>
 
       <Image
@@ -58,7 +58,7 @@ export default async function DetailContent({
         <DetailList id={id} href={href} />
         <Button
           href={`/parish-information/${href}`}
-          className="ml-auto"
+          className="mt-6 ml-auto"
           color="white"
         >
           전체보기
