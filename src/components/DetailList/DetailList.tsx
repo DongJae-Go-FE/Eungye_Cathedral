@@ -19,18 +19,18 @@ export default async function DetailList({ href, id }: DetailListType) {
 
   return (
     <ul className="text-body02r w-full text-black">
-      {data?.previous.state && (
+      {data?.previous?.state && (
         <li className={liStyle}>
           <div className={titleBox}>이전 글</div>
           <div className={contentBox}>
             <Link
-              href={`/parish-information/${href}/${data?.previous.id}`}
+              href={`/parish-information/${href}/${data?.previous?.id}`}
               className={LinkStyle}
-              title={data?.previous.title}
+              title={data?.previous?.title}
             >
               {data?.previous.title}
             </Link>
-            <ClientDateBox date={data?.previous.created_at || ""} />
+            <ClientDateBox date={data?.previous?.created_at || ""} />
           </div>
         </li>
       )}
@@ -39,13 +39,13 @@ export default async function DetailList({ href, id }: DetailListType) {
           <div className={titleBox}>다음 글</div>
           <div className={contentBox}>
             <Link
-              href={`/parish-information/${href}/${data?.next.id}`}
+              href={`/parish-information/${href}/${data?.next?.id}`}
               className={LinkStyle}
-              title={data?.next.title}
+              title={data?.next?.title}
             >
-              {data?.next.title}
+              {data?.next?.title}
             </Link>
-            <ClientDateBox date={data?.next.created_at || ""} />
+            <ClientDateBox date={data?.next?.created_at || ""} />
           </div>
         </li>
       )}
