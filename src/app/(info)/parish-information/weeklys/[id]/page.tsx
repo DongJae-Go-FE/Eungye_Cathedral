@@ -1,5 +1,7 @@
 import GetApi from "@/utils/getApi";
 
+import DetailContent from "@/components/DetailContent";
+
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const weeklysList = await GetApi.getWeeklys({
     page: "1",
@@ -22,7 +24,17 @@ export default async function Page({
   const { id } = await params;
 
   const weeklysDetail = await GetApi.getWeeklysDetail({ id });
-  console.log(weeklysDetail);
 
-  return <div></div>;
+  return (
+    <div>
+      <DetailContent
+        id={id}
+        title={weeklysDetail.title}
+        content={weeklysDetail.content}
+        href="weeklys"
+        imgUrl={weeklysDetail.imgUrl}
+        date={weeklysDetail.created_at}
+      />
+    </div>
+  );
 }

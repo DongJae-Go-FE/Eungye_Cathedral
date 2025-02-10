@@ -1,5 +1,7 @@
 import GetApi from "@/utils/getApi";
 
+import DetailContent from "@/components/DetailContent";
+
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const noticesList = await GetApi.getNotices({
     page: "1",
@@ -22,7 +24,17 @@ export default async function Page({
   const { id } = await params;
 
   const noticesDetail = await GetApi.getNoticesDetail({ id });
-  console.log(noticesDetail);
 
-  return <div></div>;
+  return (
+    <div>
+      <DetailContent
+        id={id}
+        title={noticesDetail.title}
+        content={noticesDetail.content}
+        href="notices"
+        imgUrl={noticesDetail.imgUrl}
+        date={noticesDetail.created_at}
+      />
+    </div>
+  );
 }
