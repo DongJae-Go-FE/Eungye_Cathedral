@@ -48,7 +48,7 @@ export default function SideBar() {
 
     return (
       <Fragment>
-        <h3 className={h3Style}>{currentSection.title}</h3>
+        <h4 className={h3Style}>{currentSection.title}</h4>
         <nav className={navStyle}>
           <ul className="flex w-full flex-col">
             {currentSection.list.map(({ title, href }, index) => (
