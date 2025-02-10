@@ -24,7 +24,7 @@ export default async function DetailList({ href, id }: DetailListType) {
           <div className={titleBox}>이전 글</div>
           <div className={contentBox}>
             <Link
-              href={`parish-information/${href}/`}
+              href={`/parish-information/${href}/${data.previous.id}`}
               className={LinkStyle}
               title={data.previous.title}
             >
@@ -39,7 +39,7 @@ export default async function DetailList({ href, id }: DetailListType) {
           <div className={titleBox}>다음 글</div>
           <div className={contentBox}>
             <Link
-              href={`parish-information/${href}/`}
+              href={`/parish-information/${href}/${data.next.id}`}
               className={LinkStyle}
               title={data.next.title}
             >

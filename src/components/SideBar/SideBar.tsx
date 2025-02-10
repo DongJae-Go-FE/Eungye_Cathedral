@@ -7,7 +7,8 @@ import { Fragment } from "react";
 export default function SideBar() {
   const pathName = usePathname();
 
-  const h3Style = "text-heading04b h-[96px] w-full pt-10 pb-[26px] pl-8";
+  const h3Style =
+    "text-heading04b h-[96px] w-full pt-10 pb-[26px] pl-8 text-black";
   const navStyle = "w-full";
 
   const sections = [

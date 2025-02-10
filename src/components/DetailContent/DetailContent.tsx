@@ -38,13 +38,15 @@ export default async function DetailContent({
         {content && <ClientContent content={content} />}
       </div>
 
-      <Image
-        src="/"
-        alt={`${title} 이미지`}
-        width={1200}
-        height={676}
-        priority
-      />
+      {imgUrl && (
+        <Image
+          src={imgUrl}
+          alt={`${title} 이미지`}
+          width={1200}
+          height={676}
+          priority
+        />
+      )}
 
       {imgUrl && (
         <div className={colStyle}>
@@ -67,3 +69,4 @@ export default async function DetailContent({
     </div>
   );
 }
+    
