@@ -17,6 +17,12 @@ export default function ClientNoticesList() {
 
   const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
 
+  const { data: noticesList, isLoading } = useNotices({
+    page: page,
+    limit: "10",
+    search: debouncedSearchValue,
+  });
+
   const columns: TableColumn[] = [
     {
       key: "no",
@@ -34,12 +40,6 @@ export default function ClientNoticesList() {
       width: "30%",
     },
   ];
-
-  const { data: noticesList, isLoading } = useNotices({
-    page: page,
-    limit: "10",
-    search: debouncedSearchValue,
-  });
 
   const handleSubmit = (e: string) => {
     setSearch(e);

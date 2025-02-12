@@ -20,6 +20,12 @@ export default function ClientWeeklysList() {
 
   const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
 
+  const { data: weeklysList, isLoading } = useWeeklys({
+    page: page,
+    limit: "8",
+    search: debouncedSearchValue,
+  });
+
   const {
     data: WeeklysInfiniteList,
     fetchNextPage,
@@ -43,12 +49,6 @@ export default function ClientWeeklysList() {
         if (last < totalPage) return Math.min(totalPage, last + 1);
       }
     },
-  });
-
-  const { data: weeklysList, isLoading } = useWeeklys({
-    page: page,
-    limit: "8",
-    search: debouncedSearchValue,
   });
 
   const handleSubmit = (e: string) => {
