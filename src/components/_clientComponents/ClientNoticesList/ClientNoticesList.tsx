@@ -9,9 +9,13 @@ import { TableColumn } from "@/components/Table/ListTable/ListTable";
 import { useNotices } from "@/queryApi/useListQuery";
 import { formatDate } from "@/utils/common";
 
+import useDebounce from "@/hooks/useDebounce";
+
 export default function ClientNoticesList() {
   const [page, setPage] = useState("1");
   const [search, setSearch] = useState("");
+
+  const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
 
   const columns: TableColumn[] = [
     {
@@ -34,7 +38,7 @@ export default function ClientNoticesList() {
   const { data: noticesList, isLoading } = useNotices({
     page: page,
     limit: "10",
-    search: search,
+    search: debouncedSearchValue,
   });
 
   const handleSubmit = (e: string) => {
@@ -60,11 +64,14 @@ export default function ClientNoticesList() {
         }
         page={Number(noticesList?.page)}
         pageSize={Number(noticesList?.limit)}
+        // onPageChange={(page) => {
+        //   setPage((prev) => {
+        //     prev = page.toString();
+        //     return prev;
+        //   });
+        // }}
         onPageChange={(page) => {
-          setPage((prev) => {
-            prev = page.toString();
-            return prev;
-          });
+          setPage(page.toString());
         }}
       />
     </div>

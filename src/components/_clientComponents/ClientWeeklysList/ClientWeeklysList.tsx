@@ -10,12 +10,15 @@ import { useWeeklys } from "@/queryApi/useListQuery";
 import { formatDate } from "@/utils/common";
 
 import { useInfiniteQuery } from "@tanstack/react-query";
+import useDebounce from "@/hooks/useDebounce";
 
 import GetList from "@/utils/getApi";
 
 export default function ClientWeeklysList() {
   const [page, setPage] = useState("1");
   const [search, setSearch] = useState("");
+
+  const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
 
   const {
     data: WeeklysInfiniteList,
@@ -24,7 +27,7 @@ export default function ClientWeeklysList() {
     status,
     isLoading: InfiniteIsLoading,
   } = useInfiniteQuery({
-    queryKey: ["weeklys", search],
+    queryKey: ["weeklys", debouncedSearchValue],
     queryFn: ({ pageParam = 1 }) =>
       GetList.getNews({
         page: pageParam.toString(),
@@ -45,7 +48,7 @@ export default function ClientWeeklysList() {
   const { data: weeklysList, isLoading } = useWeeklys({
     page: page,
     limit: "8",
-    search: search,
+    search: debouncedSearchValue,
   });
 
   const handleSubmit = (e: string) => {
@@ -70,11 +73,14 @@ export default function ClientWeeklysList() {
         page={Number(weeklysList?.page)}
         pageSize={Number(weeklysList?.limit)}
         isLoading={isLoading}
+        // onPageChange={(page) => {
+        //   setPage((prev) => {
+        //     prev = page.toString();
+        //     return prev;
+        //   });
+        // }}
         onPageChange={(page) => {
-          setPage((prev) => {
-            prev = page.toString();
-            return prev;
-          });
+          setPage(page.toString());
         }}
       />
       <InfiniteList

@@ -10,12 +10,15 @@ import { useNews } from "@/queryApi/useListQuery";
 import { formatDate } from "@/utils/common";
 
 import { useInfiniteQuery } from "@tanstack/react-query";
+import useDebounce from "@/hooks/useDebounce";
 
 import GetList from "@/utils/getApi";
 
 export default function ClientNewsList() {
   const [page, setPage] = useState("1");
   const [search, setSearch] = useState("");
+
+  const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
 
   const {
     data: newsInfiniteList,
@@ -24,12 +27,12 @@ export default function ClientNewsList() {
     status,
     isLoading: InfiniteIsLoading,
   } = useInfiniteQuery({
-    queryKey: ["notices", search],
+    queryKey: ["news", search],
     queryFn: ({ pageParam = 1 }) =>
       GetList.getNews({
         page: pageParam.toString(),
         limit: "8",
-        search: search,
+        search: debouncedSearchValue,
       }),
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {
@@ -45,7 +48,7 @@ export default function ClientNewsList() {
   const { data: newsList, isLoading } = useNews({
     page: page,
     limit: "8",
-    search: search,
+    search: debouncedSearchValue,
   });
 
   const handleSubmit = (e: string) => {
@@ -70,11 +73,14 @@ export default function ClientNewsList() {
         page={Number(newsList?.page)}
         pageSize={Number(newsList?.limit)}
         isLoading={isLoading}
+        // onPageChange={(page) => {
+        //   setPage((prev) => {
+        //     prev = page.toString();
+        //     return prev;
+        //   });
+        // }}
         onPageChange={(page) => {
-          setPage((prev) => {
-            prev = page.toString();
-            return prev;
-          });
+          setPage(page.toString());
         }}
       />
       <InfiniteList
