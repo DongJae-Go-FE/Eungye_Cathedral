@@ -33,7 +33,7 @@ export default function ClientNewsList() {
     status,
     isLoading: InfiniteIsLoading,
   } = useInfiniteQuery({
-    queryKey: ["news", search],
+    queryKey: ["news", debouncedSearchValue],
     queryFn: ({ pageParam = 1 }) =>
       GetList.getNews({
         page: pageParam.toString(),
