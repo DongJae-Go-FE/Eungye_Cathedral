@@ -70,9 +70,6 @@
   .fadeInUp {
     animation: fadeInUp 1s ease-in-out;
   }
-  html {
-    @apply scroll-smooth;
-  }
 
   body {
     @apply w-[100dvw] bg-gray-100;

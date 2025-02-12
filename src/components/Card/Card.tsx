@@ -35,7 +35,7 @@ export default async function Card({
   }
 
   return (
-    <Link href={`/parish-information/news/${id}`} className="w-full">
+    <Link href={`/modal/parish-information/news/${id}`} className="w-full">
       <figure className="mobile:gap-y-3 desktop:gap-y-6 flex flex-col">
         {imgUrl ? (
           <Image
