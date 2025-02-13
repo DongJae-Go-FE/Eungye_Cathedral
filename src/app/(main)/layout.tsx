@@ -1,6 +1,3 @@
-import SideBar from "@/components/SideBar";
-import LayoutInfoTitle from "@/components/LayoutInfoTitle";
-
 export default async function Layout({
   children,
   modal,

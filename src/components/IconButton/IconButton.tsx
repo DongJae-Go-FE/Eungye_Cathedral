@@ -14,7 +14,7 @@ export default function IconButton({
 }: IconButtonType) {
   let sizeStyle = "";
 
-  const classList = ["flex justify-center items-center"];
+  const classList = ["flex justify-center items-center", "cursor-pointer"];
 
   switch (size) {
     case "xs": {
