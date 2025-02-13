@@ -141,7 +141,7 @@ export default function Menu({
               </ul>
             </Accordion>
           </li>
-          <li>
+          {/* <li>
             <Accordion
               title="신앙 생활"
               isOpen={pathName.includes("religious-life")}
@@ -176,7 +176,7 @@ export default function Menu({
                 </li>
               </ul>
             </Accordion>
-          </li>
+          </li> */}
           <li>
             <Accordion title="주일 학교" isOpen={pathName.includes("school")}>
               <ul>

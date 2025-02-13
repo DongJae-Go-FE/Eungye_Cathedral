@@ -170,7 +170,7 @@ export default function Header() {
                   </ul>
                 </div>
               </li>
-              <li
+              {/* <li
                 className={liStyle}
                 onMouseEnter={() => {
                   setIsOpen(true);
@@ -228,7 +228,7 @@ export default function Header() {
                     </li>
                   </ul>
                 </div>
-              </li>
+              </li> */}
               <li
                 className={liStyle}
                 onMouseEnter={() => {
