@@ -61,7 +61,7 @@ export default async function Section08({
 
   return (
     <div className="main-container bg-gray-100">
-      <h2>성당소식</h2>
+      <h2>본당소식</h2>
       <div className="mobile:flex-wrap tablet:flex-wrap desktop:flex-nowrap flex h-[calc(100%-128px)]">
         <ul className="mobile:flex-wrap mobile:gap-y-10 tablet:flex-wrap tablet:gap-y-10 flex w-full gap-6">
           {newsList.data.list.map(({ id, title, created_at, imgUrl }) => {

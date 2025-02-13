@@ -7,7 +7,7 @@ export default function LayoutInfoTitle() {
   const pathName = usePathname();
 
   const pathTitleArr: { [key: string]: string } = {
-    news: "성당소식",
+    news: "본당소식",
     notices: "공지사항",
     weeklys: "주보",
     admission: "입교",
