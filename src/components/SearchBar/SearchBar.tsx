@@ -38,7 +38,7 @@ export default function SearchBar({ handleSearch, isLoading }: SearchType) {
   };
 
   const formStyle = `${pathName.includes("/parish-information/notices") ? "" : "mobile:sticky mobile:top-[64px] mobile:pt-[3dvw] mobile:z-10"} desktop:static desktop:top-auto desktop:max-w-[700px] desktop:pt-[0] w-full bg-white pb-[3dvw]`;
-  const inputContainerStyle = `has-disabled:bg-gray-200 text-body1m flex h-12 w-full items-center justify-between rounded-sm border px-4 ${isFocus ? "border-black" : "border-gray-300"}`;
+  const inputContainerStyle = `has-disabled:bg-gray-200 text-body1m flex h-12 w-full items-center justify-between rounded-sm border px-4 ${isFocus ? (isLoading ? "border-gray-200" : "border-black") : "border-gray-300"}`;
   const btnContainerStyle =
     "before:w[1px] relative flex gap-x-4 before:absolute before:top-1/2 before:-left-[8px] before:block before:h-[21px] before:w-[1px] before:-translate-y-1/2 before:bg-gray-200 before:content-['']";
 
