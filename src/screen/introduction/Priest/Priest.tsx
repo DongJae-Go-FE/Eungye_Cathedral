@@ -9,7 +9,7 @@ import BackTop from "@/components/BackTop";
 
 import { PriestContext } from "./context";
 
-import useSchene from "../../hooks/useSchene";
+import useSchene from "../../../hooks/useSchene";
 
 const Priest = () => {
   const schene = useSchene([

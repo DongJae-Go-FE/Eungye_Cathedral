@@ -1,6 +1,6 @@
-import Section01 from "@/screen/Nave/Section01";
-import Section02 from "@/screen/Nave/Section02";
-import Section03 from "@/screen/Nave/Section03";
+import Section01 from "@/screen/introduction/Nave/Section01";
+import Section02 from "@/screen/introduction/Nave/Section02";
+import Section03 from "@/screen/introduction/Nave/Section03";
 
 import ScrollDown from "@/components/ScrollDown";
 

@@ -4,7 +4,7 @@ import { useContext } from "react";
 
 import PriestInfo from "@/components/PriestInfo";
 
-import { PriestContext } from "@/screen/Priest/context";
+import { PriestContext } from "@/screen/introduction/Priest/context";
 
 export default function Section02() {
   const { state } = useContext(PriestContext);

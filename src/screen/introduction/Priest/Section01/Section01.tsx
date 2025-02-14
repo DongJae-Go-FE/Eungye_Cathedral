@@ -5,7 +5,7 @@ import { useContext } from "react";
 import ScrollDown from "@/components/ScrollDown";
 import PriestInfo from "@/components/PriestInfo";
 
-import { PriestContext } from "@/screen/Priest/context";
+import { PriestContext } from "@/screen/introduction/Priest/context";
 
 export default function Section01() {
   const { state } = useContext(PriestContext);

@@ -68,7 +68,7 @@
   }
 
   .fadeInUp {
-    animation: fadeInUp 1s ease-in-out;
+    animation: fadeInUp 1s ease-in-out forwards;
   }
 
   body {
@@ -80,6 +80,41 @@
 
     a {
       @apply text-body01m text-black;
+    }
+  }
+}
+
+@theme {
+  --animate-bottomUp: bottomUp 0.7s ease 1s forwards;
+  --animate-fadeIn: fadeIn 2s ease 1s forwards;
+  --animate-bottomUp2: bottomUp2 0.7s cubic-bezier(0.17, 0.67, 0.91, 0.25)
+    forwards;
+
+  @keyframes bottomUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 100%;
+    }
+  }
+  @keyframes bottomUp2 {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
     }
   }
 }

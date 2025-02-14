@@ -110,9 +110,9 @@ const Modal = ({ children, title }: { children: ReactNode; title: string }) => {
   return createPortal(
     <dialog
       className="position-center rounded-lg backdrop:bg-[rgba(0,0,0,0.8)]"
+      ref={modalRef}
       onClose={() => back()}
       onClick={handleClick}
-      ref={modalRef}
     >
       <ModalContext
         value={{

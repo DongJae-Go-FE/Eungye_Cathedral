@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext, useEffect, useState } from "react";
-import { PriestContext } from "@/screen/Priest/context";
+import { PriestContext } from "@/screen/introduction/Priest/context";
 import useDebounce from "@/hooks/useDebounce";
 
 type BackTopType = {

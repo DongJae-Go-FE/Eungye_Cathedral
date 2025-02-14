@@ -9,8 +9,8 @@ import {
   useState,
 } from "react";
 
-import { Schene, ScheneContext } from "../screen/Priest/types";
-import { reducer } from "../screen/Priest/reducer";
+import { Schene, ScheneContext } from "../screen/introduction/Priest/types";
+import { reducer } from "../screen/introduction/Priest/reducer";
 
 const useSchene = (
   schenes: Omit<Schene, "currentFrame" | "index">[],
