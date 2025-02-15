@@ -76,7 +76,7 @@ export default function CardTable({
         >
           {initialData.map(({ title, date, imgUrl, id }) => {
             return (
-              <li key={id}>
+              <li key={id} className="max-w-[404px] max-h-[507px]">
                 <TableCard
                   title={title}
                   date={date}
