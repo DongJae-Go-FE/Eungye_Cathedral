@@ -1,7 +1,7 @@
 export default function Section01() {
   return (
-    <section className="w-full">
-      <div className="m-auto w-full max-w-[1280px] px-10 pt-[168px] pb-20">
+    <section className="mobile:px-[3dvw] desktop:px-0 w-full">
+      <div className="desktop:px-10 m-auto w-full max-w-[1280px] pt-[168px] pb-20">
         <h2 className="overflow-hidden text-7xl leading-[90px] font-black tracking-[2]">
           <div className="animate-bottomUp opacity-0">
             안녕하세요! <br />
