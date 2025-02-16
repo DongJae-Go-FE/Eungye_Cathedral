@@ -55,6 +55,10 @@
   }
 }
 
+@utility school-card-mobile-center {
+  @apply flex h-full w-full items-center justify-center;
+}
+
 @layer utilities {
   @keyframes fadeInUp {
     0% {
