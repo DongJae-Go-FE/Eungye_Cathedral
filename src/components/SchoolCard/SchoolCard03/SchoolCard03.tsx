@@ -3,7 +3,7 @@ export default function SchoolCard03() {
     <div className="group tablet:max-w-[calc(43%-40px)] tablet:mr-20 tablet:mb-auto relative flex w-full flex-col gap-y-8 text-left">
       <div className="mobile:aspect-square tablet:aspect-[486/502] relative overflow-hidden rounded-[20px]">
         <div className="absolute top-0 left-0 h-full w-full scale-100 rounded-[20px] bg-[url('/bg3.png')] bg-cover object-contain object-center transition-all duration-[400ms] group-hover:scale-125 group-hover:opacity-80 group-hover:blur-[22px]" />
-        <div className="mobile:school-card-mobile-center tablet:w-auto tablet:h-auto tablet:justify-start tablet:items-start tablet:bottom-16 tablet:left-8 absolute flex flex-col gap-y-4 text-white opacity-0 transition-opacity duration-[400ms] group-hover:opacity-100">
+        <div className="mobile:school-card-mobile-center desktop:w-auto desktop:h-auto desktop:justify-start desktop:items-start desktop:bottom-16 desktop:left-8 absolute flex flex-col gap-y-4 text-white opacity-0 transition-opacity duration-[400ms] group-hover:opacity-100">
           <h6 className="text-2xl font-black tracking-widest">제목3입니다.</h6>
           <p className="w-3/4 text-[18px] whitespace-pre-wrap">
             내용입니다 내용입니다 내용입니다 내용입니다 내용입니다 내용입니다.
