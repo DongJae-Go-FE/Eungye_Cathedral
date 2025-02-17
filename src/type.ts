@@ -36,3 +36,10 @@ export type AdjacentType = {
     state?: boolean;
   };
 };
+
+export type SchoolCardType = {
+  title: string;
+  contentTitle: string;
+  contentInfo: string;
+  bgImg?: string;
+};
