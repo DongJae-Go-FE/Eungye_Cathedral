@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 
 export default function LayoutInfoTitle() {
-  
   const pathName = usePathname();
 
   const pathTitleArr: { [key: string]: string } = {
@@ -14,7 +13,7 @@ export default function LayoutInfoTitle() {
     organization: "단체",
     "youth-group": "청년부",
     elementary: "초등부",
-    "middle_and_high": "중고등부",
+    middle_and_high: "중고등부",
   };
 
   const renderPathName = (): string | null => {
@@ -23,8 +22,12 @@ export default function LayoutInfoTitle() {
         return pathTitleArr[key];
       }
     }
-    return null; 
+    return null;
   };
 
-  return <h2 className="text-white">{renderPathName()}</h2>;
+  return (
+    <h2 className="desktop:mb-10 tablet:mb-0 mobile:mb-0 text-white">
+      {renderPathName()}
+    </h2>
+  );
 }
