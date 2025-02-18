@@ -2,6 +2,6 @@
 
 export default function SliderItem03() {
   return (
-    <section className="main-section main-bg bg-[url('/bg3.png')]"></section>
+    <section className="main-section main-bg bg-[url('/main/main03.jpg')]"></section>
   );
 }
