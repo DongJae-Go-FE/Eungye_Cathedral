@@ -23,17 +23,17 @@ export default function SchoolCard04({
           style={{ backgroundImage: `url('${bgImg}')` }}
         />
         <div className={cardContent}>
-          <h6 className="desktop:text-2xl tablet:text-[16px] font-black tracking-widest">
+          <h3 className="desktop:text-2xl tablet:text-[16px] font-black tracking-widest">
             {contentTitle}
-          </h6>
+          </h3>
           <p className="desktop:text-[18px] tablet:text-[14px] mobile:text-[12px] w-3/4 whitespace-pre-wrap">
             {contentInfo}
           </p>
         </div>
       </div>
-      <h5 className="tablet:text-right desktop:text-2xl tablet:text-[16px] font-bold text-black transition-colors duration-[400ms] group-hover:text-blue-700">
+      <h3 className="tablet:text-right desktop:text-2xl tablet:text-[16px] font-bold text-black transition-colors duration-[400ms] group-hover:text-blue-700">
         {title}
-      </h5>
+      </h3>
     </div>
   );
 }

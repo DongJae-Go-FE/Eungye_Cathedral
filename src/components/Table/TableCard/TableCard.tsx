@@ -49,9 +49,9 @@ export default function TableCard({
           <div className="aspect-[9/10] max-h-[435px] w-full bg-gray-200" />
         )}
         <div className={TableCardTextContainerStyle}>
-          <h5 className="text-body01b truncate text-black" title={title}>
+          <h3 className="text-body01b truncate text-black" title={title}>
             {title}
-          </h5>
+          </h3>
           <p
             className="text-body03m truncate text-gray-500"
             title={formatDate(date) || ""}

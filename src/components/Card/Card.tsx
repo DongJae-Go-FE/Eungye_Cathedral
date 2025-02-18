@@ -51,9 +51,9 @@ export default async function Card({
           </div>
         )}
         <figcaption className="flex flex-col gap-y-1">
-          <h4 className="text-heading03b w-11/12 truncate" title={title}>
+          <h3 className="text-heading03b w-11/12 truncate" title={title}>
             {title}
-          </h4>
+          </h3>
           <p className="text-body01b text-gray-600">
             {date ? formatDate(date) : "-"}
           </p>
