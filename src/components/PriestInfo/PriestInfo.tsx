@@ -2,6 +2,10 @@ type PriestInfo = {
   title: string;
   name: string;
   christianName: string;
+  period: {
+    start: string;
+    end: string;
+  };
   feteDay: string;
   briefHistory: string[];
   scripture: string;
@@ -11,6 +15,7 @@ export default function PriestInfo({
   title,
   name,
   christianName,
+  period,
   feteDay,
   briefHistory,
   scripture,
@@ -26,6 +31,9 @@ export default function PriestInfo({
       <strong className="desktop:text-heading03b mobile:text-heading04b block">
         {name} {christianName}
       </strong>
+      <p className="text-body01b">
+        재임기간: {period.start} ~ {period.end}
+      </p>
       <span className="desktop:mb-6 mobile:mb-[2dvh] block">
         축일: {feteDay}
       </span>

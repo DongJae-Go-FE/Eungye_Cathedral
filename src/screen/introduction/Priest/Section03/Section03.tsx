@@ -22,6 +22,10 @@ export default function Section03() {
           title="3대 신부"
           name="김용수"
           christianName="마테오"
+          period={{
+            start: "2024.01.01",
+            end: "ing",
+          }}
           feteDay="2024.12.12"
           briefHistory={[
             "신부님 약력",
