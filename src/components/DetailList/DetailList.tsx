@@ -19,7 +19,7 @@ export default async function DetailList({ href, id }: DetailListType) {
 
   return (
     <ul className="text-body02r w-full text-black">
-      {data?.previous?.state && (
+      {data?.previous && (
         <li className={liStyle}>
           <div className={titleBox}>이전 글</div>
           <div className={contentBox}>
@@ -34,7 +34,7 @@ export default async function DetailList({ href, id }: DetailListType) {
           </div>
         </li>
       )}
-      {data?.next.state && (
+      {data?.next && (
         <li className={liStyle}>
           <div className={titleBox}>다음 글</div>
           <div className={contentBox}>

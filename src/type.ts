@@ -27,13 +27,11 @@ export type AdjacentType = {
     id?: number | string;
     title: string;
     created_at?: string;
-    state?: boolean;
   };
   next: {
     id?: number | string;
     title: string;
     created_at?: string;
-    state?: boolean;
   };
 };
 
