@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 import { ReactNode, HtmlHTMLAttributes } from "react";
 import Empty from "@/components/Empty";
@@ -70,6 +71,9 @@ export default function ListTable({
   isLoading,
   onPageChange,
 }: TableProps) {
+  const searchParams = useSearchParams();
+  const queryString = searchParams.toString();
+
   const totalPage = pageSize ? Math.ceil(totalCount / pageSize) : 1;
 
   if (isLoading) {
@@ -101,7 +105,7 @@ export default function ListTable({
             <span className="text-body02m">총 {totalCount}건</span>
           </div>
         )}
-        <div className="table-body relative w-full">
+        <div className="table-body relative h-[531px] w-full">
           <table className="w-full table-fixed">
             <caption className="sr-only">{caption}</caption>
             <colgroup>
@@ -135,7 +139,7 @@ export default function ListTable({
                     >
                       {Object.keys(item)[index2] === "title" ? (
                         <Link
-                          href={`${href}/${item.id}`}
+                          href={`${href}/${item.id}?${queryString}`}
                           className="hover:underline"
                         >
                           {item[key]}

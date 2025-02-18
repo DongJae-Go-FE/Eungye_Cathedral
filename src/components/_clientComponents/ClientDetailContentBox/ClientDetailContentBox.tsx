@@ -9,6 +9,7 @@ export default function ClientDetailContentBox({
 }) {
   return (
     <div
+      className="min-h-32"
       dangerouslySetInnerHTML={{
         __html: DOMPurify.sanitize(content),
       }}

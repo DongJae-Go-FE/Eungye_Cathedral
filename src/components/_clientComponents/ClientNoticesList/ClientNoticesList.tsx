@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
 
 import SearchBar from "@/components/SearchBar";
 import ListTable from "@/components/Table/ListTable";
@@ -10,49 +10,61 @@ import { useNotices } from "@/queryApi/useListQuery";
 import { formatDate } from "@/utils/common";
 
 import useDebounce from "@/hooks/useDebounce";
+import { useFilter } from "@/hooks/useFilter";
+
+import { RequestFilterListType } from "@/type";
 
 export default function ClientNoticesList() {
-  const [page, setPage] = useState("1");
-  const [search, setSearch] = useState("");
-
-  const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
-
-  const { data: noticesList, isLoading } = useNotices({
-    page: page,
+  const { filter, handleSubmit } = useFilter<RequestFilterListType>({
+    page: "1",
     limit: "10",
+    search: "",
+  });
+
+  const debouncedSearchValue = useDebounce({
+    value: filter.search,
+    delay: 300,
+  });
+
+  const { data: noticesList, isFetching } = useNotices({
+    page: filter.page,
+    limit: filter.limit,
     search: debouncedSearchValue,
   });
 
-  const columns: TableColumn[] = [
-    {
-      key: "no",
-      title: "No",
-      width: "10%",
-    },
-    {
-      key: "title",
-      title: "제목",
-      width: "60%",
-    },
-    {
-      key: "created_at",
-      title: "생성일",
-      width: "30%",
-    },
-  ];
+  const columns: TableColumn[] = useMemo(
+    () => [
+      {
+        key: "no",
+        title: "No",
+        width: "10%",
+      },
+      {
+        key: "title",
+        title: "제목",
+        width: "60%",
+      },
+      {
+        key: "created_at",
+        title: "생성일",
+        width: "30%",
+      },
+    ],
+    [],
+  );
 
-  const handleSubmit = (e: string) => {
-    setSearch(e);
+  const handleSearchSubmit = (e: string) => {
+    handleSubmit({ ...filter, search: e });
   };
 
   return (
     <div>
-      <SearchBar handleSearch={handleSubmit} isLoading={isLoading} />
+      <SearchBar handleSearch={handleSearchSubmit} isLoading={isFetching} />
       <ListTable
         columns={columns}
         caption="공지사항 테이블"
         totalCount={noticesList?.data.total || 0}
-        isLoading={isLoading}
+        isLoading={isFetching}
         href="/parish-information/notices"
         initialData={
           noticesList?.data?.list?.map((list, index) => ({
@@ -70,9 +82,9 @@ export default function ClientNoticesList() {
         //     return prev;
         //   });
         // }}
-        onPageChange={(page) => {
-          setPage(page.toString());
-        }}
+        onPageChange={(newPage) =>
+          handleSubmit({ ...filter, page: newPage.toString() })
+        }
       />
     </div>
   );

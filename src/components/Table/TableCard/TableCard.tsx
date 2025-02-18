@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+
 import { formatDate } from "@/utils/common";
+
 
 type TableCardType = {
   imgUrl: string;
@@ -7,6 +12,7 @@ type TableCardType = {
   date: string;
   id?: number;
   href?: string;
+
   isLoading?: boolean;
 };
 
@@ -18,9 +24,13 @@ export default function TableCard({
   id,
   isLoading,
 }: TableCardType) {
+  const searchParams = useSearchParams();
+
   const TableCardContainerStyle =
     "flex w-full flex-col gap-y-[15px] border-b border-gray-200";
   const TableCardTextContainerStyle = "flex w-full flex-col gap-y-3 px-6 pb-6";
+
+  const queryString = searchParams.toString();
 
   if (isLoading) {
     const LoadingStyle = "rounded-sm bg-gray-200";
@@ -41,7 +51,7 @@ export default function TableCard({
   }
 
   return (
-    <Link href={`${href}/${id}`}>
+    <Link href={`${href}/${id}?${queryString}`}>
       <div className={TableCardContainerStyle}>
         {imgUrl ? (
           <div className="aspect-[9/10] max-h-[435px] w-full bg-gray-200" />

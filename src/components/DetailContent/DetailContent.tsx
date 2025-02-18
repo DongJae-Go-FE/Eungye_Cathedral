@@ -1,10 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 import Button from "../Button";
 import ImageDownload from "../ImageDownload";
 import ClientContent from "../_clientComponents/ClientDetailContentBox";
 import DetailList from "../DetailList";
-import ClientDateBox from "../_clientComponents/ClientDateBox";
+
+import { formatDate } from "@/utils/common";
 
 type DetailContentType = {
   id: string;
@@ -15,7 +19,7 @@ type DetailContentType = {
   date?: string;
 };
 
-export default async function DetailContent({
+export default function DetailContent({
   id,
   title,
   content,
@@ -23,16 +27,18 @@ export default async function DetailContent({
   imgUrl,
   date,
 }: DetailContentType) {
-  const h4Style = "text-heading04b";
-  const colStyle = "flex flex-col gap-y-3";
+  const searchParams = useSearchParams();
+
+  const h4Style = "text-heading04b mb-3";
 
   return (
     <div className="flex w-full flex-col gap-y-20">
-      <div className={colStyle}>
+      <div className="flex min-h-[221px] flex-col gap-y-3">
         <h3 className="text-heading02b text-black">{title}</h3>
         {date && (
           <div className="text-body02r relative text-gray-500">
-            생성일 : <ClientDateBox date={date} />
+            생성일 :
+            <span className="whitespace-nowrap">{formatDate(date || "")}</span>
           </div>
         )}
         {content && <ClientContent content={content} />}
@@ -49,17 +55,17 @@ export default async function DetailContent({
       )}
 
       {imgUrl && (
-        <div className={colStyle}>
+        <div className="flex flex-col">
           <h4 className={h4Style}>이미지 다운로드</h4>
           <ImageDownload fileName={imgUrl} fileUrl={imgUrl} />
         </div>
       )}
 
-      <div className={colStyle}>
+      <div className="flex flex-col">
         <h4 className={h4Style}>목록</h4>
         <DetailList id={id} href={href} />
         <Button
-          href={`/parish-information/${href}`}
+          href={`/parish-information/${href}?${searchParams.toString()}`}
           className="mt-6 ml-auto"
           color="white"
         >
@@ -69,4 +75,3 @@ export default async function DetailContent({
     </div>
   );
 }
-    

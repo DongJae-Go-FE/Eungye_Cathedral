@@ -5,7 +5,7 @@ type ImageDownloadType = {
   fileUrl: string;
 };
 
-export default async function ImageDownload({
+export default function ImageDownload({
   fileName,
   fileUrl,
 }: ImageDownloadType) {

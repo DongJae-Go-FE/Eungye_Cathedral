@@ -1,3 +1,9 @@
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+
 import GetApi from "@/utils/getApi";
 
 import DetailContent from "@/components/DetailContent";
@@ -25,16 +31,25 @@ export default async function Page({
 
   const newsDetail = await GetApi.getNewsDetail({ id });
 
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["news-adjacent"],
+    queryFn: () => GetApi.getAdjacent({ id: id, href: "news" }),
+  });
+
   return (
     <div>
-      <DetailContent
-        id={id}
-        title={newsDetail.title}
-        content={newsDetail.content}
-        href="news"
-        imgUrl={newsDetail.imgUrl}
-        date={newsDetail.created_at}
-      />
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <DetailContent
+          id={id}
+          title={newsDetail.title}
+          content={newsDetail.content}
+          href="news"
+          imgUrl={newsDetail.imgUrl}
+          date={newsDetail.created_at}
+        />
+      </HydrationBoundary>
     </div>
   );
 }

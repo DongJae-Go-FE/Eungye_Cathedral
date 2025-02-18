@@ -1,3 +1,9 @@
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+
 import GetApi from "@/utils/getApi";
 
 import DetailContent from "@/components/DetailContent";
@@ -25,16 +31,25 @@ export default async function Page({
 
   const weeklysDetail = await GetApi.getWeeklysDetail({ id });
 
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ["weeklys-adjacent"],
+    queryFn: () => GetApi.getAdjacent({ id: id, href: "weeklys" }),
+  });
+
   return (
     <div>
-      <DetailContent
-        id={id}
-        title={weeklysDetail.title}
-        content={weeklysDetail.content}
-        href="weeklys"
-        imgUrl={weeklysDetail.imgUrl}
-        date={weeklysDetail.created_at}
-      />
+      <HydrationBoundary state={dehydrate(queryClient)}>
+        <DetailContent
+          id={id}
+          title={weeklysDetail.title}
+          content={weeklysDetail.content}
+          href="weeklys"
+          imgUrl={weeklysDetail.imgUrl}
+          date={weeklysDetail.created_at}
+        />
+      </HydrationBoundary>
     </div>
   );
 }

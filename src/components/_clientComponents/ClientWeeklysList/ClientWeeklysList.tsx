@@ -1,7 +1,5 @@
 "use client";
 
-import { useState } from "react";
-
 import SearchBar from "@/components/SearchBar";
 import CardTable from "@/components/Table/CardTable/CardTable";
 import InfiniteList from "@/components/Table/InfiniteList/InfiniteList";
@@ -11,18 +9,27 @@ import { formatDate } from "@/utils/common";
 
 import { useInfiniteQuery } from "@tanstack/react-query";
 import useDebounce from "@/hooks/useDebounce";
+import { useFilter } from "@/hooks/useFilter";
 
 import GetList from "@/utils/getApi";
 
+import { RequestFilterListType } from "@/type";
+
 export default function ClientWeeklysList() {
-  const [page, setPage] = useState("1");
-  const [search, setSearch] = useState("");
-
-  const debouncedSearchValue = useDebounce({ value: search, delay: 300 });
-
-  const { data: weeklysList, isLoading } = useWeeklys({
-    page: page,
+  const { filter, handleSubmit } = useFilter<RequestFilterListType>({
+    page: "1",
     limit: "8",
+    search: "",
+  });
+
+  const debouncedSearchValue = useDebounce({
+    value: filter.search,
+    delay: 300,
+  });
+
+  const { data: weeklysList, isFetching } = useWeeklys({
+    page: filter.page,
+    limit: filter.limit,
     search: debouncedSearchValue,
   });
 
@@ -31,14 +38,14 @@ export default function ClientWeeklysList() {
     fetchNextPage,
     isFetchingNextPage,
     status,
-    isLoading: InfiniteIsLoading,
+    isFetching: InfiniteIsLoading,
   } = useInfiniteQuery({
     queryKey: ["weeklys", debouncedSearchValue],
-    queryFn: ({ pageParam = 1 }) =>
+    queryFn: ({ pageParam = filter.page }) =>
       GetList.getNews({
         page: pageParam.toString(),
-        limit: "8",
-        search: search,
+        limit: filter.limit,
+        search: debouncedSearchValue,
       }),
     initialPageParam: 1,
     getNextPageParam: (lastPage) => {
@@ -51,13 +58,13 @@ export default function ClientWeeklysList() {
     },
   });
 
-  const handleSubmit = (e: string) => {
-    setSearch(e);
+  const handleSearchSubmit = (e: string) => {
+    handleSubmit({ ...filter, search: e });
   };
 
   return (
     <div>
-      <SearchBar handleSearch={handleSubmit} isLoading={isLoading} />
+      <SearchBar handleSearch={handleSearchSubmit} isLoading={isFetching} />
       <CardTable
         totalCount={weeklysList?.data.total || 0}
         href="/parish-information/weeklys"
@@ -72,16 +79,10 @@ export default function ClientWeeklysList() {
         }
         page={Number(weeklysList?.page)}
         pageSize={Number(weeklysList?.limit)}
-        isLoading={isLoading}
-        // onPageChange={(page) => {
-        //   setPage((prev) => {
-        //     prev = page.toString();
-        //     return prev;
-        //   });
-        // }}
-        onPageChange={(page) => {
-          setPage(page.toString());
-        }}
+        isLoading={isFetching}
+        onPageChange={(newPage) =>
+          handleSubmit({ ...filter, page: newPage.toString() })
+        }
       />
       <InfiniteList
         data={WeeklysInfiniteList}

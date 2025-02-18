@@ -21,6 +21,7 @@ type CardTableType = {
   href?: string;
   page?: number;
   pageSize?: number;
+
   onPageChange?: (page: number) => void;
 };
 
@@ -76,7 +77,7 @@ export default function CardTable({
         >
           {initialData.map(({ title, date, imgUrl, id }) => {
             return (
-              <li key={id} className="max-w-[404px] max-h-[507px]">
+              <li key={id} className="max-h-[507px] max-w-[404px]">
                 <TableCard
                   title={title}
                   date={date}
