@@ -8,7 +8,7 @@ export default function SideBar() {
   const pathName = usePathname();
 
   const h3Style =
-    "text-heading04b h-[96px] w-full pt-10 pb-[26px] pl-8 text-black";
+    "text-heading04b h-[96px] w-full pt-10 pb-[26px] pl-8 text-black mb-0";
   const navStyle = "w-full";
 
   const sections = [
