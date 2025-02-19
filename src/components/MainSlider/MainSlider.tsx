@@ -228,7 +228,7 @@ export default function MainSlider() {
         </button>
       </div>
       <div className="absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-75" />
-      <h2 className="text-heading01b absolute bottom-32 left-20 z-10 text-[56px] text-gray-300 mobile:hidden tablet:hidden desktop:block">
+      <h2 className="text-heading01b mobile:hidden tablet:hidden desktop:block absolute bottom-[17dvh] left-20 z-10 mb-0 text-[3.5dvw] text-gray-300">
         안녕하세요 <br /> 은계성당 홈페이지에 오신 걸 환영합니다.
       </h2>
     </div>
