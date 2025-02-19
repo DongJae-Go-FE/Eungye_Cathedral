@@ -63,7 +63,7 @@ export default function CardTable({
   }
 
   const ulStyle =
-    "relative grid min-h-[942px] justify-center gap-5 rounded-b-md";
+    "relative grid min-h-[485px] justify-center gap-5 rounded-b-md";
 
   return (
     <div className="mobile:hidden desktop:block">
@@ -77,7 +77,7 @@ export default function CardTable({
         >
           {initialData.map(({ title, date, imgUrl, id }) => {
             return (
-              <li key={id} className="max-h-[507px] max-w-[404px]">
+              <li key={id} className="max-h-[452px] max-w-[322px]">
                 <TableCard
                   title={title}
                   date={date}
