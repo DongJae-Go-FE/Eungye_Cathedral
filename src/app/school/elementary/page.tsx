@@ -1,6 +1,13 @@
+import { Metadata } from "next";
+
 import Section01 from "@/screen/school/_components/Section01";
 import Section02 from "@/screen/school/_components/Section02";
 import Section03 from "@/screen/school/_components/Section03";
+
+export const metadata: Metadata = {
+  title: "주일학교 초등부 - 은계성당",
+  description: "은계성당 주일학교 초등부 페이지입니다.",
+};
 
 export default async function Page() {
   return (

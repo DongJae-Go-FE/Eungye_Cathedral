@@ -1,8 +1,15 @@
+import { Metadata } from "next";
+
 import Section01 from "@/screen/introduction/Nave/Section01";
 import Section02 from "@/screen/introduction/Nave/Section02";
 import Section03 from "@/screen/introduction/Nave/Section03";
 
 import ScrollDown from "@/components/ScrollDown";
+
+export const metadata: Metadata = {
+  title: "본당 소개 페이지 - 은계성당",
+  description: "은계성당 본당 소개 페이지입니다.",
+};
 
 export default async function Page() {
   return (

@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import {
   dehydrate,
   HydrationBoundary,
@@ -6,6 +8,11 @@ import {
 import GetList from "@/utils/getApi";
 
 import ClientWeeklysList from "@/components/_clientComponents/ClientWeeklysList";
+
+export const metadata: Metadata = {
+  title: "주보 - 은계성당",
+  description: "은계성당 주보 페이지입니다.",
+};
 
 export default async function Page() {
   const queryClient = new QueryClient();

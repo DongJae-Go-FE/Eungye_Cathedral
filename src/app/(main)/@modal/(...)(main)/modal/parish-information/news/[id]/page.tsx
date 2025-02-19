@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+
 import Image from "next/image";
 
 import Modal from "@/components/Modal/Modal";
@@ -19,6 +21,26 @@ export async function generateStaticParams(): Promise<{ id: string }[]> {
       id: value.id.toString(),
     })) || []
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+
+  const data = await GetApi.getNewsDetail({ id });
+
+  return {
+    title: `${data.title} 본당 소식 상세 페이지 - 은계성당`,
+    description: `${data.content}`,
+    openGraph: {
+      title: `${data.title} 본당 소식 상세 페이지 - 은계성당`,
+      description: `${data.content}`,
+      images: [data.imgUrl || ""],
+    },
+  };
 }
 
 export default async function Page({
