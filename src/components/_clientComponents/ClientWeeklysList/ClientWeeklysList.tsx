@@ -4,7 +4,7 @@ import SearchBar from "@/components/SearchBar";
 import CardTable from "@/components/Table/CardTable/CardTable";
 import InfiniteList from "@/components/Table/InfiniteList/InfiniteList";
 
-import { useWeeklys } from "@/queryApi/useListQuery";
+import { useWeeklys } from "@/hooks/useListQuery";
 import { formatDate } from "@/utils/common";
 
 import { useInfiniteQuery } from "@tanstack/react-query";

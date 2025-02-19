@@ -6,7 +6,7 @@ import SearchBar from "@/components/SearchBar";
 import ListTable from "@/components/Table/ListTable";
 
 import { TableColumn } from "@/components/Table/ListTable/ListTable";
-import { useNotices } from "@/queryApi/useListQuery";
+import { useNotices } from "@/hooks/useListQuery";
 import { formatDate } from "@/utils/common";
 
 import useDebounce from "@/hooks/useDebounce";
@@ -76,12 +76,6 @@ export default function ClientNoticesList() {
         }
         page={Number(noticesList?.page)}
         pageSize={Number(noticesList?.limit)}
-        // onPageChange={(page) => {
-        //   setPage((prev) => {
-        //     prev = page.toString();
-        //     return prev;
-        //   });
-        // }}
         onPageChange={(newPage) =>
           handleSubmit({ ...filter, page: newPage.toString() })
         }

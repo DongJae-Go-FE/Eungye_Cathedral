@@ -35,11 +35,11 @@ export default function DetailList({ href, id }: DetailListType) {
       <ul className="text-body02r h-[98px] w-full text-black">
         <li className={liStyle}>
           <div className={titleBox}>이전 글</div>
-          <div className={contentBox}></div>
+          <div className={contentBox} />
         </li>
         <li className={liStyle}>
           <div className={titleBox}>다음 글</div>
-          <div className={contentBox}></div>
+          <div className={contentBox} />
         </li>
       </ul>
     );
