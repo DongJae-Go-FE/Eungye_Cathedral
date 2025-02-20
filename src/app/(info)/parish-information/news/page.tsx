@@ -11,7 +11,7 @@ import ClientNewsList from "@/components/_clientComponents/ClientNewsList";
 
 export const metadata: Metadata = {
   title: "본당소식 - 은계성당",
-  description: "은계성당 본당소식 페이지입니다.",
+  description: "은계성당 본당소식 페이지입니다. 해당 페이지는 은계성당 본당소식을 보는 리스트 페이지입니다.",
 };
 
 export default async function Page() {

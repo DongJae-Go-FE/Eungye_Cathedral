@@ -8,7 +8,7 @@ import ScrollDown from "@/components/ScrollDown";
 
 export const metadata: Metadata = {
   title: "본당 소개 페이지 - 은계성당",
-  description: "은계성당 본당 소개 페이지입니다.",
+  description: "은계성당 본당 소개 페이지입니다. 지금까지의 본당 역사를 소개하는 페이지입니다.",
 };
 
 export default async function Page() {

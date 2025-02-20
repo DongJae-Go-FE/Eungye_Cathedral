@@ -6,7 +6,7 @@ import Section03 from "@/screen/school/_components/Section03";
 
 export const metadata: Metadata = {
   title: "주일학교 초등부 - 은계성당",
-  description: "은계성당 주일학교 초등부 페이지입니다.",
+  description: "은계성당 주일학교 초등부 페이지입니다. 은계성당 주일학교 초등부를 소개하고 홍보하는 페이지입니다.",
 };
 
 export default async function Page() {

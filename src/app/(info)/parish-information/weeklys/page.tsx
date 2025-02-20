@@ -11,7 +11,7 @@ import ClientWeeklysList from "@/components/_clientComponents/ClientWeeklysList"
 
 export const metadata: Metadata = {
   title: "주보 - 은계성당",
-  description: "은계성당 주보 페이지입니다.",
+  description: "은계성당 주보 페이지입니다. 해당 페이지는 은계성당 주보를 보는 페이지입니다.",
 };
 
 export default async function Page() {
