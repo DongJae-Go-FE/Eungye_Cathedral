@@ -13,7 +13,7 @@ export default async function Page() {
   return (
     <div className="sub-container">
       <Section01
-        title={`안녕하세요!\n은계성당 중등부입니다.`}
+        title={`안녕하세요!\n은계성당 중고등부입니다.`}
         content="우리는 은계성당입니다.우리는 은계성당입니다.우리는
               은계성당입니다.우리는 은계성당입니다.우리는 은계성당입니다.우리는
               은계성당입니다.우리는 은계성당입니다.우리는 은계성당입니다.우리는
@@ -21,13 +21,13 @@ export default async function Page() {
               은계성당입니다.우리는 은계성당입니다."
       />
       <Section02
-        title="중등부는 언제든지 환영합니다."
+        title="중고등부는 언제든지 환영합니다."
         content="우리와 함께해요"
         btnHref="/"
         btnTitle="은계성당 연락하기"
       />
       <Section03
-        title="중등부 활동을 소개합니다."
+        title="중고등부 활동을 소개합니다."
         btnTitle="은계성당 연락하기"
         btnHref="/"
         card={{

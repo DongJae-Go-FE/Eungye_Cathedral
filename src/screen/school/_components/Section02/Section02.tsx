@@ -52,12 +52,12 @@ export default function Section02({
       <h3 className={h3Style} ref={h3Ref}>
         {title}
       </h3>
-      <p
+      <strong
         className={`text-body01m mb-8 ${isVisibleTwo ? "fadeInUp" : ""}`}
         ref={pRef}
       >
         {content}
-      </p>
+      </strong>
       <SchoolButton href={btnHref}>{btnTitle}</SchoolButton>
     </section>
   );
