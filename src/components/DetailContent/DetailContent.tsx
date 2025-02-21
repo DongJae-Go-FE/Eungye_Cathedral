@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 
 import Button from "../Button";
-import ImageDownload from "../ImageDownload";
 import ClientContent from "../_clientComponents/ClientDetailContentBox";
 import DetailList from "../DetailList";
 
@@ -52,13 +51,6 @@ export default function DetailContent({
           height={676}
           priority
         />
-      )}
-
-      {imgUrl && (
-        <div className="flex flex-col">
-          <h4 className={h4Style}>이미지 다운로드</h4>
-          <ImageDownload fileName={imgUrl} fileUrl={imgUrl} />
-        </div>
       )}
 
       <div className="flex flex-col">

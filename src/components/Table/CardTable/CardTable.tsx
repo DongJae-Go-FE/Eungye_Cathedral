@@ -72,12 +72,13 @@ export default function CardTable({
         <ul
           className={ulStyle}
           style={{
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gridTemplateColumns:
+              "repeat(auto-fill, minmax(min(300px,100%), 1fr))",
           }}
         >
           {initialData.map(({ title, date, imgUrl, id }) => {
             return (
-              <li key={id} className="max-h-[452px] max-w-[322px]">
+              <li key={id}>
                 <TableCard
                   title={title}
                   date={date}
