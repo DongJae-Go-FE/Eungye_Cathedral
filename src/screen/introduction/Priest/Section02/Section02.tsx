@@ -13,7 +13,7 @@ export default function Section02() {
 
   return (
     <section className="priest-section">
-      <div className="bg-white">
+      <div className="flex items-center justify-center bg-white">
         {frame === 1 && <div className="fadeInUp h-full w-full bg-gray-600" />}
         {frame === 2 && <div className="fadeInUp h-full w-full bg-gray-300" />}
       </div>
