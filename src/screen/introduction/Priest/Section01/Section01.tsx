@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useContext } from "react";
 
 import ScrollDown from "@/components/ScrollDown";
@@ -14,8 +16,17 @@ export default function Section01() {
 
   return (
     <section className="priest-section relative">
-      <div className="bg-white">
-        {frame === 1 && <div className="fadeInUp h-full w-full bg-gray-600" />}
+      <div className="flex items-center justify-center bg-white">
+        {frame === 1 && (
+          <Image
+            src="/bg1.png"
+            width={691}
+            height={733}
+            alt="신부님 사진"
+            className="fadeInUp"
+            priority
+          />
+        )}
         {frame === 2 && <div className="fadeInUp h-full w-full bg-gray-300" />}
       </div>
       <div>
