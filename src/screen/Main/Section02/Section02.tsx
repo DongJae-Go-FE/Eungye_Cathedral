@@ -23,7 +23,7 @@ export default async function Section02() {
             <ul>
               <li className="mb-1">
                 <strong className="text-heading03b">
-                  주소 : 경기 시흥시 은계중앙로 17(우편번호 14922)
+                  주소 : 경기도 시흥시 은계중앙로 17(우편번호 14922)
                 </strong>
               </li>
               <li>

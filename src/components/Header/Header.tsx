@@ -106,7 +106,7 @@ export default function Header() {
                         <span
                           className={`${depthSpanStyle} ${pathName === "/introduction/priest" ? twoDepthOnStyle : twoDepthStyle}`}
                         >
-                          역대 본당 주임 사제
+                          사제
                         </span>
                       </Link>
                     </li>

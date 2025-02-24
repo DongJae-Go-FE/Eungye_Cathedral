@@ -5,17 +5,14 @@ export default async function Section05() {
   return (
     <section className="main-section main-bg bg-[url('/bg3.png')]">
       <MainIntroduction
-        title="주일학교입니다."
-        content={`은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.은계성당 주일학교를 소개합니다.\n은계성당 주일학교를 소개합니다.`}
-        titleBtnName="주일학교"
-        titleBtnHref="/school"
+        title="은계성당 신부님"
+        content={`은계성당의 역대 신부님들을 소개합니다.\n아래 버튼을 누르면 소개 페이지로 이동합니다.`}
+        titleBtnName="사제 안내"
+        titleBtnHref="/introduction/priest"
       >
         <ul>
           <li>
-            <MainButton title="메인" href="/" />
-          </li>
-          <li>
-            <MainButton title="메인" href="/" />
+            <MainButton title="이동하기" href="/introduction/priest" />
           </li>
         </ul>
       </MainIntroduction>

@@ -99,7 +99,7 @@ export default function Menu({
                     className={`${menuLiStyle} ${pathName === "/introduction/priest" ? menuLiTextOnStyle : menuLiTextStyle}`}
                     onClick={onClose}
                   >
-                    역대 본당 주임 사제
+                    사제
                   </Link>
                 </li>
               </ul>

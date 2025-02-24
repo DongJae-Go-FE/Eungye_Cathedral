@@ -20,24 +20,32 @@ export default function Footer() {
         <h3 className="mb-[50px]">로고</h3>
         <address className="not-italic">
           <ul className={`flex flex-col gap-y-2 ${pStyle}`}>
-            <li>도로명 주소: 주소를 쓸거임</li>
-            <li>지번주소: 주소를 쓸거임</li>
-            <li>이메일: </li>
+            <li>도로명 주소 : 경기도 시흥시 은계중앙로 17(우편번호 14922)</li>
+            <li>지번 주소 : 경기도 시흥시 은행동 657(우편번호 14922)</li>
+            <li>이메일 : masterforce999@naver.com</li>
           </ul>
         </address>
       </div>
       <hr className="mobile:block tablet:hidden h-[1px] bg-white" />
       <div className="mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none">
-        <h3 className="text-heading03b">031-311-1111</h3>
+        <h3 className="text-heading03b">031-317-2021</h3>
         <p className={pStyle}>운영시간: 10:00 ~ 18:00</p>
         <ul className="mt-4 mb-12 flex gap-x-4">
           <li>
-            <Link href="/" className={linkStyle}>
+            <Link
+              href="http://www.caincheon.or.kr/"
+              className={linkStyle}
+              target="_blank"
+            >
               인천교구청
             </Link>
           </li>
           <li>
-            <Link href="/" className={linkStyle}>
+            <Link
+              href="https://youth.caincheon.or.kr/"
+              className={linkStyle}
+              target="_blank"
+            >
               인천교구 청소년 사목국
             </Link>
           </li>
