@@ -8,7 +8,7 @@
 
 @utility main-section {
   /* 메인 이미지 배경용 css*/
-  @apply mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40 flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat;
+  @apply mobile:px-[8dvw] mobile:py-[30dvh] tablet:px-[10dvw] tablet:py-[20dvh] desktop:px-[120px] desktop:pb-40 relative flex min-h-[100dvh] w-[100dvw] flex-col justify-end bg-cover bg-no-repeat;
   ul {
     @apply mobile:flex-col mobile:gap-y-2 tablet:flex-col tablet:gap-y-2 desktop:flex-row desktop:gap-x-4 flex;
 
@@ -25,6 +25,10 @@
 
 @utility main-bg {
   @apply bg-cover bg-center bg-no-repeat;
+}
+
+@utility bg-backdrop {
+  @apply absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-75;
 }
 
 @utility sub-container {

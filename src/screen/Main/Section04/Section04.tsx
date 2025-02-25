@@ -16,6 +16,7 @@ export default async function Section04() {
           </li>
         </ul>
       </MainIntroduction>
+      <div className="bg-backdrop" />
     </section>
   );
 }

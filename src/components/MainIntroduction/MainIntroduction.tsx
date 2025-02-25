@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { Fragment, PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 
 interface MainIntroduction extends PropsWithChildren {
   titleBtnName: string;
@@ -17,11 +17,11 @@ export default async function MainIntroduction({
   children,
 }: MainIntroduction) {
   return (
-    <Fragment>
-      <h3 className="mb-4 flex flex-col text-heading01r text-white">
+    <div className="relative z-20">
+      <h3 className="text-heading01r mb-4 flex flex-col text-white">
         <Link
           href={titleBtnHref}
-          className="flex items-center gap-1 text-body01r text-xl text-white"
+          className="text-body01r flex items-center gap-1 text-xl text-white"
         >
           {titleBtnName}
           <svg
@@ -36,10 +36,10 @@ export default async function MainIntroduction({
         </Link>
         {title}
       </h3>
-      <p className="mb-11 whitespace-pre-wrap text-body01r text-white">
+      <p className="text-body01r mb-11 whitespace-pre-wrap text-white">
         {content}
       </p>
       {children}
-    </Fragment>
+    </div>
   );
 }
