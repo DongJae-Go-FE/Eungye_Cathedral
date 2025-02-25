@@ -101,7 +101,7 @@ export default function Section03() {
   }, []);
 
   const containerStyle =
-    "sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3 overflow-x-hidden";
+    "sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3 overflow-x-hidden z-24";
 
   const pStyle =
     "desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b";

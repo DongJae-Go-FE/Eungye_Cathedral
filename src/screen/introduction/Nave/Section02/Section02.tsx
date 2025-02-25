@@ -222,8 +222,10 @@ export default function Section02() {
   }, []);
 
   const ulStyle = "relative flex w-full flex-col items-center justify-center";
-  const boxStyle = "absolute top-0 h-[70dvh] w-3/4 rounded-2xl";
+  const boxStyle = "absolute top-0 h-[70dvh] w-3/4 rounded-2xl p-4";
+  const textStyle = "relative z-20";
   const opacityStyle = "opacity-0";
+  const backDropStyle = "bg-backdrop rounded-2xl";
 
   return (
     <div className="sticky top-[20%] w-full">
@@ -232,56 +234,71 @@ export default function Section02() {
           className={`${boxStyle} bg-red-100 text-white opacity-0`}
           ref={liOne}
         >
-          <h4 ref={liOneH4} className={opacityStyle}>
-            테스트1
-          </h4>
-          <p ref={liOneP} className={opacityStyle}>
-            문구
-          </p>
+          <div className={textStyle}>
+            <h4 ref={liOneH4} className={opacityStyle}>
+              테스트1
+            </h4>
+            <p ref={liOneP} className={opacityStyle}>
+              문구
+            </p>
+          </div>
+          <div className={backDropStyle} />
         </li>
         <li
           className={`${boxStyle} bg-blue-100 text-white opacity-0`}
           ref={liTwo}
         >
-          <h4 ref={liTwoH4} className={opacityStyle}>
-            테스트2
-          </h4>
-          <p ref={liTwoP} className={opacityStyle}>
-            문구
-          </p>
+          <div className={textStyle}>
+            <h4 ref={liTwoH4} className={opacityStyle}>
+              테스트2
+            </h4>
+            <p ref={liTwoP} className={opacityStyle}>
+              문구
+            </p>
+          </div>
+          <div className={backDropStyle} />
         </li>
         <li
           className={`${boxStyle} bg-green-100 text-white opacity-0`}
           ref={liThree}
         >
-          <h4 ref={liThreeH4} className={opacityStyle}>
-            테스트3
-          </h4>
-          <p ref={liThreeP} className={opacityStyle}>
-            문구
-          </p>
+          <div className={textStyle}>
+            <h4 ref={liThreeH4} className={opacityStyle}>
+              테스트3
+            </h4>
+            <p ref={liThreeP} className={opacityStyle}>
+              문구
+            </p>
+          </div>
+          <div className={backDropStyle} />
         </li>
         <li
           className={`${boxStyle} bg-yellow-100 text-white opacity-0`}
           ref={liFour}
         >
-          <h4 ref={liFourH4} className={opacityStyle}>
-            테스트4
-          </h4>
-          <p ref={liFourP} className={opacityStyle}>
-            문구
-          </p>
+          <div className={textStyle}>
+            <h4 ref={liFourH4} className={opacityStyle}>
+              테스트4
+            </h4>
+            <p ref={liFourP} className={opacityStyle}>
+              문구
+            </p>
+          </div>
+          <div className={backDropStyle} />
         </li>
         <li
           className={`${boxStyle} bg-purple-100 text-white opacity-0`}
           ref={liFive}
         >
-          <h4 ref={liFiveH4} className={opacityStyle}>
-            테스트5
-          </h4>
-          <p ref={liFiveP} className={opacityStyle}>
-            문구
-          </p>
+          <div className={textStyle}>
+            <h4 ref={liFiveH4} className={opacityStyle}>
+              테스트5
+            </h4>
+            <p ref={liFiveP} className={opacityStyle}>
+              문구
+            </p>
+          </div>
+          <div className={backDropStyle} />
         </li>
       </ul>
     </div>
