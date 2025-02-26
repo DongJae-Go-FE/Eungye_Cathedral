@@ -75,11 +75,14 @@ export default function Section01() {
         지금부터
         <div className="desktop:flex-row mobile:flex-col flex gap-x-3">
           <div className={mouseAnimationBoxStyle}>
-            <h4 className="absolute top-0 opacity-0" ref={h3OneRef}>
+            <h4
+              className="absolute top-0 whitespace-nowrap opacity-0"
+              ref={h3OneRef}
+            >
               은계성당
             </h4>
             <h4
-              className="absolute top-0 text-blue-600 opacity-0"
+              className="absolute top-0 whitespace-nowrap text-blue-600 opacity-0"
               ref={h3TwoRef}
             >
               은계성당

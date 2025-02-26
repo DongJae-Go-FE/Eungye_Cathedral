@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+
 import { useSearchParams } from "next/navigation";
 
 import { formatDate } from "@/utils/common";
-
 
 type TableCardType = {
   imgUrl: string;
@@ -54,9 +55,21 @@ export default function TableCard({
     <Link href={`${href}/${id}?${queryString}`}>
       <div className={TableCardContainerStyle}>
         {imgUrl ? (
-          <div className="aspect-[9/10] max-h-[435px] w-full bg-gray-200" />
+          <Image
+            className="aspect-[9/10] max-h-[435px] w-full bg-gray-200 object-cover"
+            src="/bg1.png"
+            width={322}
+            height={358}
+            alt="이미지 테스트"
+          />
         ) : (
-          <div className="aspect-[9/10] max-h-[435px] w-full bg-gray-200" />
+          <Image
+            className="aspect-[9/10] max-h-[435px] w-full bg-gray-200 object-cover"
+            src="/bg1.png"
+            width={322}
+            height={358}
+            alt="이미지 테스트"
+          />
         )}
         <div className={TableCardTextContainerStyle}>
           <h3 className="text-body01b truncate text-black" title={title}>

@@ -35,14 +35,26 @@ export default function Section02({
     });
   };
 
+  const options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  };
+
   useObserver({
     target: h3Ref,
     onIntersect: handleIntersect,
+    root: options.root,
+    rootMargin: options.rootMargin,
+    threshold: options.threshold,
   });
 
   useObserver({
     target: pRef,
     onIntersect: handleIntersect,
+    root: options.root,
+    rootMargin: options.rootMargin,
+    threshold: options.threshold,
   });
 
   const h3Style = `desktop:text-4xl desktop:leading-[60px] tablet:text-3xl tablet:leading-[44px] mobile:text-2xl mobile:leading-8 desktop:mb-6 table:mb-4 mobile:mb-2 translate-y-[8%] font-black tracking-[2] opacity-0 ${isVisible ? "fadeInUp" : ""}`;

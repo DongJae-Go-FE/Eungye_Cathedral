@@ -2,7 +2,7 @@ import Map from "@/components/Map/Map";
 
 export default async function Section02() {
   const leftBoxStyle =
-    "mobile:w-full mobile:border-b mobile:border-[#d9d9d9] mobile:pb-[16dvw] tablet:w-full tablet:border-b tablet:border-[#d9d9d9] tablet:pb-[10dvw] desktop:flex-1 desktop:border-b-0 desktop:border-r desktop:border-[#d9d9d9] desktop:pr-[120px]";
+    "mobile:w-full mobile:border-b mobile:border-[#d9d9d9] mobile:pb-[16dvw] tablet:w-full tablet:border-b tablet:border-[#d9d9d9] tablet:pb-[10dvw] desktop:flex-1 desktop:border-b-0 desktop:border-r desktop:border-[#d9d9d9] desktop:pr-[120px] desktop:pb-0";
   const rightBoxStyle =
     "mobile:w-full mobile:pt-[16dvw] tablet:w-full tablet:pt-[10dvw] desktop:flex-1 desktop:pl-[120px] desktop:pt-0";
   const aStyle = "text-body01m text-xl";
@@ -14,9 +14,9 @@ export default async function Section02() {
   const tableContentLastStyle = "h-14 py-2.5";
 
   return (
-    <div className="main-container min-h-[60dvh]">
+    <div className="main-container">
       <h2>성당 및 미사안내</h2>
-      <div className="flex h-[calc(100%-128px)] mobile:flex-wrap tablet:flex-wrap">
+      <div className="mobile:flex-wrap tablet:flex-wrap flex">
         <div className={leftBoxStyle}>
           <Map />
           <address className="mt-6 not-italic">
