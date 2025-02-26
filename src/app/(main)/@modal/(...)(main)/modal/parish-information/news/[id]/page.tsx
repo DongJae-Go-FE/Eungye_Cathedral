@@ -5,7 +5,6 @@ import Image from "next/image";
 import Modal from "@/components/Modal/Modal";
 import GetApi from "@/utils/getApi";
 
-import ImageDownload from "@/components/ImageDownload";
 import ClientContent from "@/components/_clientComponents/ClientDetailContentBox";
 import ClientDateBox from "@/components/_clientComponents/ClientDateBox";
 
@@ -73,15 +72,6 @@ export default async function Page({
             height={300}
             priority
           />
-        )}
-        {newsDetail.imgUrl && (
-          <div className={colStyle}>
-            <h4 className="text-heading04b">이미지 다운로드</h4>
-            <ImageDownload
-              fileName={newsDetail.imgUrl}
-              fileUrl={newsDetail.imgUrl}
-            />
-          </div>
         )}
       </div>
     </Modal>
