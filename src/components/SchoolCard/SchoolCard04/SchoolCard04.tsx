@@ -26,7 +26,7 @@ export default function SchoolCard04({
           <h3 className="desktop:text-2xl tablet:text-[16px] font-black tracking-widest">
             {contentTitle}
           </h3>
-          <p className="desktop:text-[18px] tablet:text-[14px] mobile:text-[12px] mobile:text-center tablet:text-left w-3/4 whitespace-pre-wrap">
+          <p className="desktop:text-[18px] tablet:text-[14px] mobile:text-[12px] mobile:text-center tablet:text-right w-3/4 whitespace-pre-wrap">
             {contentInfo}
           </p>
         </div>
