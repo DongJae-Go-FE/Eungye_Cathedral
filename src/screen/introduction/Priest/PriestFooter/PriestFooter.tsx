@@ -13,10 +13,10 @@ export default function PriestFooter() {
       <div className={addressContainer}>
         <h3 className="mb-[50px]">로고</h3>
         <address className="not-italic">
-          <ul className={`flex flex-col gap-y-2 ${pStyle}`}>
-            <li>도로명 주소: 주소를 쓸거임</li>
-            <li>지번주소: 주소를 쓸거임</li>
-            <li>이메일: </li>
+        <ul className={`flex flex-col gap-y-2 ${pStyle}`}>
+            <li>도로명 주소 : 경기도 시흥시 은계중앙로 17(우편번호 14922)</li>
+            <li>지번 주소 : 경기도 시흥시 은행동 657(우편번호 14922)</li>
+            <li>이메일 : masterforce999@naver.com</li>
           </ul>
         </address>
       </div>
