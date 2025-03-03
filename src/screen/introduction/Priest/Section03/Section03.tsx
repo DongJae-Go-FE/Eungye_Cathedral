@@ -33,7 +33,7 @@ export default function Section03() {
             "신부님 약력",
             "신부님 약력",
           ]}
-          scripture="asdasdsasdasdsas dasdsasdasdsasdas asda"
+          scripture="asdasdsasdasdsas dasdsasdasdsasdas"
         />
       </div>
     </section>
