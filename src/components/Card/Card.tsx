@@ -1,8 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import Empty from "@/components/Empty";
-
 import { formatDate } from "@/utils/common";
 
 type CardType = {
