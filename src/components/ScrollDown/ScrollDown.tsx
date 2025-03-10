@@ -47,7 +47,7 @@ export default function ScrollDown({
       className={`scroll-down mobile:bottom-2 tablet:bottom-8 absolute left-1/2 -translate-x-1/2 p-0 ${hide ? "invisible opacity-0" : ""}`}
     >
       <div
-        className={`text-heading04r animate-bounce ${color === "black" ? "text-black" : "text-white"}`}
+        className={`heading04r animate-bounce ${color === "black" ? "text-black" : "text-white"}`}
       >
         Scroll Down
         <svg

@@ -58,7 +58,7 @@ export default async function Page({
       <div className="flex flex-col gap-y-4">
         <div className={colStyle}>
           {newsDetail.created_at && (
-            <div className="text-body02r relative text-gray-500">
+            <div className="body02r relative text-gray-500">
               생성일 : <ClientDateBox date={newsDetail.created_at} />
             </div>
           )}

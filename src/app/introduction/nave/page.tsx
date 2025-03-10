@@ -17,9 +17,9 @@ export default async function Page() {
     <div className="sub-container relative">
       <div className="bg-black">
         <div className="relative flex h-[calc(100dvh-64px)] w-[100dvw] items-center justify-center">
-          <h2 className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b mb-0 text-white">
+          <h2 className="desktop:heading01b tablet:heading02b mobile:heading03b mb-0 text-white">
             안녕하세요{" "}
-            <strong className="desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b">
+            <strong className="desktop:heading01b tablet:heading02b mobile:heading03b">
               은계성당
             </strong>{" "}
             입니다.

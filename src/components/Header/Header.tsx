@@ -28,22 +28,22 @@ export default function Header() {
 
   const liSpanAfterStyle =
     " after:content-[''] after:absolute after:w-0 after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-white after:transition-[width] after:duration-200";
-  const liSpanStyle = `flex items-center h-full text-white relative hover:text-body01b hover:after:w-full ${liSpanAfterStyle}`;
+  const liSpanStyle = `flex items-center h-full text-white relative hover:body01b hover:after:w-full ${liSpanAfterStyle}`;
 
   const depthStyle = `${isOpen ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"} transition-[grid-template-rows] duration-300`;
   const depthUlStyle = "overflow-hidden";
   const depthLiStyle = "w-full h-[64px]";
   const depthLinkStyle = `flex w-full h-full items-center justify-center text-white`;
 
-  const oneDepthStyle = "text-body01r";
-  const oneDepthOnStyle = "text-body01b after:w-full";
+  const oneDepthStyle = "body01r";
+  const oneDepthOnStyle = "body01b after:w-full";
 
   const depthSpanAfterStyle =
     "after:content-[''] after:absolute after:w-0 after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:h-0.5 after:bg-white after:transition-[width] after:duration-200";
-  const depthSpanStyle = `relative hover:after:w-full hover:text-body02b ${depthSpanAfterStyle}`;
+  const depthSpanStyle = `relative hover:after:w-full hover:body02b ${depthSpanAfterStyle}`;
 
-  const twoDepthStyle = "text-body02r after:w-0";
-  const twoDepthOnStyle = "text-body02b after:w-full";
+  const twoDepthStyle = "body02r after:w-0";
+  const twoDepthOnStyle = "body02b after:w-full";
 
   const handleDrawer = () => {
     setIsDrawerOpen(true);

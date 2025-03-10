@@ -14,6 +14,8 @@ const pretendard = localFont({
 });
 
 export const metadata: Metadata = {
+  /** 추후 배포 후 수정 필요 */
+  metadataBase: new URL('http://localhost:9091'),
   title: "은계성당",
   description: "안녕하세요 인천교구 은계성당 페이지에 오신걸 환영합니다. 경기도 시흥시 은행동에 있는 은계성당을 소개하는 페이지입니다.",
   keywords:

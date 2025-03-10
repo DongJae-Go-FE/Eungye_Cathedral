@@ -55,10 +55,10 @@ export default async function Card({
           />
         )}
         <figcaption className="flex flex-col gap-y-1">
-          <h3 className="text-heading03b w-11/12 truncate" title={title}>
+          <h3 className="heading03b w-11/12 truncate" title={title}>
             {title}
           </h3>
-          <p className="text-body01b text-gray-600">
+          <p className="body01b text-gray-600">
             {date ? formatDate(date) : "-"}
           </p>
         </figcaption>

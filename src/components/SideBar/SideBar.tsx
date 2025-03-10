@@ -8,7 +8,7 @@ export default function SideBar() {
   const pathName = usePathname();
 
   const h3Style =
-    "text-heading04b h-[96px] w-full pt-10 pb-[26px] pl-8 text-black mb-0";
+    "heading04b h-[96px] w-full pt-10 pb-[26px] pl-8 text-black mb-0";
   const navStyle = "w-full";
 
   const sections = [
@@ -57,8 +57,8 @@ export default function SideBar() {
                   href={href}
                   className={`block h-full w-full px-8 py-3 ${
                     pathName.includes(href)
-                      ? "text-body01b text-black"
-                      : "text-body01m text-gray-600"
+                      ? "body01b text-black"
+                      : "body01m text-gray-600"
                   }`}
                 >
                   {title}

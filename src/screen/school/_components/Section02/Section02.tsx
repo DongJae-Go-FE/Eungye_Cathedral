@@ -65,7 +65,7 @@ export default function Section02({
         {title}
       </h3>
       <strong
-        className={`text-body01m mb-8 ${isVisibleTwo ? "fadeInUp" : ""}`}
+        className={`body01m mb-8 ${isVisibleTwo ? "fadeInUp" : ""}`}
         ref={pRef}
       >
         {content}

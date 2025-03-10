@@ -47,7 +47,7 @@ export default function MainSlider() {
       const paginationInstance = new Pagination({
         type: "fraction",
         renderFraction: (currentClass, totalClass) => {
-          return `<span class="${currentClass} text-heading01b text-white"></span> <span class="text-heading03r text-gray-100"> / </span> <span class="${totalClass} text-heading03r text-gray-100"></span>`;
+          return `<span class="${currentClass} heading01b text-white"></span> <span class="heading03r text-gray-100"> / </span> <span class="${totalClass} heading03r text-gray-100"></span>`;
         },
         fractionCurrentFormat: (index) => {
           return `0${index.toString()}`;
@@ -228,7 +228,7 @@ export default function MainSlider() {
         </button>
       </div>
       <div className="bg-backdrop" />
-      <h2 className="text-heading01b mobile:hidden tablet:hidden desktop:block absolute bottom-[17dvh] left-20 z-10 mb-0 text-[3.5dvw] text-gray-300">
+      <h2 className="heading01b mobile:hidden tablet:hidden desktop:block absolute bottom-[17dvh] left-20 z-10 mb-0 text-[3.5dvw] text-gray-300">
         안녕하세요 <br /> <strong>은계성당</strong>에 오신 걸 환영합니다.
       </h2>
     </div>

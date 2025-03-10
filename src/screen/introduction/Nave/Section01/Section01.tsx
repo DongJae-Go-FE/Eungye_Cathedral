@@ -65,7 +65,7 @@ export default function Section01() {
   }, []);
 
   const h3Style =
-    "desktop:text-heading01b tablet:text-heading02b mobile:text-heading03b desktop:flex-row mobile:flex-col flex justify-center gap-x-3 text-white";
+    "desktop:heading01b tablet:heading02b mobile:heading03b desktop:flex-row mobile:flex-col flex justify-center gap-x-3 text-white";
   const mouseAnimationBoxStyle =
     "desktop:w-[139px] mobile:w-full mobile:flex desktop:block mobile:justify-center desktop:justify-normal desktop:h-0 mobile:h-9 tablet:h-[48px] relative";
 

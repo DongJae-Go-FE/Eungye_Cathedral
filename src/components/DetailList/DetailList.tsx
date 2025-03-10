@@ -32,7 +32,7 @@ export default function DetailList({ href, id }: DetailListType) {
 
   if (isLoading) {
     return (
-      <ul className="text-body02r h-[98px] w-full text-black">
+      <ul className="body02r h-[98px] w-full text-black">
         <li className={liStyle}>
           <div className={titleBox}>이전 글</div>
           <div className={contentBox} />
@@ -46,7 +46,7 @@ export default function DetailList({ href, id }: DetailListType) {
   }
 
   return (
-    <ul className="text-body02r h-[98px] w-full text-black">
+    <ul className="body02r h-[98px] w-full text-black">
       {data?.previous && (
         <li className={liStyle}>
           <div className={titleBox}>이전 글</div>

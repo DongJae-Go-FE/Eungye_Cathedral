@@ -38,7 +38,7 @@ export default function ImageDownload({
       </span>
       <p className="flex w-[calc(100%-50px)] justify-between">
         <span
-          className="text-body01m w-3/4 truncate text-black"
+          className="body01m w-3/4 truncate text-black"
           title={fileName}
         >
           {fileName}

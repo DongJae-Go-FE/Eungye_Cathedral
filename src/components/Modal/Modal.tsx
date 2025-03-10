@@ -30,7 +30,7 @@ const Header: FC = () => {
   const { title, onClose } = useContext(ModalContext);
   return (
     <div className="flex h-12 w-full items-center justify-between">
-      <h4 className="text-heading03b">{title}</h4>
+      <h4 className="heading03b">{title}</h4>
       <IconButton type="button" onClick={onClose}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

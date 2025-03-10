@@ -5,11 +5,11 @@ export default async function Section02() {
     "mobile:w-full mobile:border-b mobile:border-[#d9d9d9] mobile:pb-[16dvw] tablet:w-full tablet:border-b tablet:border-[#d9d9d9] tablet:pb-[10dvw] desktop:flex-1 desktop:border-b-0 desktop:border-r desktop:border-[#d9d9d9] desktop:pr-[120px] desktop:pb-0";
   const rightBoxStyle =
     "mobile:w-full mobile:pt-[16dvw] tablet:w-full tablet:pt-[10dvw] desktop:flex-1 desktop:pl-[120px] desktop:pt-0";
-  const aStyle = "text-body01m text-xl";
+  const aStyle = "body01m text-xl";
   const tableStyle =
     "w-full table-fixed border-b-[1px] border-t-[1px] border-gray-200 text-center";
   const tableTheadStyle =
-    "h-14 border-b border-gray-200 bg-gray-100 py-2.5 text-heading04b";
+    "h-14 border-b border-gray-200 bg-gray-100 py-2.5 heading04b";
   const tableContentStyle = "h-14 border-b border-gray-200 py-2.5";
   const tableContentLastStyle = "h-14 py-2.5";
 
@@ -22,7 +22,7 @@ export default async function Section02() {
           <address className="mt-6 not-italic">
             <ul>
               <li className="mb-1">
-                <strong className="text-heading03b">
+                <strong className="heading03b">
                   주소 : 경기도 시흥시 은계중앙로 17(우편번호 14922)
                 </strong>
               </li>

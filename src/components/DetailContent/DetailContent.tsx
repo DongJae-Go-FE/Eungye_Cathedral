@@ -28,14 +28,14 @@ export default function DetailContent({
 }: DetailContentType) {
   const searchParams = useSearchParams();
 
-  const h4Style = "text-heading04b mb-3";
+  const h4Style = "heading04b mb-3";
 
   return (
     <div className="flex w-full flex-col gap-y-20">
       <div className="flex min-h-[221px] flex-col gap-y-3">
-        <h3 className="text-heading02b text-black">{title}</h3>
+        <h3 className="heading02b text-black">{title}</h3>
         {date && (
-          <div className="text-body02r relative text-gray-500">
+          <div className="body02r relative text-gray-500">
             생성일 :
             <span className="whitespace-nowrap">{formatDate(date || "")}</span>
           </div>

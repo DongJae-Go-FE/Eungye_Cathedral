@@ -40,7 +40,7 @@ const RenderPrevUI = ({
   return (
     <div className="relative h-[611px] w-full">
       <div className="table-header mb-2">
-        <span className="text-body02m">총 0건</span>
+        <span className="body02m">총 0건</span>
       </div>
       <ul className="flex h-12 w-full items-center border-y-2 border-gray-200">
         {columns.map(({ title, width }, index) => {
@@ -48,7 +48,7 @@ const RenderPrevUI = ({
             <li
               key={index}
               style={{ width: width ? width : "auto" }}
-              className="text-body02m px-5 text-center"
+              className="body02m px-5 text-center"
             >
               {title}
             </li>
@@ -102,7 +102,7 @@ export default function ListTable({
       <div className="h-[611px] w-full">
         {totalCount && (
           <div className="table-header mb-2">
-            <span className="text-body02m">총 {totalCount}건</span>
+            <span className="body02m">총 {totalCount}건</span>
           </div>
         )}
         <div className="table-body relative h-[531px] w-full">
@@ -120,7 +120,7 @@ export default function ListTable({
                     <th
                       key={index}
                       style={{ textAlign: headerAlign }}
-                      className="text-body02m h-12 border-y-2 border-gray-200 px-5"
+                      className="body02m h-12 border-y-2 border-gray-200 px-5"
                     >
                       {title}
                     </th>
@@ -135,7 +135,7 @@ export default function ListTable({
                     <td
                       key={key + index}
                       title={`${item[key]}`}
-                      className="text-body02r h-12 truncate border-b-2 border-gray-100 px-5 text-center"
+                      className="body02r h-12 truncate border-b-2 border-gray-100 px-5 text-center"
                     >
                       {Object.keys(item)[index2] === "title" ? (
                         <Link

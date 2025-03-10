@@ -30,7 +30,7 @@ const CardContainerStyle = "flex min-h-[975px] flex-col gap-y-3";
 const RenderPrevUI = ({ children }: { children: ReactNode }) => {
   return (
     <div className={CardContainerStyle}>
-      <span className="text-body02m">총0건</span>
+      <span className="body02m">총0건</span>
       <ul className="relative min-h-[942px] w-full">{children}</ul>
     </div>
   );
@@ -68,7 +68,7 @@ export default function CardTable({
   return (
     <div className="mobile:hidden desktop:block">
       <div className={CardContainerStyle}>
-        <span className="text-body02m">총{totalCount}건</span>
+        <span className="body02m">총{totalCount}건</span>
         <ul
           className={ulStyle}
           style={{

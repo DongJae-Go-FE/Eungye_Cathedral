@@ -5,8 +5,8 @@ export default function PriestFooter() {
     "w-[100dvw]-[45px] flex tablet:h-[296px] justify-between bg-[#292A30] tablet:px-[60px] mobile:px-[8vw] py-[30px] text-white mobile:flex-col tablet:flex-row mobile:h-auto mobile:gap-y-6 tablet:gap-y-0";
   const addressContainer =
     "flex flex-col mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none";
-  const pStyle = "text-body02r text-gray-300";
-  const linkStyle = "text-body02r underline underline-offset-4";
+  const pStyle = "body02r text-gray-300";
+  const linkStyle = "body02r underline underline-offset-4";
 
   return (
     <footer className={footerStyle}>
@@ -22,7 +22,7 @@ export default function PriestFooter() {
       </div>
       <hr className="mobile:block tablet:hidden h-[1px] bg-white" />
       <div className="mobile:w-full tablet:w-auto tablet:flex-1 desktop:flex-none">
-        <h3 className="text-heading03b">031-311-1111</h3>
+        <h3 className="heading03b">031-311-1111</h3>
         <p className={pStyle}>운영시간: 10:00 ~ 18:00</p>
         <ul className="mt-4 mb-12 flex gap-x-4">
           <li>

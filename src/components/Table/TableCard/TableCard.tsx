@@ -72,11 +72,11 @@ export default function TableCard({
           />
         )}
         <div className={TableCardTextContainerStyle}>
-          <h3 className="text-body01b truncate text-black" title={title}>
+          <h3 className="body01b truncate text-black" title={title}>
             {title}
           </h3>
           <p
-            className="text-body03m truncate text-gray-500"
+            className="body03m truncate text-gray-500"
             title={formatDate(date) || ""}
           >
             {formatDate(date)}

@@ -18,10 +18,10 @@ export default async function MainIntroduction({
 }: MainIntroduction) {
   return (
     <div className="relative z-20">
-      <h3 className="text-heading01r mb-4 flex flex-col text-white">
+      <h3 className="heading01r mb-4 flex flex-col text-white">
         <Link
           href={titleBtnHref}
-          className="text-body01r flex items-center gap-1 text-xl text-white"
+          className="body01r flex items-center gap-1 text-xl text-white"
         >
           {titleBtnName}
           <svg
@@ -36,7 +36,7 @@ export default async function MainIntroduction({
         </Link>
         {title}
       </h3>
-      <p className="text-body01r mb-11 whitespace-pre-wrap text-white">
+      <p className="body01r mb-11 whitespace-pre-wrap text-white">
         {content}
       </p>
       {children}
