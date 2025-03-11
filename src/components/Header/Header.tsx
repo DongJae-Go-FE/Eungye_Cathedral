@@ -52,17 +52,17 @@ export default function Header() {
   return (
     <header className={headerStyle}>
       <div className="flex h-[64px] w-full items-center border-b border-[#46464B] pl-5">
-        <h1 className="w-32">
-          <Link href="/">
+        <h1>
+          <Link href="/" className="flex items-center gap-x-1">
             <Image
-              src="/logo.png"
-              width={118}
-              height={32}
+              src="/logo-white.png"
+              width={48}
+              height={48}
               alt="은계성당 로고"
               className="h-full"
-              style={{ width: "auto", height: "auto" }}
               priority
             />
+            <span className="font-bold text-[18px]">은계 성당</span>
           </Link>
         </h1>
         <div className="desktop:block hidden h-full">

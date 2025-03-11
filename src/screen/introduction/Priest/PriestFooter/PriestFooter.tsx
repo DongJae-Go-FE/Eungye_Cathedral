@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function PriestFooter() {
   const footerStyle =
@@ -11,7 +12,19 @@ export default function PriestFooter() {
   return (
     <footer className={footerStyle}>
       <div className={addressContainer}>
-        <h3 className="mb-[50px]">로고</h3>
+        <h3 className="mb-6">
+          <Link href="/" className="flex items-center gap-x-1">
+            <Image
+              src="/logo-white.png"
+              width={64}
+              height={64}
+              alt="은계성당 로고"
+              className="h-full"
+              priority
+            />
+            <span className="text-2xl font-bold">은계 성당</span>
+          </Link>
+        </h3>
         <address className="not-italic">
           <ul className={`flex flex-col gap-y-2 ${pStyle}`}>
             <li>도로명 주소 : 경기도 시흥시 은계중앙로 17(우편번호 14922)</li>

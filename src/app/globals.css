@@ -365,6 +365,10 @@
   @apply absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-75;
 }
 
+@utility bg-backdrop2 {
+  @apply absolute top-0 left-0 z-10 h-full w-full backdrop-brightness-[58%];
+}
+
 @utility sub-container {
   /* 서브 레이아웃*/
   @apply mobile:min-h-[calc(100dvh-360px)] tablet:min-h-[calc(100dvh-296px)] w-[100dvw] pt-[64px];

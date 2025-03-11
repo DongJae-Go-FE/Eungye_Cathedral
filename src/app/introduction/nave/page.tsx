@@ -32,10 +32,10 @@ export default async function Page() {
         <div className="relative h-[4000dvh] py-[1500px]">
           <Section02 />
         </div>
-        <div className="relative h-[1000dvh] bg-[url('/bg1.png')] bg-cover bg-fixed bg-center bg-no-repeat py-[600px]">
+        <div className="relative h-[1000dvh] bg-[url('/nave/intro.jpeg')] bg-cover bg-fixed bg-center  bg-no-repeat py-[600px]">
           <div className="absolute top-0 left-0 h-[600dvh] w-full bg-white z-24" />
           <Section03 />
-          <div className="bg-backdrop" />
+          <div className="bg-backdrop2" />
         </div>
       </div>
     </div>

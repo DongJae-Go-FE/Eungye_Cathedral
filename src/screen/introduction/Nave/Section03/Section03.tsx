@@ -103,8 +103,7 @@ export default function Section03() {
   const containerStyle =
     "sticky top-1/2 flex -translate-y-1/2 flex-col items-center gap-y-3 overflow-x-hidden z-24";
 
-  const pStyle =
-    "desktop:heading01b tablet:heading02b mobile:heading03b";
+  const pStyle = "desktop:heading01b tablet:heading02b mobile:heading03b";
 
   return (
     <div className={containerStyle}>
@@ -114,12 +113,12 @@ export default function Section03() {
       <p className={pStyle} ref={pTwoRef}>
         함께 해주실래요?
       </p>
-      <div className="position-center opacity-0" ref={containerRef}>
-        <address>
-          <strong>성당번호</strong>
-          <strong>주소</strong>
+      <div className="position-center opacity-0 text-gray-300 text-center" ref={containerRef}>
+        <address className="not-italic">
+          <strong className="text-2xl">031-317-2021</strong><br />
+          <strong className="text-2xl">경기도 시흥시 은계중앙로 17</strong>
         </address>
-        <p>언제든지 환영합니다</p>
+        <p className="text-3xl font-bold mt-1.5">언제든지 여러분을 환영합니다!</p>
       </div>
     </div>
   );
