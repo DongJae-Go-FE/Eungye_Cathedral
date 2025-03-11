@@ -11,7 +11,7 @@ import ClientDateBox from "@/components/_clientComponents/ClientDateBox";
 export async function generateStaticParams(): Promise<{ id: string }[]> {
   const newsList = await GetApi.getNews({
     page: "1",
-    limit: "5",
+    limit: "2",
     search: "",
   });
 

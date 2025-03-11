@@ -23,7 +23,11 @@ interface ModalContextType {
 const ModalContext = createContext<ModalContextType>({});
 
 const Container: FC<PropsWithChildren> = ({ children }) => {
-  return <div className="h-[60vh] w-[60vw] px-9 py-6">{children}</div>;
+  return (
+    <div className="desktop:w-[60dvw] mobile:w-[90dvw] h-[60dvh] px-9 py-6">
+      {children}
+    </div>
+  );
 };
 
 const Header: FC = () => {
