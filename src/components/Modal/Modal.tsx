@@ -111,27 +111,30 @@ const Modal = ({ children, title }: { children: ReactNode; title: string }) => {
     }
   };
 
-  return createPortal(
-    <dialog
-      className="position-center rounded-lg backdrop:bg-[rgba(0,0,0,0.8)]"
-      ref={modalRef}
-      onClose={() => back()}
-      onClick={handleClick}
-    >
-      <ModalContext
-        value={{
-          title: title,
-          onClose: () => back(),
-        }}
+  return (
+    typeof window !== "undefined" &&
+    createPortal(
+      <dialog
+        className="position-center rounded-lg backdrop:bg-[rgba(0,0,0,0.8)]"
+        ref={modalRef}
+        onClose={() => back()}
+        onClick={handleClick}
       >
-        <Modal.Container>
-          <Modal.Header />
-          <Modal.Body>{children}</Modal.Body>
-          <Modal.Footer />
-        </Modal.Container>
-      </ModalContext>
-    </dialog>,
-    document.body,
+        <ModalContext
+          value={{
+            title: title,
+            onClose: () => back(),
+          }}
+        >
+          <Modal.Container>
+            <Modal.Header />
+            <Modal.Body>{children}</Modal.Body>
+            <Modal.Footer />
+          </Modal.Container>
+        </ModalContext>
+      </dialog>,
+      document.body,
+    )
   );
 };
 
