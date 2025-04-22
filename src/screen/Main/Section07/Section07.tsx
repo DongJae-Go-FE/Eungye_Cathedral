@@ -78,7 +78,7 @@ export default async function Section07({
     <div className="main-container" id="section7">
       <h2>
         공지사항
-        <Link href="/notices" className="flex items-center gap-x-2">
+        <Link href="/parish-information/notices" className="flex items-center gap-x-2">
           전체 보기
           <svg
             xmlns="http://www.w3.org/2000/svg"
