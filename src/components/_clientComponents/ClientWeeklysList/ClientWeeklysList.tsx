@@ -38,7 +38,7 @@ export default function ClientWeeklysList() {
     fetchNextPage,
     isFetchingNextPage,
     status,
-    isFetching: InfiniteIsLoading,
+    isLoading: InfiniteIsLoading,
   } = useInfiniteQuery({
     queryKey: ["weeklys", debouncedSearchValue],
     queryFn: ({ pageParam = filter.page }) =>

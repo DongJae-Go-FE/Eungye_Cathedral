@@ -38,7 +38,7 @@ export default function ClientNewsList() {
     fetchNextPage,
     isFetchingNextPage,
     status,
-    isFetching: InfiniteIsLoading,
+    isLoading: InfiniteIsLoading,
   } = useInfiniteQuery({
     queryKey: ["news", debouncedSearchValue],
     queryFn: ({ pageParam = filter.page }) =>

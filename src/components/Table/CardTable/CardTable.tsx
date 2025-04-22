@@ -25,7 +25,8 @@ type CardTableType = {
   onPageChange?: (page: number) => void;
 };
 
-const CardContainerStyle = "flex min-h-[975px] flex-col gap-y-3";
+const CardContainerStyle =
+  "mobile:hidden desktop:flex min-h-[975px] flex-col gap-y-3";
 
 const RenderPrevUI = ({ children }: { children: ReactNode }) => {
   return (
