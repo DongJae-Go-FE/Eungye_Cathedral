@@ -32,7 +32,8 @@ type InfiniteListType = {
   isLoading?: boolean;
 };
 
-const CardContainerStyle = "flex min-h-[975px] flex-col gap-y-3 py-4";
+const CardContainerStyle =
+  "min-h-[975px] flex-col gap-y-3 py-4 desktop:hidden mobile:flex";
 
 const RenderPrevUI = ({ children }: { children: ReactNode }) => {
   return (

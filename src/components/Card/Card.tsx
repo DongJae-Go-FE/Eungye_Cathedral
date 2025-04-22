@@ -37,7 +37,7 @@ export default async function Card({
       <figure className="mobile:gap-y-3 desktop:gap-y-6 flex flex-col">
         {imgUrl ? (
           <Image
-            width={200}
+            width={900}
             height={400}
             className="aspect-[9/7.5] w-full object-cover"
             src={imgUrl}

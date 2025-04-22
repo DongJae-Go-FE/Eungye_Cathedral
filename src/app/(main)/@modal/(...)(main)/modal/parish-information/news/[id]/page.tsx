@@ -68,8 +68,8 @@ export default async function Page({
           <Image
             src={newsDetail.imgUrl}
             alt={`${newsDetail.title} 이미지`}
-            width={500}
-            height={300}
+            width={800}
+            height={500}
             priority
           />
         )}
